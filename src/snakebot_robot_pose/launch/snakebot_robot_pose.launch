@@ -1,0 +1,5 @@
+<launch>
+
+	<node name="snakebot_robot_pose" pkg="snakebot_robot_pose" type="robot_pose" output="screen" />
+
+</launch>

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/snake/Documents/catkin_ws/src/snakebot_collisions/src/geometry.cpp
+geometry.h
+/home/snake/Documents/catkin_ws/src/snakebot_collisions/src/geometry.h
+
+/home/snake/Documents/catkin_ws/src/snakebot_collisions/src/geometry.h
+cmath
+-
+vector
+-
+

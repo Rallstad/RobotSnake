@@ -1,0 +1,48 @@
+snakebot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 1000
+  
+
+  # Effort Controllers ---------------------------------------
+  joint_01_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_01
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_02_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_02
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_03_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_03
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_04_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_04
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_05_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_05
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_06_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_06
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_07_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_07
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_08_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_08
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_09_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_09
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_10_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_10
+    pid: {p: 100.0, i: 0.1, d: 1.0}

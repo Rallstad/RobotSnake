@@ -1,0 +1,578 @@
+{
+  "keys": {}, 
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr", 
+          "repr": "{u'rqt_plot/Plot': [6, 5, 4, 3, 2, 1]}"
+        }
+      }, 
+      "groups": {
+        "plugin__rqt_plot__Plot__8": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (8)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'2'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[7]', u'/snakebot/desired_joint_positions/data[7]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[u'-0.999999999601037', u'1']"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[u'51.8000000000002', u'52.8000000000002']"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__9": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (9)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'2'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[8]', u'/snakebot/desired_joint_positions/data[8]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[u'-0.999999998482101', u'1']"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[u'50.7800000000002', u'51.7800000000002']"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_reconfigure__Param__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget___plugincontainer_top_widget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'Dynamic Reconfigure'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000012d0000023901000000060100000001')", 
+                  "pretty-print": "       - 9     "
+                }, 
+                "_splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000013e0000006401000000090100000002')", 
+                  "pretty-print": "       > d     "
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u'/LabVIEW_ROS/to_ROS_measured_angles/data[0]'"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.04195762852245, 1.02300341899242]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[0.0, 1.0]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__2": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (2)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u'/LabVIEW_ROS/to_ROS_measured_angles/data[1]'"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.09768210007543, 1.05955841960158]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[0.0, 1.0]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__3": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (3)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u'/LabVIEW_ROS/to_ROS_measured_angles/data[4]'"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.02867973070377, 1.26861574383627]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[0.0, 1.0]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__4": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (4)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u'/LabVIEW_ROS/to_ROS_measured_angles/data[3]'"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-2.08767026963809, 1.10707000400231]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[0.0, 1.0]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__5": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (5)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u'/LabVIEW_ROS/to_ROS_measured_angles/data[2]'"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.58827611103737, 1.0]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[0.0, 1.0]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__6": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (6)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u'/LabVIEW_ROS/to_ROS_measured_angles/data[5]'"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.64162494150304, 1.0]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[0.0, 1.0]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__7": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (7)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'2'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[6]', u'/snakebot/desired_joint_positions/data[6]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[u'-1.59178345984684', u'1']"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[u'53.1659999999997', u'54.1659999999997']"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_publisher__Publisher__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__PublisherWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'Message Publisher'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "publishers": {
+                  "type": "repr", 
+                  "repr": "u\"[{'type_name': 'std_msgs/Float64MultiArray', 'topic_name': '/snakebot/desired_joint_positions', 'enabled': False, 'rate': 100.0, 'expressions': {u'/snakebot/desired_joint_positions/data': '[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]'}, 'publisher_id': 0, 'counter': 0}, {'type_name': 'std_msgs/Float64', 'topic_name': '/snakebot/propulsion_force', 'enabled': False, 'rate': 100.0, 'expressions': {u'/snakebot/propulsion_force/data': '35'}, 'publisher_id': 1, 'counter': 0}, {'type_name': 'std_msgs/Float64MultiArray', 'topic_name': '/snakebot/desired_joint_positions', 'enabled': False, 'rate': 100.0, 'expressions': {u'/snakebot/desired_joint_positions/data': '[-0.2, -0.4, -0.6, -0.4, -0.2, -0.0, 0.2, 0.4, 0.6, 0.4]'}, 'publisher_id': 2, 'counter': 0}, {'type_name': 'std_msgs/Float64', 'topic_name': '/snakebot/propulsion_force', 'enabled': False, 'rate': 100.0, 'expressions': {u'/snakebot/propulsion_force/data': '35'}, 'publisher_id': 3, 'counter': 0}]\""
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__10": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (10)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'2'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[9]', u'/snakebot/desired_joint_positions/data[9]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[u'-0.999999998977733', u'1']"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[u'46.6110000000003', u'47.6110000000003']"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }
+      }
+    }, 
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb00010000000007800000001800000eff000004af000007800000001800000eff000004af000000010000')", 
+          "pretty-print": "                       "
+        }, 
+        "state": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd00000001000000030000078000000469fc0100000005fc000000000000026c0000017700fffffffc0100000002fc00000000000003ed0000000000fffffffc0200000002fb00000058007200710074005f007000750062006c00690073006800650072005f005f005000750062006c00690073006800650072005f005f0031005f005f005000750062006c006900730068006500720057006900640067006500740100000019000001cd0000000000000000fb0000006c007200710074005f007200650063006f006e006600690067007500720065005f005f0050006100720061006d005f005f0031005f005f005f0070006c007500670069006e0063006f006e007400610069006e00650072005f0074006f0070005f00770069006400670065007401000001ec0000027a0000000000000000fc000000000000026c0000017700fffffffc0200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f007400570069006400670065007401000000190000022e0000013300fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0034005f005f00440061007400610050006c006f0074005700690064006700650074010000024d000002350000013300fffffffc00000272000002800000017700fffffffc0200000003fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0032005f005f00440061007400610050006c006f007400570069006400670065007401000000190000022b0000013300fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0033005f005f00440061007400610050006c006f0074005700690064006700650074010000024a000002380000013300fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0037005f005f00440061007400610050006c006f0074005700690064006700650074010000024e000002340000000000000000fc000002fa000001770000000000fffffffc0200000001fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0038005f005f00440061007400610050006c006f0074005700690064006700650074010000024e000002340000000000000000fc000004f8000002880000017700fffffffc0200000003fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0035005f005f00440061007400610050006c006f007400570069006400670065007401000000190000022a0000013300fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0036005f005f00440061007400610050006c006f00740057006900640067006500740100000249000002390000013300fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0039005f005f00440061007400610050006c006f0074005700690064006700650074010000024f000002330000000000000000fc000005f4000001770000000000fffffffc0200000001fb00000044007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f00310030005f005f00440061007400610050006c006f00740057006900640067006500740100000250000002320000000000000000000007800000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
+          "pretty-print": "                   l w                  Xrqt_publisher__Publisher__1__PublisherWidget          lrqt_reconfigure__Param__1___plugincontainer_top_widget            l w                                            . 3                                       M 5 3               Brqt_plot__Plot__2__DataPlotWidget          Brqt_plot__Plot__3__DataPlotWidget          Brqt_plot__Plot__7__DataPlotWidget            w                                            N 4                 Brqt_plot__Plot__5__DataPlotWidget          Brqt_plot__Plot__6__DataPlotWidget          Brqt_plot__Plot__9__DataPlotWidget            w                                             P 2                                                            "
+        }
+      }, 
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr", 
+              "repr": "8"
+            }
+          }, 
+          "groups": {}
+        }
+      }
+    }
+  }
+}

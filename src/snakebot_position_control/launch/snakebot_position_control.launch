@@ -1,0 +1,5 @@
+<launch>
+
+	<node name="snakebot_position_control" pkg="snakebot_position_control" type="position_control" output="screen" />
+
+</launch>

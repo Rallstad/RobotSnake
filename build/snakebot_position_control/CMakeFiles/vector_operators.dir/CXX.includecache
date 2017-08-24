@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/snake/Documents/catkin_ws/src/snakebot_position_control/src/vectoroperators.cpp
+vectoroperators.h
+/home/snake/Documents/catkin_ws/src/snakebot_position_control/src/vectoroperators.h
+
+/home/snake/Documents/catkin_ws/src/snakebot_position_control/src/vectoroperators.h
+vector
+-
+iostream
+-
+

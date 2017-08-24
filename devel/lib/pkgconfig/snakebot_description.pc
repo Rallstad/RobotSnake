@@ -1,0 +1,8 @@
+prefix=/home/snake/Documents/catkin_ws/devel
+
+Name: snakebot_description
+Description: Description of snakebot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/snake/Documents/catkin_ws/devel/lib 
+Requires: 

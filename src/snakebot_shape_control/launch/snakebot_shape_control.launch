@@ -1,0 +1,5 @@
+<launch>
+
+	<node name="snakebot_shape_control" pkg="snakebot_shape_control" type="shape_control" output="screen" />
+
+</launch>

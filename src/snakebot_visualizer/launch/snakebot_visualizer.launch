@@ -1,0 +1,6 @@
+<launch>
+
+	<node name="snakebot_visualizer" pkg="snakebot_visualizer" type="visualizer" output="screen" />
+
+	<node name="model_visualization" pkg="rviz" type="rviz" output="screen" />
+</launch>

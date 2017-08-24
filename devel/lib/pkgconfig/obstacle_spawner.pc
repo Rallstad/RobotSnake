@@ -1,0 +1,8 @@
+prefix=/home/snake/Documents/catkin_ws/devel
+
+Name: obstacle_spawner
+Description: Description of obstacle_spawner
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/snake/Documents/catkin_ws/devel/lib 
+Requires: 

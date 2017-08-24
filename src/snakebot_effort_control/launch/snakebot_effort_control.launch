@@ -1,0 +1,35 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find snakebot_effort_control)/config/snakebot_effort_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="effort_controller_spawner"
+    pkg="controller_manager"
+    type="spawner" respawn="false"
+    output="screen" ns="/snakebot"
+    args="joint_state_controller
+    	joint_01_effort_controller
+			joint_02_effort_controller
+			joint_03_effort_controller
+			joint_04_effort_controller
+			joint_05_effort_controller
+    	joint_06_effort_controller
+			joint_07_effort_controller
+			joint_08_effort_controller
+			joint_09_effort_controller
+			joint_10_effort_controller"
+  />
+
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find snakebot_description)/urdf/snakebot.xacro'" />
+    <remap from="/joint_states" to="/snakebot/joint_states" />
+  </node> 
+  
+  <!-- rqt publisher snakebot launch file -->
+	<include file="$(find snakebot_effort_control)/launch/snakebot_publisher_rqt.launch" />
+
+
+</launch>

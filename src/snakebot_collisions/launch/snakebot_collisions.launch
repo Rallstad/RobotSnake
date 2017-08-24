@@ -1,0 +1,7 @@
+<launch>
+
+	<node name="snakebot_collisions" pkg="snakebot_collisions" type="collisions" output="screen" /> 
+
+
+
+</launch>

@@ -1,0 +1,8 @@
+<launch>
+	<!--
+	<node name="snakebot_spawner" pkg="snakebot_spawner" type="spawner" output="screen" /> -->
+	
+	<node name="snakebot_propulsion_controller" pkg="snakebot_propulsion_control" type="propulsion_control" output="screen" />
+	
+
+</launch>

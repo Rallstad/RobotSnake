@@ -1,0 +1,2 @@
+set(snakebot_labview_communication_MESSAGE_FILES "/home/snake/Documents/catkin_ws/src/snakebot_labview_communication/msg/Collisions.msg;/home/snake/Documents/catkin_ws/src/snakebot_labview_communication/msg/LinkPoses.msg;/home/snake/Documents/catkin_ws/src/snakebot_labview_communication/msg/Float64Array.msg;/home/snake/Documents/catkin_ws/src/snakebot_labview_communication/msg/Int32Array.msg")
+set(snakebot_labview_communication_SERVICE_FILES "")

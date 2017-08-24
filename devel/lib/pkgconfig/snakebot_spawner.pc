@@ -1,0 +1,8 @@
+prefix=/home/snake/Documents/catkin_ws/devel
+
+Name: snakebot_spawner
+Description: Description of snakebot_spawner
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/snake/Documents/catkin_ws/devel/lib 
+Requires: roscpp std_msgs

@@ -1,0 +1,2 @@
+ObstaclePose obstaclePose
+SnakePose snakePose

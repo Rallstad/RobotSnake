@@ -1,0 +1,8 @@
+prefix=/home/snake/Documents/catkin_ws/install
+
+Name: snakebot_effort_control
+Description: Description of snakebot_effort_control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/snake/Documents/catkin_ws/install/lib 
+Requires: 

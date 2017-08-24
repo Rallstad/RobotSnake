@@ -1,0 +1,10 @@
+<launch>
+
+	<node name="snakebot_effort_selector" pkg="snakebot_effort_selector" type="effort_selector" 		output="screen" /> 
+	
+	  <!-- effort controller snakebot launch file -->
+	<include file="$(find snakebot_effort_control)/launch/snakebot_effort_control.launch" /> 
+
+
+
+</launch>

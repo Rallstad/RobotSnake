@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- Load RQT with a pre-setup GUI for Baxter controls from a perspective file  -->
+  <node name="snakebot_publisher_rqt" pkg="rqt_gui" type="rqt_gui" respawn="false"
+	output="screen" args="--perspective-file $(find snakebot_effort_control)/launch/snakebot_publisher_rqt.perspective"/>
+	
+	<node name="snakebot_plotter_rqt" pkg="rqt_gui" type="rqt_gui" respawn="false"
+	output="screen" args="--perspective-file $(find snakebot_effort_control)/launch/plot_reference_measured_joints.perspective"/>
+	
+	
+  
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/snake/Documents/catkin_ws/install
+
+Name: snakebot_input_interface
+Description: Description of snakebot_input_interface
+Version: 0.0.0
+Cflags: -I/home/snake/Documents/catkin_ws/install/include
+Libs: -L/home/snake/Documents/catkin_ws/install/lib 
+Requires: message_runtime roscpp rospy std_msgs

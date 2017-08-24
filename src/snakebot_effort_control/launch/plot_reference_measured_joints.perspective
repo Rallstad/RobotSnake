@@ -1,0 +1,578 @@
+{
+  "keys": {}, 
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr", 
+          "repr": "{u'rqt_plot/Plot': [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}"
+        }
+      }, 
+      "groups": {
+        "plugin__rqt_plot__Plot__8": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (8)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[7]', u'/snakebot/desired_joint_positions/data[7]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.9999999996010374, 1.0]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[62.565999999999974, 63.565999999999974]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__9": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (9)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[8]', u'/snakebot/desired_joint_positions/data[8]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.999999998482101, 1.0]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[63.370000000000005, 64.37]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_reconfigure__Param__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget___plugincontainer_top_widget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'Dynamic Reconfigure'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000012d0000023901000000060100000001')", 
+                  "pretty-print": "       - 9     "
+                }, 
+                "_splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000013e0000006401000000090100000002')", 
+                  "pretty-print": "       > d     "
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[0]', u'/snakebot/desired_joint_positions/data[0]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.041957628522451, 1.0230034189924204]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[59.462999999999965, 60.462999999999965]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__2": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (2)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[1]', u'/snakebot/desired_joint_positions/data[1]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.0976821000754287, 1.0595584196015846]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[66.84700000000004, 67.84700000000004]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__3": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (3)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[2]', u'/snakebot/desired_joint_positions/data[2]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.0286797307037734, 1.2686157438362686]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[66.13599999999997, 67.13599999999997]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__4": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (4)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/desired_joint_positions/data[3]', u'/snakebot/joint_states/position[3]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-2.0876702696380853, 1.1070700040023063]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[65.43500000000006, 66.43500000000006]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__5": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (5)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[4]', u'/snakebot/desired_joint_positions/data[4]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.5882761110373718, 1.0]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[64.62900000000002, 65.62900000000002]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__6": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (6)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/desired_joint_positions/data[5]', u'/snakebot/joint_states/position[5]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.641624941503041, 1.0]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[60.92599999999993, 61.92599999999993]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__7": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (7)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[6]', u'/snakebot/desired_joint_positions/data[6]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-1.5917834598468428, 1.0]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[61.688000000000045, 62.688000000000045]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_publisher__Publisher__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__PublisherWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'Message Publisher'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "publishers": {
+                  "type": "repr", 
+                  "repr": "u\"[{'type_name': 'std_msgs/Float64MultiArray', 'topic_name': '/snakebot/desired_joint_positions', 'enabled': False, 'rate': 100.0, 'expressions': {u'/snakebot/desired_joint_positions/data': '[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]'}, 'publisher_id': 0, 'counter': 0}, {'type_name': 'std_msgs/Float64', 'topic_name': '/snakebot/propulsion_force', 'enabled': False, 'rate': 100.0, 'expressions': {u'/snakebot/propulsion_force/data': '35'}, 'publisher_id': 1, 'counter': 0}, {'type_name': 'std_msgs/Float64MultiArray', 'topic_name': '/snakebot/desired_joint_positions', 'enabled': False, 'rate': 100.0, 'expressions': {u'/snakebot/desired_joint_positions/data': '[-0.2, -0.4, -0.6, -0.4, -0.2, -0.0, 0.2, 0.4, 0.6, 0.4]'}, 'publisher_id': 2, 'counter': 0}, {'type_name': 'std_msgs/Float64', 'topic_name': '/snakebot/propulsion_force', 'enabled': False, 'rate': 100.0, 'expressions': {u'/snakebot/propulsion_force/data': '35'}, 'publisher_id': 3, 'counter': 0}]\""
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__10": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'QwtPlot (10)'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/snakebot/joint_states/position[9]', u'/snakebot/desired_joint_positions/data[9]']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.9999999989777327, 1.0]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[64.41199999999998, 65.41199999999998]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }
+      }
+    }, 
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb0001000000000776fffffff200000f090000049d000007800000001800000eff000004af000000010000')", 
+          "pretty-print": "     v                 "
+        }, 
+        "state": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd00000001000000030000078000000469fc0100000005fc000000000000017b0000017700fffffffc0100000002fc00000000000003ed0000000000fffffffc0200000002fb00000058007200710074005f007000750062006c00690073006800650072005f005f005000750062006c00690073006800650072005f005f0031005f005f005000750062006c006900730068006500720057006900640067006500740100000019000001cd0000000000000000fb0000006c007200710074005f007200650063006f006e006600690067007500720065005f005f0050006100720061006d005f005f0031005f005f005f0070006c007500670069006e0063006f006e007400610069006e00650072005f0074006f0070005f00770069006400670065007401000001ec0000027a0000000000000000fc000000000000017b0000017700fffffffc0200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f007400570069006400670065007401000000190000022d0000016b00fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0036005f005f00440061007400610050006c006f0074005700690064006700650074010000024c000002360000013300fffffffc000001810000017b0000017700fffffffc0200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0032005f005f00440061007400610050006c006f007400570069006400670065007401000000190000022f0000016b00fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0037005f005f00440061007400610050006c006f0074005700690064006700650074010000024e000002340000016b00fffffffc000003020000017c0000017700fffffffc0200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0033005f005f00440061007400610050006c006f007400570069006400670065007401000000190000022f0000016b00fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0038005f005f00440061007400610050006c006f0074005700690064006700650074010000024e000002340000016b00fffffffc000004840000017b0000017700fffffffc0200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0034005f005f00440061007400610050006c006f00740057006900640067006500740100000019000002300000013300fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0039005f005f00440061007400610050006c006f0074005700690064006700650074010000024f000002330000016b00fffffffc000006050000017b0000017700fffffffc0200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0035005f005f00440061007400610050006c006f00740057006900640067006500740100000019000002310000016b00fffffffb00000044007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f00310030005f005f00440061007400610050006c006f00740057006900640067006500740100000250000002320000016b00ffffff000007800000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
+          "pretty-print": "                   { w                  Xrqt_publisher__Publisher__1__PublisherWidget          lrqt_reconfigure__Param__1___plugincontainer_top_widget            { w                                            - k                                       L 6 3               Brqt_plot__Plot__2__DataPlotWidget          Brqt_plot__Plot__7__DataPlotWidget            | w                                            / k                                       N 4 k               Brqt_plot__Plot__4__DataPlotWidget          Brqt_plot__Plot__9__DataPlotWidget            { w                                            1 k                                        P 2 k                                                          "
+        }
+      }, 
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr", 
+              "repr": "8"
+            }
+          }, 
+          "groups": {}
+        }
+      }
+    }
+  }
+}

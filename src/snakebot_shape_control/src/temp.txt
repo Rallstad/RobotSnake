@@ -1,0 +1,499 @@
+//void VirtualSnake::calculateJointSetPoints(){
+//    if (!(obstacleDataReady && linkStateReady)){
+//        cout << "obstacle or link data not available" << endl;
+//        return;
+//    }
+//    if (contactLinkNumber.size() == 0){
+//        cout << "could not identify contact links" << endl;
+//        return;
+//    }
+//    jointSetPoint.clear();
+//    linkAngles.clear();
+//    jointPositions.clear();
+//    int test1 = findStartJoint();
+//    int test2 = findStartLinkAngle();
+//    if ((test1 == -1) || (test2 == -1)){
+//        cout << "Could not identify first joint or link angle" << endl;
+//        return;
+//    }
+//    generateShapeCurve();
+//    for (int i = 0; i < contactLinkNumber[0] - 1; i++){
+//        jointSetPoint.push_back(0.0);
+//    }
+//    bool outOfBounds = false;
+//    int i = 0;
+//    int numberOfJoints = numberOfLinks -1;
+//    for (int joint = 1; joint < numberOfJoints-(contactLinkNumber[0]-1) + 1; joint++){
+//        if (outOfBounds){
+//            break;
+//        }
+
+//        while (1){
+//            i = i + 1;
+//            if (i > int(shapeCurve.size())-1){
+//                cout << shapeCurve[i-1].x << endl;
+//                cout << "breaking" << endl;
+//                outOfBounds = true;
+//                break;
+//            }
+//            else if (jointPositions.size() >= 10 - contactLinkNumber[0] + 1){
+//                break;
+//            }
+//            Vector2d jointToPoint(shapeCurve[i].x - jointPositions[joint-1].x, shapeCurve[i].y - jointPositions[joint-1].y);
+
+//            if ((vectorNorm(jointToPoint) < linkLength + 0.01) && (vectorNorm(jointToPoint) > linkLength - 0.01)){
+//                jointPositions.push_back(shapeCurve[i]);
+//                Vector2d jointToJoint(jointPositions[joint].x - jointPositions[joint-1].x, jointPositions[joint].y - jointPositions[joint-1].y);
+//                linkAngles.push_back(constrainAngle(atan2(jointToJoint.y, jointToJoint.x)));
+//                jointSetPoint.push_back(constrainAngle(linkAngles[joint] - linkAngles[joint-1]));
+//                break;
+//            }
+//        }
+//    }
+//    if (ros::Time::now().toNSec() - obstacleDataReceiveTime.toNSec() > 10000){
+//        obstacleDataReady = false;
+//    }
+//    //linkStateReady = false;
+//    cout << "cx = [" << c1.x << " " << c2.x << " " << c3.x << "];" << endl;
+//    cout << "cy = [" << c1.y << " " << c2.y << " " << c3.y << "];" << endl;
+//    cout << "jointx = [";
+//    for (int i = 0; i < jointPositions.size(); i++){
+//        cout << jointPositions[i].x << " ";
+//    }
+//    cout << "];" << endl;
+//    cout << "jointy = [";
+//    for (int i = 0; i < jointPositions.size(); i++){
+//        cout << jointPositions[i].y << " ";
+//    }
+//    cout << "];" << endl;
+
+//}
+
+
+//void VirtualSnake::trigInterpolate(std::vector<Point2d> points, std::vector<double> xSamples){
+////     hRIGINT 1-D piecewise trigonometric interpolation
+////        TRIGINT(X,Y,XI,C) interpolates to find YI, the values of the
+////        underlying function Y at the points in the array XI, using
+////        piecewise trigonometric interpolation.  X and Y must be vectors
+////        of length N.
+
+////        C specifies the number of data points to use in the
+////        interpolation.  The default is to use all points.
+
+////        [YI,YPI] = TRIGINT() also returns the interpolated derivative
+////        of the underlying function Y at points XI.
+
+////     Joe Henning - Fall 2012
+
+////     On the Interpolation Trigonometric Polynomial with an Arbitrary Even Number of Nodes
+////     Ernest Scheiber
+////     2011 13th International Symposium on Symbolic and Numeric Algorithms for Scientific Computing
+////     978-0-7695-4630-8/11 2011 IEEE
+////     DOI 10.1109/SYNASC.2011.13
+
+//    // MATLAB code converted manually to c++
+
+//    shapeCurve.clear();
+
+//    int n = points.size();
+//    int c = 0; //Number of data points to use
+
+//    if (n < c){
+//       cout << "??? Bad c input to trigint ==> c < points.size()\n" << endl;
+//       //yi = [];
+//       //ypi = [];
+//       return;
+//    }
+//    int klo;
+//    int khi;
+//    double term;
+//    double termp;
+//    double termp2;
+//    double prod;
+//    for (int i = 0; i < xSamples.size(); i++){
+//       // Find the right place in the table by means of a bisection.
+//       klo = 1;
+//       khi = n;
+//       int k;
+//       while (khi-klo > 1){
+//          k = trunc((khi+klo)/2.0);
+//          if (xSamples[k] > xSamples[i]){
+//             khi = k;
+//          }
+//          else{
+//             klo = k;
+//          }
+//       }
+
+//        double h = xSamples[khi] - xSamples[klo];
+//        if (h == 0.0){
+//            cout << "??? Bad x input to trigint ==> x values must be distinct\n" << endl;
+//            shapeCurve.push_back(Point2d(xSamples[i], 99999999));
+//            //ypi[i] = NaN;
+//            continue;
+//        }
+
+//        //Evaluate lagrange polynomial
+//        shapeCurve.push_back(Point2d(xSamples[i], 0));
+//        //yi[i] = 0;
+//        //ypi[i] = 0;
+//        double sumx;
+//        if (c == 0){
+//            if ((n % 2) == 0){   // even
+//                for (int k = 0; k <n; k++){
+//                    sumx = 0;
+//                    for (int m = 0; m < n; m++){
+//                       sumx = sumx + points[m].x;
+//                    }
+
+//                    term = points[k].y*(cos(0.5*(xSamples[i]-points[k].x)) + sin(0.5*(xSamples[i]-points[k].x))*cot(0.5*sumx));
+//                    termp = 0;
+//                    termp2 = points[k].y*0.5*(-sin(0.5*(xSamples[i]-points[k].x)) + cos(0.5*(xSamples[i]-points[k].x))*cot(0.5*sumx));
+//                    for (int m = 0; m < n; m++){
+//                       if (k != m){
+//                          term = term*sin(0.5*(xSamples[i]-points[m].x))/sin(0.5*(points[k].x-points[m].x));
+//                          double prod = 0.5*cos(0.5*(xSamples[i]-points[m].x));
+//                          for (int j = 0; j < n; j++){
+//                             if ((k != j) && (m != j)){
+//                                prod = prod*sin(0.5*(xSamples[i]-points[j].x))/sin(0.5*(points[k].x-points[j].x));
+//                             }
+//                          }
+//                          termp = termp + points[k].y*(cos(0.5*(xSamples[i]-points[k].x)) + sin(0.5*(xSamples[i]-points[k].x))*cot(0.5*sumx))*prod/sin(0.5*(points[k].x-points[m].x));
+//                          termp2 = termp2*sin(0.5*(xSamples[i]-points[m].x))/sin(0.5*(points[k].x-points[m].x));
+//                       }
+//                    }
+//                    shapeCurve[i].y = shapeCurve[i].y + term;
+//                    //ypi[i] = ypi[i] + termp + termp2;
+//                }
+//            }
+//            else{   // odd
+//                double prod;
+//                for (int k = 0; k < n; k++){
+//                    double term = points[k].y;
+//                    double termp = 0;
+//                    for (int m = 0; m < n; m++){
+//                        if (k != m){
+//                            term = term*sin(0.5*(xSamples[i]-points[m].x))/sin(0.5*(points[k].x-points[m].x));
+//                            prod = 0.5*cos(0.5*(xSamples[i]-points[m].x));
+//                            for (int j = 0; j < n; j++){
+//                                if ((k != j) && (m != j)){
+//                                prod = prod*sin(0.5*(xSamples[i]-points[j].x))/sin(0.5*(points[k].x-points[j].x));
+//                                }
+//                            }
+//                        termp = termp + points[k].y*prod/sin(0.5*(points[k].x-points[m].x));
+//                        }
+//                    }
+//                    shapeCurve[i].y = shapeCurve[i].y + term;
+//                    //ypi[i] = ypi[i] + termp;
+//                }
+//            }
+//        }
+//        else{
+//            double c2;
+//            if ((c % 2) == 0){ // even
+//                c2 = c/2;
+//                if (klo < c2){
+//                    klo = c2;
+//                }
+//                if (klo > n-c2){
+//                    klo = n-c2;
+//                }
+//                khi = klo + 1;
+//                for (int k = klo-(c2-1) -1; k < klo+c2; k++){
+//                    sumx = 0;
+//                    for (int m = klo-(c2-1) - 1; m < klo+c2; m++){
+//                        sumx = sumx + points[m].x;
+//                    }
+//                    term = points[k].y*(cos(0.5*(xSamples[i]-points[k].x)) + sin(0.5*(xSamples[i]-points[k].x))*cot(0.5*sumx));
+//                    termp = 0;
+//                    termp2 = points[k].y*0.5*(-sin(0.5*(xSamples[i]-points[k].x)) + cos(0.5*(xSamples[i]-points[k].x))*cot(0.5*sumx));
+//                    for (int m = klo-(c2-1) - 1; m < klo+c2; m++){
+//                        if (k != m){
+//                            term = term*sin(0.5*(xSamples[i]-points[m].x))/sin(0.5*(points[k].x-points[m].x));
+//                            prod = 0.5*cos(0.5*(xSamples[i]-points[m].x));
+//                            for (int j = 0; j < n; j++){
+//                                if ((k != j) && (m != j))
+//                                prod = prod*sin(0.5*(xSamples[i]-points[j].x))/sin(0.5*(points[k].x-points[j].x));
+//                            }
+//                        }
+//                        termp = termp + points[k].y*(cos(0.5*(xSamples[i]-points[k].x)) + sin(0.5*(xSamples[i]-points[k].x))*cot(0.5*sumx))*prod/sin(0.5*(points[k].x-points[m].x));
+//                        termp2 = termp2*sin(0.5*(xSamples[i]-points[m].x))/sin(0.5*(points[k].x-points[m].x));
+//                    }
+//                }
+//                shapeCurve[i].y = shapeCurve[i].y + term;
+//                //ypi[i] = ypi[i] + termp + termp2;
+//            }
+//            else{   // odd
+//                c2 = floor(c/2);
+//                if (klo < c2+1){
+//                    klo = c2+1;
+//                }
+//                if (klo > n-c2){
+//                    klo = n-c2;
+//                }
+//                khi = klo + 1;
+//                for (int k = klo-c2 - 1; k < klo+c2; k++){
+//                    term = points[k].y;
+//                    termp = 0;
+//                    for (int m = klo-c2 - 1; m < klo+c2; m++){
+//                        if (k != m){
+//                            term = term*sin(0.5*(xSamples[i]-points[m].x))/sin(0.5*(points[k].x-points[m].x));
+//                            prod = 0.5*cos(0.5*(xSamples[i]-points[m].x));
+//                            for (int j = 0; j < n; j++){
+//                                if ((k != j) && (m != j)){
+//                                    prod = prod*sin(0.5*(xSamples[i]-points[j].x))/sin(0.5*(points[k].x-points[j].x));
+//                                }
+//                            }
+//                            termp = termp + points[k].y*prod/sin(0.5*(points[k].x-points[m].x));
+//                        }
+//                    }
+//                    shapeCurve[i].y = shapeCurve[i].y + term;
+//                //ypi[i] = ypi[i] + termp + termp2;
+//                }
+//            }
+//        }
+//    }
+//}
+
+
+//std::vector<double> VirtualSnake::trigint(std::vector<double> x,std::vector<double> y,std::vector<double> xi,int c){
+//    cout << "the invalid pointer must be in here" << endl;
+
+//    std::vector<double> yi(xi.size(), 0.0);
+//    std::vector<double> ypi(xi.size(), 0.0);
+
+//int n = x.size();
+
+//if (n < c){
+//   cout << "??? Bad c input to trigint ==> c < length(x)\n";
+//   return yi;
+//}
+
+//for (int i = 1; i < xi.size(); i++){
+//   // Find the right place in the table by means of a bisection.
+//   int klo = 1;
+//   int khi = n;
+//   int k;
+//   while (khi-klo > 1){
+//      k = trunc((khi+klo)/2.0); // fix was replaced by trunc
+//      if (x[k] > xi[i]){
+//         khi = k;
+//      }
+//      else{
+//         klo = k;
+//      }
+//   }
+
+//   double h = x[khi] - x[klo];
+//   if (h == 0.0){
+//      cout << "??? Bad x input to trigint ==> x values must be distinct\n";
+//      yi[i] = 9999;
+//      ypi[i] = 9999;
+//      continue;
+//   }
+
+//   // Evaluate lagrange polynomial
+//   yi[i] = 0;
+//   ypi[i] = 0;
+//   double sumx;
+//   double term;
+//   double termp;
+//   double termp2;
+//   double prod;
+//   if (c == 0){
+//      if ((n % 2) == 0){   // even
+//         for (k = 1; k < n; k++){
+//            sumx = 0;
+//            for (int m = 1; m<n; m++){
+//               sumx = sumx + x[m];
+//            }
+//            term = y[k]*(cos(0.5*(xi[i]-x[k])) + sin(0.5*(xi[i]-x[k]))*cot(0.5*sumx));
+//            termp = 0;
+//            termp2 = y[k]*0.5*(-sin(0.5*(xi[i]-x[k])) + cos(0.5*(xi[i]-x[k]))*cot(0.5*sumx));
+//            for (int m = 1; m <n ;m++){
+//               if (k != m)
+//                  term = term*sin(0.5*(xi[i]-x[m]))/sin(0.5*(x[k]-x[m]));
+//                  prod = 0.5*cos(0.5*(xi[i]-x[m]));
+//                  for (int j = 1; j <n; j++){
+//                     if ((k != j) && (m != j)){
+//                        prod = prod*sin(0.5*(xi[i]-x[j]))/sin(0.5*(x[k]-x[j]));
+//                     }
+//                  }
+//                  termp = termp + y[k]*(cos(0.5*(xi[i]-x[k])) + sin(0.5*(xi[i]-x[k]))*cot(0.5*sumx))*prod/sin(0.5*(x[k]-x[m]));
+//                  termp2 = termp2*sin(0.5*(xi[i]-x[m]))/sin(0.5*(x[k]-x[m]));
+//               }
+//            }
+//            yi[i] = yi[i] + term;
+//            ypi[i] = ypi[i] + termp + termp2;
+//         }
+//      else{   // odd
+//         for (int k = 1; k < n; k++){
+//            term = y[k];
+//            termp = 0;
+//            for (int m = 1; m <n; m++){
+//               if (k != m){
+//                  term = term*sin(0.5*(xi[i]-x[m]))/sin(0.5*(x[k]-x[m]));
+//                  prod = 0.5*cos(0.5*(xi[i]-x[m]));
+//                  for (int j = 1; j <n; j++){
+//                     if ((k != j) && (m != j)){
+//                        prod = prod*sin(0.5*(xi[i]-x[j]))/sin(0.5*(x[k]-x[j]));
+//                     }
+//                  }
+//                  termp = termp + y[k]*prod/sin(0.5*(x[k]-x[m]));
+//               }
+//            }
+//            yi[i] = yi[i] + term;
+//            ypi[i] = ypi[i] + termp;
+//         }
+//      }
+//   }
+//   else{
+//       double c2;
+//      if ((c%2) == 0){   // even
+//         c2 = c/2;
+//         if (klo < c2){
+//            klo = c2;
+//         }
+//         if (klo > n-c2){
+//            klo = n-c2;
+//         }
+//         khi = klo + 1;
+//         for (int k = klo-(c2-1); k < klo+c2; k++){
+//            sumx = 0;
+//            for (int m = klo-(c2-1); m < klo+c2; m++){
+//               sumx = sumx + x[m];
+//            }
+//            term = y[k]*(cos(0.5*(xi[i]-x[k])) + sin(0.5*(xi[i]-x[k]))*cot(0.5*sumx));
+//            termp = 0;
+//            termp2 = y[k]*0.5*(-sin(0.5*(xi[i]-x[k])) + cos(0.5*(xi[i]-x[k]))*cot(0.5*sumx));
+//            for (int m = klo-(c2-1); m < klo+c2; m++){
+//               if (k != m)
+//                  term = term*sin(0.5*(xi[i]-x[m]))/sin(0.5*(x[k]-x[m]));
+//                  prod = 0.5*cos(0.5*(xi[i]-x[m]));
+//                  for (int j = 1; j < n; j++){
+//                     if ((k != j) && (m != j)){
+//                        prod = prod*sin(0.5*(xi[i]-x[j]))/sin(0.5*(x[k]-x[j]));
+//                     }
+//                  }
+//                  termp = termp + y[k]*(cos(0.5*(xi[i]-x[k])) + sin(0.5*(xi[i]-x[k]))*cot(0.5*sumx))*prod/sin(0.5*(x[k]-x[m]));
+//                  termp2 = termp2*sin(0.5*(xi[i]-x[m]))/sin(0.5*(x[k]-x[m]));
+//               }
+//            }
+//            yi[i] = yi[i] + term;
+//            ypi[i] = ypi[i] + termp + termp2;
+//         }
+//      else{   // odd
+//         c2 = floor(c/2);
+//         if (klo < c2+1){
+//            klo = c2+1;
+//         }
+//         if (klo > n-c2){
+//            klo = n-c2;
+//         }
+//         khi = klo + 1;
+//         for (int k = klo-c2; k < klo+c2; k++){
+//            term = y[k];
+//            termp = 0;
+//            for (int m = klo-c2; m < klo+c2; m++){
+//               if (k != m){
+//                  term = term*sin(0.5*(xi[i]-x[m]))/sin(0.5*(x[k]-x[m]));
+//                  prod = 0.5*cos(0.5*(xi[i]-x[m]));
+//                  for (int j = 1; j < n; j++){
+//                     if ((k != j) && (m != j)){
+//                        prod = prod*sin(0.5*(xi[i]-x[j]))/sin(0.5*(x[k]-x[j]));
+//                     }
+//                  }
+//                  termp = termp + y[k]*prod/sin(0.5*(x[k]-x[m]));
+//               }
+//            }
+//            yi[i] = yi[i] + term;
+//            ypi[i] = ypi[i] + termp;
+//         }
+//      }
+//   }
+//}
+//}
+//void VirtualSnake::linkStateCallback(const gazebo_msgs::LinkStates::ConstPtr& msg){
+//    contactLinkPosition.clear();
+//    contactLinkOrientation.clear();
+//    linkPosition.clear();
+//    linkOrientation.clear();
+//    for ( int i=0; i < msg->name.size(); i++ ) {
+//        for ( int j=0; j < contactLinkNumber.size(); j++ ) {
+//            int link =  contactLinkNumber[j];
+//            char buffer[512];
+//            if (link == 1){
+//                std::string linkName = "snakebot::dummy_link";
+//                if (msg->name[i] == linkName){
+//                    contactLinkPosition.push_back(Point2d(msg->pose[i].position.x, msg->pose[i].position.y));
+//                    contactLinkOrientation.push_back(Euler(
+//                                    Quaternion(
+//                                    msg->pose[i].orientation.x,
+//                                    msg->pose[i].orientation.y,
+//                                    -msg->pose[i].orientation.z,
+//                                    msg->pose[i].orientation.w
+//                                    )
+//                                    ).z);
+//                }
+//            }
+//            else{
+//                sprintf(buffer, "snakebot::body_%02d", link );
+//                std::string linkName = std::string(buffer);
+//                if (msg->name[i] == linkName){
+//                    contactLinkPosition.push_back(Point2d(msg->pose[i].position.x, msg->pose[i].position.y));
+//                    contactLinkOrientation.push_back(Euler(
+//                                    Quaternion(
+//                                    msg->pose[i].orientation.x,
+//                                    msg->pose[i].orientation.y,
+//                                    -msg->pose[i].orientation.z,
+//                                    msg->pose[i].orientation.w
+//                                    )
+//                                    ).z);
+//                }
+//            }
+//        }
+//    }
+//    for ( int i=0; i < msg->name.size(); i++ ) {
+//        for ( int link=1; link < numberOfLinks + 1 ; link++ ) {
+//            char buffer[512];
+//            if (link == 1){
+//                std::string linkName = "snakebot::dummy_link";
+//                if (msg->name[i] == linkName){
+//                    linkPosition.push_back(Point2d(msg->pose[i].position.x, msg->pose[i].position.y));
+//                    linkOrientation.push_back(Euler(
+//                                    Quaternion(
+//                                    msg->pose[i].orientation.x,
+//                                    msg->pose[i].orientation.y,
+//                                    -msg->pose[i].orientation.z,
+//                                    msg->pose[i].orientation.w
+//                                    )
+//                                    ).z);
+//                }
+//            }
+//            else{
+//                sprintf(buffer, "snakebot::body_%02d", link );
+//                std::string linkName = std::string(buffer);
+//                if (msg->name[i] == linkName){
+//                    linkPosition.push_back(Point2d(msg->pose[i].position.x, msg->pose[i].position.y));
+//                    linkOrientation.push_back(Euler(
+//                                    Quaternion(
+//                                    msg->pose[i].orientation.x,
+//                                    msg->pose[i].orientation.y,
+//                                    -msg->pose[i].orientation.z,
+//                                    msg->pose[i].orientation.w
+//                                    )
+//                                    ).z);
+//                }
+//            }
+//        }
+//    }
+//    if ((contactLinkPosition.size() != 3) || (contactLinkOrientation.size() != 3) || (linkPosition.size() != numberOfLinks) || (linkOrientation.size() != numberOfLinks)){
+//        linkStateReady = false;
+//    }
+//    else {
+//        linkStateReady = true;
+//    }
+//}
+
+
+

@@ -1,0 +1,8 @@
+<launch>
+
+	<node name="snakebot_labview_communication" pkg="snakebot_labview_communication" type="labview_communication" output="screen" />
+	
+  <node name="snakebot_labview_plot_rqt" pkg="rqt_gui" type="rqt_gui" respawn="false"
+	output="screen" args="--perspective-file $(find snakebot_labview_communication)/launch/plot_labview_measured_angles.perspective"/>	
+
+</launch>

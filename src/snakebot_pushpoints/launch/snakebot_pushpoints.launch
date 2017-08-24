@@ -1,0 +1,8 @@
+<launch>
+
+	<node name="snakebot_pushpoints" pkg="snakebot_pushpoints" type="pushpoints" output="screen" /> 
+ 
+
+
+
+</launch>

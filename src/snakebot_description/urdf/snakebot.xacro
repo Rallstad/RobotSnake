@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<robot name="snakebot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+        <!-- Put here the robot description -->
+	
+	<xacro:property name="camera_link" value="0.05" /> <!-- Size of square 'camera' box -->
+	<xacro:property name="height" value="1" /> <!-- Link -->
+  <xacro:property name="axel_offset" value="0.05" /> <!-- Space btw top of beam and the each joint -->
+
+	<xacro:property name="PI" value="3.1415926535897931"/>
+
+	<xacro:property name="chassisHeight" value="0.1"/>
+	<xacro:property name="chassisLength" value="0.2"/>
+	<xacro:property name="chassisWidth" value="0.1"/>
+	<xacro:property name="chassisMass" value="1"/>
+	<xacro:property name="jointOffset" value="0.03"/>
+
+	<xacro:property name="casterRadius" value="0.05"/>
+	<xacro:property name="casterMass" value="5"/>
+
+	<xacro:property name="wheelWidth" value="0.05"/>
+	<xacro:property name="wheelRadius" value="0.1"/>
+	<xacro:property name="wheelPos" value="0.2"/>
+	<xacro:property name="wheelMass" value="5"/>
+
+	<xacro:property name="cameraSize" value="0.05"/>
+	<xacro:property name="cameraMass" value="0.1"/>
+
+	<xacro:include filename="$(find snakebot_description)/urdf/snakebot.gazebo" />
+	<xacro:include filename="$(find snakebot_description)/urdf/materials.xacro" />
+	<xacro:include filename="$(find snakebot_description)/urdf/macros.xacro" />
+
+
+	<link name="dummy_link" />
+
+	<joint name="base_joint" type="fixed">
+		<parent link="dummy_link"/>
+		<child link="body_01"/>
+	</joint>
+
+
+	<body_first num="1" nextNum="2"/>
+	<body_upTo9 num="2" nextNum="3"/>
+	<body_upTo9 num="3" nextNum="4"/>
+	<body_upTo9 num="4" nextNum="5"/>
+	<body_upTo9 num="5" nextNum="6"/>
+	<body_upTo9 num="6" nextNum="7"/>
+	<body_upTo9 num="7" nextNum="8"/>
+	<body_upTo9 num="8" nextNum="9"/>
+	<body_9 num="9" nextNum="10"/>
+	<body_above9 num="10" nextNum="11"/>		
+	<body_last_above9 num="11"/>
+
+
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="${camera_link+chassisLength} 0 ${0.5*camera_link}" rpy="0 0 0"/>
+    <parent link="body_11"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <!-- Camera -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+
+
+</robot>

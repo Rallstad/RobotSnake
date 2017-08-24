@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+<world name="myworld">
+
+	<include>
+		<uri>model://sun</uri>
+	</include>
+
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+
+<model name ='cylinder_1'>
+   <pose>0.63 0.37 0 0 0 0</pose>
+   <link name ='cyl'>
+       <pose>0 0 0.1 0 0 0</pose>
+       <collision name ='collision'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </collision>
+       <visual name ='visual'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </visual>
+   </link>
+   <static>1</static>
+</model>
+
+
+<model name ='cylinder_2'>
+   <pose>1.37 0.68 0 0 0 0</pose>
+   <link name ='cyl'>
+       <pose>0 0 0.1 0 0 0</pose>
+       <collision name ='collision'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </collision>
+       <visual name ='visual'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </visual>
+   </link>
+   <static>1</static>
+</model>
+
+
+<model name ='cylinder_3'>
+   <pose>2.16 1.36 0 0 0 0</pose>
+   <link name ='cyl'>
+       <pose>0 0 0.1 0 0 0</pose>
+       <collision name ='collision'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </collision>
+       <visual name ='visual'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </visual>
+   </link>
+   <static>1</static>
+</model>
+
+<model name ='cylinder_4'>
+   <pose>-0.5 -0.5 0 0 0 0</pose>
+   <link name ='cyl'>
+       <pose>0 0 0.1 0 0 0</pose>
+       <collision name ='collision'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </collision>
+       <visual name ='visual'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </visual>
+   </link>
+   <static>1</static>
+</model>
+
+<model name ='cylinder_5'>
+   <pose>2.80 3.0 0 0 0 0</pose>
+   <link name ='cyl'>
+       <pose>0 0 0.1 0 0 0</pose>
+       <collision name ='collision'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </collision>
+       <visual name ='visual'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </visual>
+   </link>
+   <static>1</static>
+</model>
+<!--
+<model name ='cylinder_6'>
+   <pose>1.2 0.20 0 0 0 0</pose>
+   <link name ='cyl'>
+       <pose>0 0 0.1 0 0 0</pose>
+       <collision name ='collision'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </collision>
+       <visual name ='visual'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </visual>
+   </link>
+   <static>1</static>
+</model> 
+
+<model name ='cylinder_7'>
+   <pose>2.2 0.7 0 0 0 0</pose>
+   <link name ='cyl'>
+       <pose>0 0 0.1 0 0 0</pose>
+       <collision name ='collision'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </collision>
+       <visual name ='visual'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </visual>
+   </link>
+   <static>1</static>
+</model> 
+
+<model name ='cylinder_8'>
+   <pose>0.9 1.1 0 0 0 0</pose>
+   <link name ='cyl'>
+       <pose>0 0 0.1 0 0 0</pose>
+       <collision name ='collision'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </collision>
+       <visual name ='visual'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </visual>
+   </link>
+   <static>1</static>
+</model> 
+
+<model name ='cylinder_9'>
+   <pose>2.8 1.20 0 0 0 0</pose>
+   <link name ='cyl'>
+       <pose>0 0 0.1 0 0 0</pose>
+       <collision name ='collision'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </collision>
+       <visual name ='visual'>
+           <geometry>
+               <cylinder><radius>0.1</radius><length>0.2</length></cylinder>
+           </geometry>
+       </visual>
+   </link>
+   <static>1</static>
+</model> -->
+
+
+</world>
+</sdf>

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC    -shared -Wl,-soname,libcommunication_class.so -o /home/snake/Documents/catkin_ws/devel/lib/libcommunication_class.so CMakeFiles/communication_class.dir/src/communication.cpp.o 
