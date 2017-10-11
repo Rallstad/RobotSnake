@@ -1,0 +1,2 @@
+set(snakebot_link_pose_interface_MESSAGE_FILES "/home/snake/Documents/catkin_ws/src/archived packages/snakebot_link_pose_interface/msg/SnakePose.msg;/home/snake/Documents/catkin_ws/src/archived packages/snakebot_link_pose_interface/msg/ObstaclePose.msg;/home/snake/Documents/catkin_ws/src/archived packages/snakebot_link_pose_interface/msg/Pose.msg")
+set(snakebot_link_pose_interface_SERVICE_FILES "")

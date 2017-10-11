@@ -1,0 +1,8 @@
+prefix=/home/snake/Documents/catkin_ws/devel
+
+Name: snakebot_hybrid_controller
+Description: Description of snakebot_hybrid_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/snake/Documents/catkin_ws/devel/lib 
+Requires: 

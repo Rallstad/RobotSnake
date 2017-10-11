@@ -1,0 +1,11 @@
+<launch>
+
+  <node pkg="snakebot_kinematics"
+        type="kinematics"
+        output="screen"
+        name="kinematics"
+        respawn="false"
+        launch-prefix=""
+        required="true">
+  </node>
+</launch>

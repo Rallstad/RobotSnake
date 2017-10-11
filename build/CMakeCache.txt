@@ -218,6 +218,9 @@ GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
 //Path to a library.
 GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
 
+//Dependencies for target
+HybridController_LIB_DEPENDS:STATIC=
+
 //lsb_release executable was found
 LSB_FOUND:BOOL=TRUE
 
@@ -425,6 +428,9 @@ OGRE_Terrain_LIBRARY_FWK:STRING=NOTFOUND
 //x
 OGRE_Terrain_LIBRARY_REL:FILEPATH=/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 
+//Dependencies for target
+PID_LIB_DEPENDS:STATIC=
+
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
@@ -492,6 +498,9 @@ actionlib_DIR:PATH=/opt/ros/indigo/share/actionlib/cmake
 actionlib_msgs_DIR:PATH=/opt/ros/indigo/share/actionlib_msgs/cmake
 
 //Dependencies for target
+bumper_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
 bumper_class_LIB_DEPENDS:STATIC=
 
 //The directory containing a CMake configuration file for catkin.
@@ -538,6 +547,9 @@ genmsg_DIR:PATH=/opt/ros/indigo/share/genmsg/cmake
 
 //The directory containing a CMake configuration file for genpy.
 genpy_DIR:PATH=/opt/ros/indigo/share/genpy/cmake
+
+//Dependencies for target
+geometry_LIB_DEPENDS:STATIC=
 
 //Dependencies for target
 geometry_lib_LIB_DEPENDS:STATIC=
@@ -589,6 +601,15 @@ message_generation_DIR:PATH=/opt/ros/indigo/share/message_generation/cmake
 message_runtime_DIR:PATH=/opt/ros/indigo/share/message_runtime/cmake
 
 //Value Computed by CMake
+mocap_optitrack_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/mocap_optitrack
+
+//Value Computed by CMake
+mocap_optitrack_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/mocap_optitrack
+
+//Dependencies for target
+obstacle_interface_class_LIB_DEPENDS:STATIC=
+
+//Value Computed by CMake
 obstacle_spawner_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/obstacle_spawner
 
 //Value Computed by CMake
@@ -620,6 +641,9 @@ rosgraph_DIR:PATH=/opt/ros/indigo/share/rosgraph/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/indigo/share/rosgraph_msgs/cmake
+
+//The directory containing a CMake configuration file for roslaunch.
+roslaunch_DIR:PATH=/opt/ros/indigo/share/roslaunch/cmake
 
 //The directory containing a CMake configuration file for roslib.
 roslib_DIR:PATH=/opt/ros/indigo/share/roslib/cmake
@@ -676,10 +700,28 @@ snakebot_gazebo_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/snakebot
 snakebot_gazebo_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/snakebot_gazebo
 
 //Value Computed by CMake
+snakebot_hybrid_controller_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/archived packages/snakebot_hybrid_controller
+
+//Value Computed by CMake
+snakebot_hybrid_controller_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/archived packages/snakebot_hybrid_controller
+
+//Value Computed by CMake
 snakebot_input_interface_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/snakebot_input_interface
 
 //Value Computed by CMake
 snakebot_input_interface_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/snakebot_input_interface
+
+//Value Computed by CMake
+snakebot_interface_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/archived packages/snakebot_interface
+
+//Value Computed by CMake
+snakebot_interface_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/archived packages/snakebot_interface
+
+//Value Computed by CMake
+snakebot_kinematics_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/snakebot_kinematics
+
+//Value Computed by CMake
+snakebot_kinematics_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/snakebot_kinematics
 
 //Value Computed by CMake
 snakebot_labview_communication_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/snakebot_labview_communication
@@ -688,10 +730,22 @@ snakebot_labview_communication_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws
 snakebot_labview_communication_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/snakebot_labview_communication
 
 //Value Computed by CMake
+snakebot_link_pose_interface_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/archived packages/snakebot_link_pose_interface
+
+//Value Computed by CMake
+snakebot_link_pose_interface_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/archived packages/snakebot_link_pose_interface
+
+//Value Computed by CMake
 snakebot_log_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/snakebot_log
 
 //Value Computed by CMake
 snakebot_log_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/snakebot_log
+
+//Value Computed by CMake
+snakebot_obstacle_interface_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/archived packages/snakebot_obstacle_interface
+
+//Value Computed by CMake
+snakebot_obstacle_interface_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/archived packages/snakebot_obstacle_interface
 
 //Value Computed by CMake
 snakebot_position_control_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/snakebot_position_control
@@ -740,6 +794,18 @@ snakebot_spawner_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/snakebo
 
 //Value Computed by CMake
 snakebot_spawner_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/snakebot_spawner
+
+//Value Computed by CMake
+snakebot_viewer_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/archived packages/snakebot_viewer
+
+//Value Computed by CMake
+snakebot_viewer_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/archived packages/snakebot_viewer
+
+//Value Computed by CMake
+snakebot_virtual_snake_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/archived packages/snakebot_virtual_snake
+
+//Value Computed by CMake
+snakebot_virtual_snake_SOURCE_DIR:STATIC=/home/snake/Documents/catkin_ws/src/archived packages/snakebot_virtual_snake
 
 //Value Computed by CMake
 snakebot_visualizer_BINARY_DIR:STATIC=/home/snake/Documents/catkin_ws/build/snakebot_visualizer
@@ -895,7 +961,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=18
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=21
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

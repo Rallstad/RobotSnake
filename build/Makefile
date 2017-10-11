@@ -540,6 +540,123 @@ snakebot_input_interface_genpy/fast:
 .PHONY : snakebot_input_interface_genpy/fast
 
 #=============================================================================
+# Target rules for targets named _snakebot_kinematics_generate_messages_check_deps_kinematics
+
+# Build rule for target.
+_snakebot_kinematics_generate_messages_check_deps_kinematics: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _snakebot_kinematics_generate_messages_check_deps_kinematics
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_kinematics
+
+# fast build rule for target.
+_snakebot_kinematics_generate_messages_check_deps_kinematics/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_kinematics.dir/build.make snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_kinematics.dir/build
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_kinematics/fast
+
+#=============================================================================
+# Target rules for targets named kinematics
+
+# Build rule for target.
+kinematics: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kinematics
+.PHONY : kinematics
+
+# fast build rule for target.
+kinematics/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/kinematics.dir/build.make snakebot_kinematics/CMakeFiles/kinematics.dir/build
+.PHONY : kinematics/fast
+
+#=============================================================================
+# Target rules for targets named snakebot_kinematics_gencpp
+
+# Build rule for target.
+snakebot_kinematics_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics_gencpp
+.PHONY : snakebot_kinematics_gencpp
+
+# fast build rule for target.
+snakebot_kinematics_gencpp/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/snakebot_kinematics_gencpp.dir/build.make snakebot_kinematics/CMakeFiles/snakebot_kinematics_gencpp.dir/build
+.PHONY : snakebot_kinematics_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named snakebot_kinematics_generate_messages
+
+# Build rule for target.
+snakebot_kinematics_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics_generate_messages
+.PHONY : snakebot_kinematics_generate_messages
+
+# fast build rule for target.
+snakebot_kinematics_generate_messages/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages.dir/build.make snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages.dir/build
+.PHONY : snakebot_kinematics_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named snakebot_kinematics_generate_messages_cpp
+
+# Build rule for target.
+snakebot_kinematics_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics_generate_messages_cpp
+.PHONY : snakebot_kinematics_generate_messages_cpp
+
+# fast build rule for target.
+snakebot_kinematics_generate_messages_cpp/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp.dir/build.make snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp.dir/build
+.PHONY : snakebot_kinematics_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named snakebot_kinematics_generate_messages_lisp
+
+# Build rule for target.
+snakebot_kinematics_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics_generate_messages_lisp
+.PHONY : snakebot_kinematics_generate_messages_lisp
+
+# fast build rule for target.
+snakebot_kinematics_generate_messages_lisp/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_lisp.dir/build.make snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_lisp.dir/build
+.PHONY : snakebot_kinematics_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named snakebot_kinematics_generate_messages_py
+
+# Build rule for target.
+snakebot_kinematics_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics_generate_messages_py
+.PHONY : snakebot_kinematics_generate_messages_py
+
+# fast build rule for target.
+snakebot_kinematics_generate_messages_py/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py.dir/build.make snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py.dir/build
+.PHONY : snakebot_kinematics_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named snakebot_kinematics_genlisp
+
+# Build rule for target.
+snakebot_kinematics_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics_genlisp
+.PHONY : snakebot_kinematics_genlisp
+
+# fast build rule for target.
+snakebot_kinematics_genlisp/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/snakebot_kinematics_genlisp.dir/build.make snakebot_kinematics/CMakeFiles/snakebot_kinematics_genlisp.dir/build
+.PHONY : snakebot_kinematics_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named snakebot_kinematics_genpy
+
+# Build rule for target.
+snakebot_kinematics_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics_genpy
+.PHONY : snakebot_kinematics_genpy
+
+# fast build rule for target.
+snakebot_kinematics_genpy/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/snakebot_kinematics_genpy.dir/build.make snakebot_kinematics/CMakeFiles/snakebot_kinematics_genpy.dir/build
+.PHONY : snakebot_kinematics_genpy/fast
+
+#=============================================================================
 # Target rules for targets named _snakebot_position_control_generate_messages_check_deps_PositionControlEffort
 
 # Build rule for target.
@@ -1736,6 +1853,45 @@ visualizer/fast:
 .PHONY : visualizer/fast
 
 #=============================================================================
+# Target rules for targets named _run_tests_mocap_optitrack
+
+# Build rule for target.
+_run_tests_mocap_optitrack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_mocap_optitrack
+.PHONY : _run_tests_mocap_optitrack
+
+# fast build rule for target.
+_run_tests_mocap_optitrack/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/_run_tests_mocap_optitrack.dir/build.make mocap_optitrack/CMakeFiles/_run_tests_mocap_optitrack.dir/build
+.PHONY : _run_tests_mocap_optitrack/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_mocap_optitrack_roslaunch-check
+
+# Build rule for target.
+_run_tests_mocap_optitrack_roslaunch-check: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_mocap_optitrack_roslaunch-check
+.PHONY : _run_tests_mocap_optitrack_roslaunch-check
+
+# fast build rule for target.
+_run_tests_mocap_optitrack_roslaunch-check/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/_run_tests_mocap_optitrack_roslaunch-check.dir/build.make mocap_optitrack/CMakeFiles/_run_tests_mocap_optitrack_roslaunch-check.dir/build
+.PHONY : _run_tests_mocap_optitrack_roslaunch-check/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_mocap_optitrack_roslaunch-check_launch
+
+# Build rule for target.
+_run_tests_mocap_optitrack_roslaunch-check_launch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_mocap_optitrack_roslaunch-check_launch
+.PHONY : _run_tests_mocap_optitrack_roslaunch-check_launch
+
+# fast build rule for target.
+_run_tests_mocap_optitrack_roslaunch-check_launch/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/_run_tests_mocap_optitrack_roslaunch-check_launch.dir/build.make mocap_optitrack/CMakeFiles/_run_tests_mocap_optitrack_roslaunch-check_launch.dir/build
+.PHONY : _run_tests_mocap_optitrack_roslaunch-check_launch/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_generate_messages_cpp
 
 # Build rule for target.
@@ -1745,7 +1901,7 @@ actionlib_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 actionlib_generate_messages_cpp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make snakebot_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+	$(MAKE) -f mocap_optitrack/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make mocap_optitrack/CMakeFiles/actionlib_generate_messages_cpp.dir/build
 .PHONY : actionlib_generate_messages_cpp/fast
 
 #=============================================================================
@@ -1758,7 +1914,7 @@ actionlib_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 actionlib_generate_messages_lisp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make snakebot_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+	$(MAKE) -f mocap_optitrack/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make mocap_optitrack/CMakeFiles/actionlib_generate_messages_lisp.dir/build
 .PHONY : actionlib_generate_messages_lisp/fast
 
 #=============================================================================
@@ -1771,7 +1927,7 @@ actionlib_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 actionlib_generate_messages_py/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/build.make snakebot_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/build
+	$(MAKE) -f mocap_optitrack/CMakeFiles/actionlib_generate_messages_py.dir/build.make mocap_optitrack/CMakeFiles/actionlib_generate_messages_py.dir/build
 .PHONY : actionlib_generate_messages_py/fast
 
 #=============================================================================
@@ -1784,7 +1940,7 @@ actionlib_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make snakebot_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f mocap_optitrack/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make mocap_optitrack/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
 .PHONY : actionlib_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -1797,7 +1953,7 @@ actionlib_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make snakebot_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f mocap_optitrack/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make mocap_optitrack/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
 .PHONY : actionlib_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -1810,8 +1966,190 @@ actionlib_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_py/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make snakebot_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+	$(MAKE) -f mocap_optitrack/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make mocap_optitrack/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
 .PHONY : actionlib_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named clean_test_results_mocap_optitrack
+
+# Build rule for target.
+clean_test_results_mocap_optitrack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_mocap_optitrack
+.PHONY : clean_test_results_mocap_optitrack
+
+# fast build rule for target.
+clean_test_results_mocap_optitrack/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/clean_test_results_mocap_optitrack.dir/build.make mocap_optitrack/CMakeFiles/clean_test_results_mocap_optitrack.dir/build
+.PHONY : clean_test_results_mocap_optitrack/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_mocap_optitrack
+
+# Build rule for target.
+run_tests_mocap_optitrack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_mocap_optitrack
+.PHONY : run_tests_mocap_optitrack
+
+# fast build rule for target.
+run_tests_mocap_optitrack/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/run_tests_mocap_optitrack.dir/build.make mocap_optitrack/CMakeFiles/run_tests_mocap_optitrack.dir/build
+.PHONY : run_tests_mocap_optitrack/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_mocap_optitrack_roslaunch-check
+
+# Build rule for target.
+run_tests_mocap_optitrack_roslaunch-check: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_mocap_optitrack_roslaunch-check
+.PHONY : run_tests_mocap_optitrack_roslaunch-check
+
+# fast build rule for target.
+run_tests_mocap_optitrack_roslaunch-check/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/run_tests_mocap_optitrack_roslaunch-check.dir/build.make mocap_optitrack/CMakeFiles/run_tests_mocap_optitrack_roslaunch-check.dir/build
+.PHONY : run_tests_mocap_optitrack_roslaunch-check/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_mocap_optitrack_roslaunch-check_launch
+
+# Build rule for target.
+run_tests_mocap_optitrack_roslaunch-check_launch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_mocap_optitrack_roslaunch-check_launch
+.PHONY : run_tests_mocap_optitrack_roslaunch-check_launch
+
+# fast build rule for target.
+run_tests_mocap_optitrack_roslaunch-check_launch/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/run_tests_mocap_optitrack_roslaunch-check_launch.dir/build.make mocap_optitrack/CMakeFiles/run_tests_mocap_optitrack_roslaunch-check_launch.dir/build
+.PHONY : run_tests_mocap_optitrack_roslaunch-check_launch/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_cpp
+
+# Build rule for target.
+sensor_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make mocap_optitrack/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_lisp
+
+# Build rule for target.
+sensor_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make mocap_optitrack/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_py
+
+# Build rule for target.
+sensor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make mocap_optitrack/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_cpp
+
+# Build rule for target.
+tf2_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_cpp
+.PHONY : tf2_msgs_generate_messages_cpp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make mocap_optitrack/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
+.PHONY : tf2_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_lisp
+
+# Build rule for target.
+tf2_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_lisp
+.PHONY : tf2_msgs_generate_messages_lisp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make mocap_optitrack/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+.PHONY : tf2_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_py
+
+# Build rule for target.
+tf2_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_py
+.PHONY : tf2_msgs_generate_messages_py
+
+# fast build rule for target.
+tf2_msgs_generate_messages_py/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make mocap_optitrack/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
+.PHONY : tf2_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named tf_generate_messages_cpp
+
+# Build rule for target.
+tf_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_cpp
+.PHONY : tf_generate_messages_cpp
+
+# fast build rule for target.
+tf_generate_messages_cpp/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/tf_generate_messages_cpp.dir/build.make mocap_optitrack/CMakeFiles/tf_generate_messages_cpp.dir/build
+.PHONY : tf_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named tf_generate_messages_lisp
+
+# Build rule for target.
+tf_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_lisp
+.PHONY : tf_generate_messages_lisp
+
+# fast build rule for target.
+tf_generate_messages_lisp/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/tf_generate_messages_lisp.dir/build.make mocap_optitrack/CMakeFiles/tf_generate_messages_lisp.dir/build
+.PHONY : tf_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named tf_generate_messages_py
+
+# Build rule for target.
+tf_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_py
+.PHONY : tf_generate_messages_py
+
+# fast build rule for target.
+tf_generate_messages_py/fast:
+	$(MAKE) -f mocap_optitrack/CMakeFiles/tf_generate_messages_py.dir/build.make mocap_optitrack/CMakeFiles/tf_generate_messages_py.dir/build
+.PHONY : tf_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named mocap_optitrack_mocap_node
+
+# Build rule for target.
+mocap_optitrack_mocap_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mocap_optitrack_mocap_node
+.PHONY : mocap_optitrack_mocap_node
+
+# fast build rule for target.
+mocap_optitrack_mocap_node/fast:
+	$(MAKE) -f mocap_optitrack/src/CMakeFiles/mocap_optitrack_mocap_node.dir/build.make mocap_optitrack/src/CMakeFiles/mocap_optitrack_mocap_node.dir/build
+.PHONY : mocap_optitrack_mocap_node/fast
 
 #=============================================================================
 # Target rules for targets named dynamic_reconfigure_gencfg
@@ -1918,45 +2256,6 @@ gazebo_ros_gencfg/fast:
 .PHONY : gazebo_ros_gencfg/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_cpp
-
-# Build rule for target.
-sensor_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make snakebot_gazebo/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_lisp
-
-# Build rule for target.
-sensor_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make snakebot_gazebo/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_py
-
-# Build rule for target.
-sensor_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make snakebot_gazebo/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-#=============================================================================
 # Target rules for targets named std_srvs_generate_messages_cpp
 
 # Build rule for target.
@@ -1994,84 +2293,6 @@ std_srvs_generate_messages_py: cmake_check_build_system
 std_srvs_generate_messages_py/fast:
 	$(MAKE) -f snakebot_gazebo/CMakeFiles/std_srvs_generate_messages_py.dir/build.make snakebot_gazebo/CMakeFiles/std_srvs_generate_messages_py.dir/build
 .PHONY : std_srvs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_cpp
-
-# Build rule for target.
-tf2_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_cpp
-.PHONY : tf2_msgs_generate_messages_cpp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make snakebot_gazebo/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
-.PHONY : tf2_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_lisp
-
-# Build rule for target.
-tf2_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_lisp
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make snakebot_gazebo/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_py
-
-# Build rule for target.
-tf2_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_py
-.PHONY : tf2_msgs_generate_messages_py
-
-# fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make snakebot_gazebo/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named tf_generate_messages_cpp
-
-# Build rule for target.
-tf_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_cpp
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/tf_generate_messages_cpp.dir/build.make snakebot_gazebo/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named tf_generate_messages_lisp
-
-# Build rule for target.
-tf_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_lisp
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/tf_generate_messages_lisp.dir/build.make snakebot_gazebo/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named tf_generate_messages_py
-
-# Build rule for target.
-tf_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_py
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	$(MAKE) -f snakebot_gazebo/CMakeFiles/tf_generate_messages_py.dir/build.make snakebot_gazebo/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named trajectory_msgs_generate_messages_cpp
@@ -2155,6 +2376,15 @@ help:
 	@echo "... snakebot_input_interface_generate_messages_py"
 	@echo "... snakebot_input_interface_genlisp"
 	@echo "... snakebot_input_interface_genpy"
+	@echo "... _snakebot_kinematics_generate_messages_check_deps_kinematics"
+	@echo "... kinematics"
+	@echo "... snakebot_kinematics_gencpp"
+	@echo "... snakebot_kinematics_generate_messages"
+	@echo "... snakebot_kinematics_generate_messages_cpp"
+	@echo "... snakebot_kinematics_generate_messages_lisp"
+	@echo "... snakebot_kinematics_generate_messages_py"
+	@echo "... snakebot_kinematics_genlisp"
+	@echo "... snakebot_kinematics_genpy"
 	@echo "... _snakebot_position_control_generate_messages_check_deps_PositionControlEffort"
 	@echo "... position_control"
 	@echo "... position_controller_class"
@@ -2247,12 +2477,29 @@ help:
 	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... visualizer"
+	@echo "... _run_tests_mocap_optitrack"
+	@echo "... _run_tests_mocap_optitrack_roslaunch-check"
+	@echo "... _run_tests_mocap_optitrack_roslaunch-check_launch"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... clean_test_results_mocap_optitrack"
+	@echo "... run_tests_mocap_optitrack"
+	@echo "... run_tests_mocap_optitrack_roslaunch-check"
+	@echo "... run_tests_mocap_optitrack_roslaunch-check_launch"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... tf2_msgs_generate_messages_cpp"
+	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... tf_generate_messages_cpp"
+	@echo "... tf_generate_messages_lisp"
+	@echo "... tf_generate_messages_py"
+	@echo "... mocap_optitrack_mocap_node"
 	@echo "... dynamic_reconfigure_gencfg"
 	@echo "... dynamic_reconfigure_generate_messages_cpp"
 	@echo "... dynamic_reconfigure_generate_messages_lisp"
@@ -2261,18 +2508,9 @@ help:
 	@echo "... gazebo_msgs_generate_messages_lisp"
 	@echo "... gazebo_msgs_generate_messages_py"
 	@echo "... gazebo_ros_gencfg"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... tf_generate_messages_py"
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"

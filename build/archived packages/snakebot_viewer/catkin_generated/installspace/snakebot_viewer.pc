@@ -1,0 +1,8 @@
+prefix=/home/snake/Documents/catkin_ws/install
+
+Name: snakebot_viewer
+Description: Description of snakebot_viewer
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/snake/Documents/catkin_ws/install/lib 
+Requires: roscpp visualization_msgs

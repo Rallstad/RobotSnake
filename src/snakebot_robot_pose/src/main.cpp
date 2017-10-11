@@ -114,7 +114,7 @@ void RobotPose::linkStateCallback(const gazebo_msgs::LinkStates::ConstPtr& msg){
                     pose.theta = thetaFromEuler(msg->pose[i]);
                     pose.x = msg->pose[i].position.x + l*cos(pose.theta);
                     pose.y = msg->pose[i].position.y + l*sin(pose.theta);
-                    cout << "theta= " << pose.theta << endl;
+                    cout << "theta = " << pose.theta << endl;
                     cout << "x = " << msg->pose[i].position.x << " x addtion= " << l*cos(pose.theta) << endl;
                     cout << "y = " << msg->pose[i].position.y << " y addtion= " << l*sin(pose.theta) << endl;
                     snakePose.pose.push_back(pose);

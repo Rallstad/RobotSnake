@@ -1,0 +1,8 @@
+prefix=/home/snake/Documents/catkin_ws/install
+
+Name: snakebot_virtual_snake
+Description: Description of snakebot_virtual_snake
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/snake/Documents/catkin_ws/install/lib 
+Requires: message_runtime roscpp rospy std_msgs
