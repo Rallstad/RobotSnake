@@ -9,6 +9,7 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o
  /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.h
  /opt/ros/indigo/include/XmlRpcDecl.h
  /opt/ros/indigo/include/XmlRpcValue.h
+ /opt/ros/indigo/include/geometry_msgs/Point.h
  /opt/ros/indigo/include/geometry_msgs/Pose2D.h
  /opt/ros/indigo/include/ros/advertise_options.h
  /opt/ros/indigo/include/ros/advertise_service_options.h
@@ -75,6 +76,7 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o
  /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/main.cpp
  /opt/ros/indigo/include/XmlRpcDecl.h
  /opt/ros/indigo/include/XmlRpcValue.h
+ /opt/ros/indigo/include/geometry_msgs/Point.h
  /opt/ros/indigo/include/geometry_msgs/Pose2D.h
  /opt/ros/indigo/include/ros/advertise_options.h
  /opt/ros/indigo/include/ros/advertise_service_options.h

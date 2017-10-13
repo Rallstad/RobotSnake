@@ -10,6 +10,7 @@ int main(int argc, char **argv){
 
     while(ros::ok()){
     	snake.publishSnakeConfiguration();
+        snake.calculateJointPosition();
     	ros::spinOnce();
     	loop_rate.sleep();
     }
