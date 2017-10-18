@@ -10,7 +10,7 @@
     <uri>model://ground_plane</uri>
   </include>
 
-<model name ='cylinder_1'>
+<!--<model name ='cylinder_1'>
    <pose>0.63 0.37 0 0 0 0</pose>
    <link name ='cyl'>
        <pose>0 0 0.1 0 0 0</pose>
@@ -101,6 +101,7 @@
    </link>
    <static>1</static>
 </model>
+-->
 <!--
 <model name ='cylinder_6'>
    <pose>1.2 0.20 0 0 0 0</pose>

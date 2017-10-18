@@ -98,7 +98,7 @@
 	
 	</macro>
 
-	<macro name="body_upTo9" params="num nextNum">
+	<macro name="body_upTo3" params="num nextNum">
 	
 	<link name="body_0${num}">
 		<collision> 
@@ -164,7 +164,7 @@
 
 	</macro>
 	
-		<macro name="body_9" params="num nextNum">
+		<macro name="body_3" params="num nextNum">
 	
 	<link name="body_0${num}">
 		<collision> 
@@ -230,7 +230,7 @@
 
 	</macro>
 	
-	<macro name="body_last_upTo9" params="num">
+	<macro name="body_last_upTo3" params="num">
 	
 	<link name="body_0${num}">
 		<collision> 
@@ -279,7 +279,7 @@
 	
 	
 
-	<macro name="body_above9" params="num nextNum">
+	<macro name="body_above3" params="num nextNum">
 	
 	<link name="body_${num}">
 		<collision> 
@@ -345,7 +345,7 @@
 
 	</macro>
 	
-	<macro name="body_last_above9" params="num">
+	<macro name="body_last_above3" params="num">
 	
 	<link name="body_${num}">
 		<collision> 

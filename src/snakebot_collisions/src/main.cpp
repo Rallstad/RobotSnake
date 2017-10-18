@@ -5,7 +5,7 @@ int main(int argc, char **argv)
     int freq = 100;
     ros::init(argc, argv, "collisions");
     ros::NodeHandle n;
-    int numberOfLinks = 11;
+    int numberOfLinks = 5;
 
     Collisions collisions(n, numberOfLinks);
     ros::Rate loop_rate(freq);

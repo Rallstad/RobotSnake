@@ -9,7 +9,7 @@ int main(int argc, char **argv){
     ros::Rate loop_rate(freq);
 
     while(ros::ok()){
-    	snake.publishSnakeConfiguration();
+    	//snake.publishSnakeConfiguration();
         snake.calculateJointPosition();
     	ros::spinOnce();
     	loop_rate.sleep();

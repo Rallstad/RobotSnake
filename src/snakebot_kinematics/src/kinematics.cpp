@@ -45,21 +45,15 @@ void Snake::calculateJointPosition(){
 			jointPositions[joint_num].y = headGroundPose.y -link_length*sin(theta_sum*M_PI/180);
 		}
 		else if(joint_num > 0){
-			
-			if(joint_num < 4){
-				theta_sum+=jointAnglesBody[1+(joint_num*2)];
-			}
-			else{
-				theta_sum-=jointAnglesBody[1+(joint_num*2)];
-			}
-			
+			theta_sum-=jointAnglesBody[(joint_num*2)-1];
 			jointPositions[joint_num].x = jointPositions[joint_num-1].x -link_length*cos(theta_sum*M_PI/180);
 			jointPositions[joint_num].y = jointPositions[joint_num-1].y -link_length*sin(theta_sum*M_PI/180);
 		}
 		jointAnglesWorld[joint_num] = theta_sum;
 		//cout << "Joint: " <<joint_num << "Theta: " << jointAnglesWorld[(joint_num-1)/2] <<endl;
-		//cout << "Theta_sum: " << theta_sum <<endl;
+		cout << "Theta_sum: " << theta_sum <<"\n"<<endl;
 		cout<< "Joint: " <<joint_num << " X: " << jointPositions[joint_num].x << " Y: "<< jointPositions[joint_num].y <<endl;
+		//cout<<"\n";
 	}
 	cout<<"\n";
 }

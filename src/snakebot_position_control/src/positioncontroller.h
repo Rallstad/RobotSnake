@@ -20,7 +20,7 @@ extern bool followRealSnakeMode;
 class PositionController
 {
 private:
-    static const int numJoints = 10;
+    static const int numJoints = 4;
 
     //ROS specific
     ros::NodeHandle n;
