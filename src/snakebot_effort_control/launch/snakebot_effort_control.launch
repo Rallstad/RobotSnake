@@ -13,6 +13,12 @@
 			joint_02_effort_controller
 			joint_03_effort_controller
 			joint_04_effort_controller
+      joint_05_effort_controller
+      joint_06_effort_controller
+      joint_07_effort_controller
+      joint_08_effort_controller
+      joint_09_effort_controller
+      joint_10_effort_controller
       "
   />
 

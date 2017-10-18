@@ -5,7 +5,7 @@ int main(int argc, char **argv)
     int freq = 100;
     ros::init(argc, argv, "pushpoints");
     ros::NodeHandle n;
-    int numberOfLinks = 5;
+    int numberOfLinks = 11;
 
     PushpointExtractor pushpointObj(n, numberOfLinks);
     ros::Rate loop_rate(freq);

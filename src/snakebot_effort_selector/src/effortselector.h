@@ -12,7 +12,7 @@ using std::endl;
 class EffortSelector
 {
 private:
-    static const int numJoints = 4;
+    static const int numJoints = 10;
 
     //ROS specific
     ros::NodeHandle n;

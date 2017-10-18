@@ -14,7 +14,7 @@ bool followRealSnakeMode = false;
 
 int main(int argc, char **argv)
 {
-    int const numJoints = 4;
+    int const numJoints = 10;
     int freq = 1000;
     ros::init(argc, argv, "position_controller");
     ros::NodeHandle n;

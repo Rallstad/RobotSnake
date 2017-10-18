@@ -1,7 +1,7 @@
 #include "virtualsnake.h"
 
 VirtualSnake::VirtualSnake(ros::NodeHandle n){
-    numberOfLinks = 5;
+    numberOfLinks = 11;
     linkLength = 0.2 + 0.03*2;
     linkWidth = 0.1;
     obstacleDataSub = n.subscribe("/snakebot/pushpoints", 10, &VirtualSnake::obstacleDataCallback, this);

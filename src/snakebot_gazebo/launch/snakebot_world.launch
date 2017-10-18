@@ -16,6 +16,12 @@
 	 -J joint_02 0.2
 	 -J joint_03 0.2
 	 -J joint_04 0.2
+	 -J joint_05 0.2
+	 -J joint_06 -0.2
+	 -J joint_07 -0.2
+	 -J joint_08 -0.2
+	 -J joint_09 -0.2
+	 -J joint_10 -0.2
 	 " /> 
 	
 	

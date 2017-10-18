@@ -13,7 +13,7 @@ using std::endl;
 int main( int argc, char** argv )
 {
     //cout << "main has started" << endl;
-    int numberOfLinks = 5;
+    int numberOfLinks = 11;
     int freq = 30;
     ros::init(argc, argv, "viewer");
     ros::NodeHandle rosNode;

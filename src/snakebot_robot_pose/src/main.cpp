@@ -149,7 +149,7 @@ void RobotPose::linkStateCallback(const gazebo_msgs::LinkStates::ConstPtr& msg){
 
 int main(int argc, char **argv)
 {
-    int numberOfLinks = 5;
+    int numberOfLinks = 11;
     int freq = 100;
     ros::init(argc, argv, "position");
     ros::NodeHandle n;

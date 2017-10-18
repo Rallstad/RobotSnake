@@ -13,7 +13,7 @@
 int main(int argc, char **argv)
 {
     //Initialization
-    double totalMass = 1*5; //Hardcoded for 1kg times 11 links. Inaccurate
+    double totalMass = 1*11; //Hardcoded for 1kg times 11 links. Inaccurate
     double linkLength = 0.2;
     double linkWidth = 0.1;
     double linkHeight = 0.1;

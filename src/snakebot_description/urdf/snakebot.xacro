@@ -40,15 +40,21 @@
 
 	
 	<body_first num="1" nextNum="2"/>
-	<body_upTo3 num="2" nextNum="3"/>
-	<body_3 num="3" nextNum="4"/>
-	<body_above3 num="4" nextNum="5"/>
-	<body_last_above3 num="5"/>
+    <body_upTo9 num="2" nextNum="3"/>
+    <body_upTo9 num="3" nextNum="4"/>
+    <body_upTo9 num="4" nextNum="5"/>
+    <body_upTo9 num="5" nextNum="6"/>
+    <body_upTo9 num="6" nextNum="7"/>
+    <body_upTo9 num="7" nextNum="8"/>
+    <body_upTo9 num="8" nextNum="9"/>
+    <body_9 num="9" nextNum="10"/>
+    <body_above9 num="10" nextNum="11"/>        
+    <body_last_above9 num="11"/>
 
 
   <joint name="camera_joint" type="fixed">
     <origin xyz="${camera_link+chassisLength} 0 ${0.5*camera_link}" rpy="0 0 0"/>
-    <parent link="body_5"/>
+    <parent link="body_11"/>
     <child link="camera_link"/>
   </joint>
 
