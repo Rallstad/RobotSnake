@@ -275,6 +275,48 @@ snakebot_kinematics_genpy/fast:
 	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_kinematics/CMakeFiles/snakebot_kinematics_genpy.dir/build.make snakebot_kinematics/CMakeFiles/snakebot_kinematics_genpy.dir/build
 .PHONY : snakebot_kinematics_genpy/fast
 
+# Convenience name for target.
+snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
+.PHONY : snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+topic_tools_generate_messages_cpp: snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
+.PHONY : topic_tools_generate_messages_cpp
+
+# fast build rule for target.
+topic_tools_generate_messages_cpp/fast:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_cpp.dir/build.make snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_cpp.dir/build
+.PHONY : topic_tools_generate_messages_cpp/fast
+
+# Convenience name for target.
+snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
+.PHONY : snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+topic_tools_generate_messages_lisp: snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
+.PHONY : topic_tools_generate_messages_lisp
+
+# fast build rule for target.
+topic_tools_generate_messages_lisp/fast:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_lisp.dir/build.make snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_lisp.dir/build
+.PHONY : topic_tools_generate_messages_lisp/fast
+
+# Convenience name for target.
+snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_py.dir/rule:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_py.dir/rule
+.PHONY : snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_py.dir/rule
+
+# Convenience name for target.
+topic_tools_generate_messages_py: snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_py.dir/rule
+.PHONY : topic_tools_generate_messages_py
+
+# fast build rule for target.
+topic_tools_generate_messages_py/fast:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_py.dir/build.make snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_py.dir/build
+.PHONY : topic_tools_generate_messages_py/fast
+
 src/kinematics.o: src/kinematics.cpp.o
 .PHONY : src/kinematics.o
 
@@ -345,6 +387,9 @@ help:
 	@echo "... snakebot_kinematics_genlisp"
 	@echo "... snakebot_kinematics_genpy"
 	@echo "... test"
+	@echo "... topic_tools_generate_messages_cpp"
+	@echo "... topic_tools_generate_messages_lisp"
+	@echo "... topic_tools_generate_messages_py"
 	@echo "... src/kinematics.o"
 	@echo "... src/kinematics.i"
 	@echo "... src/kinematics.s"

@@ -21,7 +21,7 @@ gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/robot_pose.sh &
 
 #gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/labview_communication.sh &
 
-#gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/virtual_snake.sh &
+gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/virtual_snake.sh &
 gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/shape_control.sh &
 
 gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/mocap_optitrack.sh &

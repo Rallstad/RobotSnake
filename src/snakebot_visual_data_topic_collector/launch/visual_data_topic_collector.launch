@@ -1,0 +1,11 @@
+<launch>
+
+  <node pkg="snakebot_visual_data_topic_collector"
+        type="visual_data_topic_collector"
+        output="screen"
+        name="visual_data_topic_collector"
+        respawn="false"
+        launch-prefix=""
+        required="true">
+  </node>
+</launch>

@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 
     while (ros::ok())
     {
-        //controller.calculateAndPublishEffort();
+        controller.calculateAndPublishEffort();
         //cout << ros::Time::now().toNSec() << endl;
         ros::spinOnce();
         loop_rate.sleep();

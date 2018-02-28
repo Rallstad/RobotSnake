@@ -4,19 +4,25 @@
 #
 rigid_bodies:
     '1':
-        pose: Robot_1/pose
-        pose2d: Robot_1/ground_pose
-        child_frame_id: Robot_1/base_link
+        pose: joint_12/pose
+        pose2d: joint_12/ground_pose
+        child_frame_id: joint_12/base_link
         parent_frame_id: world
     '2':
-        pose: Robot_2/pose
-        pose2d: Robot_2/ground_pose
-        child_frame_id: Robot_2/base_link
+        pose: joint_8/pose
+        pose2d: joint_8/ground_pose
+        child_frame_id: joint_8/base_link
         parent_frame_id: world
     '3':
-        pose: snake_head/pose
-        pose2d: snake_head/ground_pose
-        child_frame_id: snake_head/base_link
+        pose: joint_4/pose
+        pose2d: joint_4/ground_pose
+        child_frame_id: joint_4/base_link
         parent_frame_id: world
+    '4':
+        pose: joint_0/pose
+        pose2d: joint_0/ground_pose
+        child_frame_id: joint_0/base_link
+        parent_frame_id: world
+
 optitrack_config:
         multicast_address: 224.0.0.1

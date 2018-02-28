@@ -9,8 +9,12 @@ int main(int argc, char **argv){
     ros::Rate loop_rate(freq);
 
     while(ros::ok()){
-    	//snake.publishSnakeConfiguration();
+    	
         snake.calculateJointPosition();
+        snake.publishSnakeConfiguration();
+        snake.writeJointPosesToFile();
+
+        //snake.readJointPosesFromBag();
     	ros::spinOnce();
     	loop_rate.sleep();
     }

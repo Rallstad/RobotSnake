@@ -1,0 +1,3 @@
+#!/bin/bash
+
+roslaunch snakebot_visual_data_topic_collector visual_data_topic_collector.launch

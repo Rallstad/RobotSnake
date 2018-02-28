@@ -106,6 +106,12 @@ kinematics_EXTERNAL_OBJECTS =
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: snakebot_kinematics/CMakeFiles/kinematics.dir/build.make
+/home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/librosbag.so
+/home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/librosbag_storage.so
+/home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/libroslz4.so
+/home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /usr/lib/x86_64-linux-gnu/liblz4.so
+/home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/libtopic_tools.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/libroscpp.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -114,10 +120,10 @@ kinematics_EXTERNAL_OBJECTS =
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/librosconsole_backend_interface.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /usr/lib/liblog4cxx.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/libxmlrpcpp.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/libroscpp_serialization.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/librostime.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/libxmlrpcpp.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /opt/ros/indigo/lib/libcpp_common.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /usr/lib/x86_64-linux-gnu/libboost_system.so
 /home/snake/Documents/catkin_ws/devel/lib/snakebot_kinematics/kinematics: /usr/lib/x86_64-linux-gnu/libboost_thread.so

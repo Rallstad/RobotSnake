@@ -5,8 +5,10 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Float64Array.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Int32Array.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/visual_data_topic_collector.h
  /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.cpp
  /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.h
+ /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
  /opt/ros/indigo/include/XmlRpcDecl.h
  /opt/ros/indigo/include/XmlRpcValue.h
  /opt/ros/indigo/include/geometry_msgs/Point.h
@@ -18,11 +20,13 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o
  /opt/ros/indigo/include/ros/common.h
  /opt/ros/indigo/include/ros/console.h
  /opt/ros/indigo/include/ros/console_backend.h
+ /opt/ros/indigo/include/ros/cpp_common_decl.h
  /opt/ros/indigo/include/ros/datatypes.h
  /opt/ros/indigo/include/ros/duration.h
  /opt/ros/indigo/include/ros/exception.h
  /opt/ros/indigo/include/ros/exceptions.h
  /opt/ros/indigo/include/ros/forwards.h
+ /opt/ros/indigo/include/ros/header.h
  /opt/ros/indigo/include/ros/init.h
  /opt/ros/indigo/include/ros/macros.h
  /opt/ros/indigo/include/ros/master.h
@@ -64,16 +68,32 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o
  /opt/ros/indigo/include/ros/types.h
  /opt/ros/indigo/include/ros/wall_timer.h
  /opt/ros/indigo/include/ros/wall_timer_options.h
+ /opt/ros/indigo/include/rosbag/bag.h
+ /opt/ros/indigo/include/rosbag/buffer.h
+ /opt/ros/indigo/include/rosbag/chunked_file.h
+ /opt/ros/indigo/include/rosbag/constants.h
+ /opt/ros/indigo/include/rosbag/exceptions.h
+ /opt/ros/indigo/include/rosbag/macros.h
+ /opt/ros/indigo/include/rosbag/message_instance.h
+ /opt/ros/indigo/include/rosbag/query.h
+ /opt/ros/indigo/include/rosbag/stream.h
+ /opt/ros/indigo/include/rosbag/structures.h
+ /opt/ros/indigo/include/rosbag/view.h
  /opt/ros/indigo/include/rosconsole/macros_generated.h
+ /opt/ros/indigo/include/roslz4/lz4s.h
  /opt/ros/indigo/include/std_msgs/Float64MultiArray.h
+ /opt/ros/indigo/include/std_msgs/Int32.h
  /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
  /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
+ /opt/ros/indigo/include/std_msgs/String.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Float64Array.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Int32Array.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/visual_data_topic_collector.h
  /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.h
  /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/main.cpp
+ /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
  /opt/ros/indigo/include/XmlRpcDecl.h
  /opt/ros/indigo/include/XmlRpcValue.h
  /opt/ros/indigo/include/geometry_msgs/Point.h
@@ -85,11 +105,13 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o
  /opt/ros/indigo/include/ros/common.h
  /opt/ros/indigo/include/ros/console.h
  /opt/ros/indigo/include/ros/console_backend.h
+ /opt/ros/indigo/include/ros/cpp_common_decl.h
  /opt/ros/indigo/include/ros/datatypes.h
  /opt/ros/indigo/include/ros/duration.h
  /opt/ros/indigo/include/ros/exception.h
  /opt/ros/indigo/include/ros/exceptions.h
  /opt/ros/indigo/include/ros/forwards.h
+ /opt/ros/indigo/include/ros/header.h
  /opt/ros/indigo/include/ros/init.h
  /opt/ros/indigo/include/ros/macros.h
  /opt/ros/indigo/include/ros/master.h
@@ -131,7 +153,21 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o
  /opt/ros/indigo/include/ros/types.h
  /opt/ros/indigo/include/ros/wall_timer.h
  /opt/ros/indigo/include/ros/wall_timer_options.h
+ /opt/ros/indigo/include/rosbag/bag.h
+ /opt/ros/indigo/include/rosbag/buffer.h
+ /opt/ros/indigo/include/rosbag/chunked_file.h
+ /opt/ros/indigo/include/rosbag/constants.h
+ /opt/ros/indigo/include/rosbag/exceptions.h
+ /opt/ros/indigo/include/rosbag/macros.h
+ /opt/ros/indigo/include/rosbag/message_instance.h
+ /opt/ros/indigo/include/rosbag/query.h
+ /opt/ros/indigo/include/rosbag/stream.h
+ /opt/ros/indigo/include/rosbag/structures.h
+ /opt/ros/indigo/include/rosbag/view.h
  /opt/ros/indigo/include/rosconsole/macros_generated.h
+ /opt/ros/indigo/include/roslz4/lz4s.h
  /opt/ros/indigo/include/std_msgs/Float64MultiArray.h
+ /opt/ros/indigo/include/std_msgs/Int32.h
  /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
  /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
+ /opt/ros/indigo/include/std_msgs/String.h
