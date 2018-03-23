@@ -1,0 +1,11 @@
+<launch>
+
+	<node pkg="snakebot_matlab_communication"
+			type="matlab_communication"
+			output="screen"
+			name="matlab_communication"
+			respawn="false"
+			launch-prefix=""
+			required="true">
+	</node>
+</launch>
