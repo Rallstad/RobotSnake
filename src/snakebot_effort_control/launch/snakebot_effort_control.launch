@@ -19,6 +19,9 @@
       joint_08_effort_controller
       joint_09_effort_controller
       joint_10_effort_controller
+      joint_11_effort_controller
+      joint_12_effort_controller
+      joint_13_effort_controller
       "
   />
 

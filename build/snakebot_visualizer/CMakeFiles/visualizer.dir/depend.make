@@ -4,6 +4,7 @@
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/LinkContacts.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/SnakeContacts.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_input_interface/Ctrl.h
+snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_propulsion_control/PropulsionEffort.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/ObstaclePose.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/Pose.h

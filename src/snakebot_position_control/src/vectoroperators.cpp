@@ -5,6 +5,7 @@ using std::endl;
 
 std::vector<double> operator+(const std::vector<double>& lhs, const std::vector<double>& rhs){
     if (lhs.size() != rhs.size()){
+        cout<< "lhs: " <<lhs.size() <<" rhs: "<< rhs.size()<<endl;
         cout << "Error: vector size mismatch for operator +" << endl;
         std::vector<double> emptyVector;
         return  emptyVector;
@@ -18,7 +19,7 @@ std::vector<double> operator+(const std::vector<double>& lhs, const std::vector<
 
 std::vector<double> operator-(const std::vector<double>& lhs, const std::vector<double>& rhs){
     if (lhs.size() != rhs.size()){
-
+        cout<< "lhs: " <<lhs.size() <<" rhs: "<< rhs.size()<<endl;
         cout << "Error: vector size mismatch for operator -" << endl;
         std::vector<double> emptyVector;
         return  emptyVector;
@@ -48,6 +49,7 @@ std::vector<double> operator*(const double& lhs, const std::vector<double>& rhs)
 
 std::vector<double> elementWiseMult(const std::vector<double>& lhs, const std::vector<double>& rhs){
     if (lhs.size() != rhs.size()){
+        cout<< "lhs: " <<lhs.size() <<" rhs: "<< rhs.size()<<endl;
         cout << "Error: vector size mismatch for element wise multiplication" << endl;
         std::vector<double> emptyVector;
         return  emptyVector;

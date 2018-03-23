@@ -30,11 +30,15 @@ private:
 	ros::Subscriber measuredJointAnglesSub;
 	ros::Subscriber headGroundPoseSub;
 	ros::Subscriber jointPoseSub;
+
+	ros::Subscriber matlabTestSub;
+
 	ros::Publisher snakeConfigurationPub;
 
 	void anglesCallback(const snakebot_labview_communication::Float64Array::ConstPtr &msg);
 	void headGroundPoseCallback(const geometry_msgs::Pose2D::ConstPtr &msg);
 	void jointPoseCallback(const snakebot_visual_data_topic_collector::visual_data_topic_collector::ConstPtr &msg);
+	void matlabCallback(const geometry_msgs::Point::ConstPtr &msg);
 
 public:
 	void calculateJointAnglesWorld();

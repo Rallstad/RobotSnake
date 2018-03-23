@@ -29,12 +29,21 @@ void PropulsionController::setPhysicalSpec(double totalMass, double linkLength, 
 // CALLBACK FUNCTIONS //////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////////////
 void PropulsionController::obstacleDataCallback(const snakebot_pushpoints::Pushpoints::ConstPtr& msg){
-    this->n1 = Vector3d(msg->contact_normals[0].x, msg->contact_normals[0].y, msg->contact_normals[0].z);
+
+    this->n1 = Vector3d(reduceForceResolution(msg->contact_normals[0].x),reduceForceResolution(msg->contact_normals[0].y),reduceForceResolution(msg->contact_normals[0].z));
+    this->n2 = Vector3d(reduceForceResolution(msg->contact_normals[1].x),reduceForceResolution(msg->contact_normals[1].y),reduceForceResolution(msg->contact_normals[1].z));
+    this->n3 = Vector3d(reduceForceResolution(msg->contact_normals[2].x),reduceForceResolution(msg->contact_normals[2].y),reduceForceResolution(msg->contact_normals[2].z));
+    this->t1 = Vector3d(reduceForceResolution(msg->contact_tangents[0].x),reduceForceResolution(msg->contact_tangents[0].y),reduceForceResolution(msg->contact_tangents[0].z));
+    this->t2 = Vector3d(reduceForceResolution(msg->contact_tangents[1].x),reduceForceResolution(msg->contact_tangents[1].y),reduceForceResolution(msg->contact_tangents[1].z));
+    this->t3 = Vector3d(-reduceForceResolution(msg->contact_tangents[2].x),-reduceForceResolution(msg->contact_tangents[2].y),-reduceForceResolution(msg->contact_tangents[2].z));
+
+    /*this->n1 = Vector3d(msg->contact_normals[0].x, msg->contact_normals[0].y, msg->contact_normals[0].z);
     this->n2 = Vector3d(msg->contact_normals[1].x, msg->contact_normals[1].y, msg->contact_normals[1].z);
     this->n3 = Vector3d(msg->contact_normals[2].x, msg->contact_normals[2].y, msg->contact_normals[2].z);
     this->t1 = Vector3d(msg->contact_tangents[0].x, msg->contact_tangents[0].y, msg->contact_tangents[0].z);
     this->t2 = Vector3d(msg->contact_tangents[1].x, msg->contact_tangents[1].y, msg->contact_tangents[1].z);
-    this->t3 = Vector3d(-msg->contact_tangents[2].x, -msg->contact_tangents[2].y, -msg->contact_tangents[2].z); // Defined opposite direction, see the pdf
+    this->t3 = Vector3d(-msg->contact_tangents[2].x, -msg->contact_tangents[2].y, -msg->contact_tangents[2].z); // Defined opposite direction, see the pdf*/
+
     this->c1 = Position3d(msg->contact_positions[0].x, msg->contact_positions[0].y, msg->contact_positions[0].z);
     this->c2 = Position3d(msg->contact_positions[1].x, msg->contact_positions[1].y, msg->contact_positions[1].z);
     this->c3 = Position3d(msg->contact_positions[2].x, msg->contact_positions[2].y, msg->contact_positions[2].z);
@@ -44,6 +53,29 @@ void PropulsionController::obstacleDataCallback(const snakebot_pushpoints::Pushp
     obstacleDataInitialized = true;
     contactsCallbackTime = ros::Time::now();
     contactsMsgDataTime = msg->header.stamp;
+}
+
+float PropulsionController::reduceForceResolution(float force){
+    if(force >= -1.0 && force <= -0.5){
+        //return -0.75;
+        return -0.80;
+    }
+    else if(force > -0.5 && force <= 0.0){
+        //return -0.25;
+        return -0.20;
+    }
+    else if(force > 0.0 && force <= 0.5){
+        //return 0.25;
+        return 0.30;
+    }
+    else if(force > 0.5 && force <= 1.0){
+        //return 0.75;
+        return 0.70;
+    }
+    else{
+        cout<<"Error: Force greater than 1, equal to "<<force <<endl;
+        return -5.0;
+    }    
 }
 
 
@@ -72,25 +104,36 @@ void PropulsionController::f3Fromfs()
     double B = -det(c1, n1) * (n3.x/n1.x) + det(c3, n3) +
     (det(c2, n2)-det(c1, n1)*(n2.x/n1.x))*  (((n1.y/n1.x)*n3.x - n3.y)/(n2.y - (n1.y/n1.x)*n2.x));
 
-    cout << "c1 == " << c1.x << ", " << c1.y << endl;
-    cout << "c2 == " << c2.x << ", " << c2.y << endl;
-    cout << "c3 == " << c3.x << ", " << c3.y << endl;
+    cout << "c1 == " << c1.x << ", " << c1.y << ", "<<c1.z<<endl;
+    cout << "c2 == " << c2.x << ", " << c2.y << ", "<<c2.z<< endl;
+    cout << "c3 == " << c3.x << ", " << c3.y << ", "<<c3.z<< endl;
     cout << "n1 == " << n1.x << ", " << n1.y << endl;
     cout << "n2 == " << n2.x << ", " << n2.y << endl;
     cout << "n3 == " << n3.x << ", " << n3.y << endl;
     cout << "t1 == " << t1.x << ", " << t1.y << endl;
     cout << "t2 == " << t2.x << ", " << t2.y << endl;
     cout << "t3 == " << t3.x << ", " << t3.y << endl;
-	
+    cout<<"A: "<<A<<endl;
+    cout<<"B: " <<B<<endl;
+	if(isinf(A)){
+        cout<<"hiemataholehe";
+    }
     f3 = -fs*(A/B);
     //f3 = fs*(A/B);
     cout << "f3 == " << f3 << endl;
+    cout<<"1 "<<det(c1, n1)<<endl;
+    cout<<"2 "<<(t1.x/n1.x)<<endl;
+    cout<<"3 "<<(n2.x/n1.x)<<endl;
+    cout<<"4 "<<(t1.y - (n1.y/n1.x)*t1.x)<<endl;
+    cout<<"5 "<<(n2.y - (n1.y/n1.x)*n2.x)<<endl;
 }
 
 // Uses the calculated f3 to calculate propulsion torque
 void PropulsionController::desiredTorqueFromf3()
 {
     setTorqueJoint();
+    float temp = t3.y*(r.x * r.x + r.y * r.y);
+    cout<<"torqueDenominator: "<<temp<<endl;
     desiredTorque.z = (f3 * n3.x * (r.x * t3.x + r.y * t3.y))/(t3.y*(r.x * r.x + r.y * r.y));
 }
 
@@ -119,13 +162,13 @@ void PropulsionController::publishTorque(){
     }
     if (c3Side == "left"){
         if (desiredTorque.z < 0.0){
-            cout << "Calculated torque is in wrong direction, won't publish" <<endl;
+            cout << "Left, desiredTorqueZ = " <<desiredTorque.z << " Calculated torque is in wrong direction, won't publish" <<endl;
             return;
         }
     }
     else if (c3Side == "right"){
         if (desiredTorque.z > 0.0){
-            cout << "Calculated torque is in wrong direction, won't publish" <<endl;
+            cout << "Right, desiredTorqueZ = " <<desiredTorque.z << " Calculated torque is in wrong direction, won't publish" <<endl;
             return;
         }
     }

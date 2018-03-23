@@ -12,7 +12,7 @@ using std::endl;
 class EffortSelector
 {
 private:
-    static const int numJoints = 10;
+    static const int numJoints = 13;
 
     //ROS specific
     ros::NodeHandle n;
@@ -31,6 +31,9 @@ private:
     ros::Publisher joint8TorquePub;
     ros::Publisher joint9TorquePub;
     ros::Publisher joint10TorquePub;
+    ros::Publisher joint11TorquePub;
+    ros::Publisher joint12TorquePub;
+    ros::Publisher joint13TorquePub;
 
     bool propulsionEffortReady;
     bool positionControlEffortReady;

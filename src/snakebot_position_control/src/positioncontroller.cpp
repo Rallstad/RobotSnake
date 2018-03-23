@@ -12,10 +12,10 @@ PositionController::PositionController(ros::NodeHandle handle, double stepLength
     this->ki = ki;
     this->effortLimit = effortLimit;
 
-    setMappingMatrix();
+    //setMappingMatrix();
 
     desiredPositionSub = n.subscribe("/snakebot/desired_joint_positions", 1, &PositionController::desiredPositionCallback, this);
-    labviewPositionSub = n.subscribe("LabVIEW_ROS/to_ROS_measured_angles", 1, &PositionController::labviewPositionCallback, this);
+    //labviewPositionSub = n.subscribe("LabVIEW_ROS/to_ROS_measured_angles", 1, &PositionController::labviewPositionCallback, this);
     jointStateSub = n.subscribe("/snakebot/joint_states", 1, &PositionController::jointStateCallback, this);
     desiredPositionPub = n.advertise<std_msgs::Float64MultiArray>("/snakebot/desired_joint_positions", 1);
     effortPub = n.advertise<snakebot_position_control::PositionControlEffort>("/snakebot/position_controller_effort", 1);
@@ -28,6 +28,7 @@ PositionController::PositionController(ros::NodeHandle handle, double stepLength
     errorPrev.resize(numJoints, 0.0);
     errorDerivative.resize(numJoints, 0.0);
     errorIntegral.resize(numJoints, 0.0);
+    cout <<"numJoints: "<< numJoints<<endl;
 
     desiredPositionReady = false;
     currentPositionReady = false;
@@ -51,6 +52,9 @@ PositionController::~PositionController()
 void PositionController::desiredPositionCallback(const std_msgs::Float64MultiArray::ConstPtr &msg){
     desiredPosition = msg->data;
     desiredPositionReady = true;
+    cout<<"desiredmsgsize "<<msg->data.size()<<endl;
+   // cout<<"desiredPositionReady: " << desiredPositionReady;
+    //cout<<"currentPositionReady: " <<currentPositionReady;
 }
 
 // get vector of measured positions of real snake robot and use as desired position
@@ -68,7 +72,6 @@ void PositionController::jointStateCallback(const sensor_msgs::JointState::Const
     currentPosition = msg->position;
     currentVelocity = msg->velocity;
     currentPositionReady = true;
-
     calculateAndPublishEffort();
 }
 
@@ -85,9 +88,9 @@ void PositionController::calculateAndPublishEffort(){
         errorPrev = desiredPosition - currentPosition; // to prevent a jump when the controller first starts
         firstRun = false;
     }
-
     error = desiredPosition - currentPosition;
-    //cout << error[0] << endl;
+    //cout << "desiredsize: "<<desiredPosition.size()<<endl;
+    //cout << "currentsize: "<<currentPosition.size()<<endl;
     errorDerivative = (error - errorPrev)/dt;
     //errorDerivative = currentVelocity;
     velocityAverage = movingAverage(errorDerivative, velocityAverage, 0.5);
@@ -96,7 +99,6 @@ void PositionController::calculateAndPublishEffort(){
     effort = elementWiseMult(kp, error) + elementWiseMult(kd, velocityAverage) + elementWiseMult(ki, errorIntegral);
     effort = saturate(effortLimit, -effortLimit, effort);
     errorPrev = error;
-
     snakebot_position_control::PositionControlEffort msg;
     msg.effort = effort;
     msg.arraySize = effort.size();

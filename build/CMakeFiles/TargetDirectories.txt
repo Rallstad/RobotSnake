@@ -178,3 +178,5 @@
 /home/snake/Documents/catkin_ws/build/snakebot_visualizer/CMakeFiles/visualization_msgs_generate_messages_lisp.dir
 /home/snake/Documents/catkin_ws/build/snakebot_visualizer/CMakeFiles/visualization_msgs_generate_messages_py.dir
 /home/snake/Documents/catkin_ws/build/snakebot_visualizer/CMakeFiles/visualizer.dir
+/home/snake/Documents/catkin_ws/build/world_setup/CMakeFiles/world_setup.dir
+/home/snake/Documents/catkin_ws/build/world_setup/CMakeFiles/world_setup_generate_messages.dir

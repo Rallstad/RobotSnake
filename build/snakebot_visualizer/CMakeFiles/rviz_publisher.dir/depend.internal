@@ -5,6 +5,7 @@ snakebot_visualizer/CMakeFiles/rviz_publisher.dir/src/rvizpublisher.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/LinkContacts.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/SnakeContacts.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_input_interface/Ctrl.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_propulsion_control/PropulsionEffort.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/ObstaclePose.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/Pose.h

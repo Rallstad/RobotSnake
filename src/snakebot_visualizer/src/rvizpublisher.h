@@ -26,6 +26,7 @@ private:
     int                     numberOfLinks;
 
     Pose2d					snakePose;
+    Pose2d                  jointPose;
     ContactData				contacts;
     double					ctrlA, ctrlV;
     unsigned int            propulsionJoint;

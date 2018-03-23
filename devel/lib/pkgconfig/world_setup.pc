@@ -1,0 +1,8 @@
+prefix=/home/snake/Documents/catkin_ws/devel
+
+Name: world_setup
+Description: Description of world_setup
+Version: 0.0.0
+Cflags: -I/home/snake/Documents/catkin_ws/src/world_setup/include -I/usr/include
+Libs: -L/home/snake/Documents/catkin_ws/devel/lib -lworld_setup -l:/usr/lib/x86_64-linux-gnu/libtinyxml.so
+Requires: roscpp roslaunch std_msgs

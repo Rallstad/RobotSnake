@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+    <world name="myworld">
+        <include>s
+            <uri>model://sun</uri>
+        </include>
+        <include>
+            <uri>model://ground_plane</uri>
+        </include>
+        <model name="cylinder_1">
+            <pose>2.72 0.37 0 0 0 0</pose>
+            <link name="cyl">
+                <pose>0 0 0.1 0 0 0</pose>
+                <collision name="collision">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.1</radius>
+                            <length>0.2</length>
+                        </cylinder>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.1</radius>
+                            <length>0.2</length>
+                        </cylinder>
+                    </geometry>
+                </visual>
+            </link>
+            <static>1</static>
+        </model>
+        <model name="cylinder_2">
+            <pose>1.37 0.68 0 0 0 0</pose>
+            <link name="cyl">
+                <pose>0 0 0.1 0 0 0</pose>
+                <collision name="collision">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.1</radius>
+                            <length>0.2</length>
+                        </cylinder>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.1</radius>
+                            <length>0.2</length>
+                        </cylinder>
+                    </geometry>
+                </visual>
+            </link>
+            <static>1</static>
+        </model>
+        <model name="cylinder_3">
+            <pose>2.16 1.36 0 0 0 0</pose>
+            <link name="cyl">
+                <pose>0 0 0.1 0 0 0</pose>
+                <collision name="collision">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.1</radius>
+                            <length>0.2</length>
+                        </cylinder>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.1</radius>
+                            <length>0.2</length>
+                        </cylinder>
+                    </geometry>
+                </visual>
+            </link>
+            <static>1</static>
+        </model>
+    </world>
+</sdf>

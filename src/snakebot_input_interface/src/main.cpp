@@ -6,7 +6,7 @@ int main(int argc, char **argv)
     int freq = 100;
     ros::init(argc, argv, "input_interface");
     ros::NodeHandle n;
-    int numberOfLinks = 11;
+    int numberOfLinks = 14;
 
     JoystickInterface joyInterface(n);
     ros::Rate loop_rate(freq);

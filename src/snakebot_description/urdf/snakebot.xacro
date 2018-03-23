@@ -8,13 +8,13 @@
 
 	<xacro:property name="PI" value="3.1415926535897931"/>
 
-	<xacro:property name="chassisHeight" value="0.1"/>
-	<xacro:property name="chassisLength" value="0.2"/>
-	<xacro:property name="chassisWidth" value="0.1"/>
-	<xacro:property name="chassisMass" value="1"/>
-	<xacro:property name="jointOffset" value="0.03"/>
+	<xacro:property name="chassisHeight" value="0.1"/><!--Simulation:0.1 Real robot: 0.07--> 
+	<xacro:property name="chassisLength" value="0.2"/><!--Simulation: 0.2 Real robot: 0.0885-->
+	<xacro:property name="chassisWidth" value="0.1"/><!--Simulation: 0.1 Real robot: 0.07-->
+	<xacro:property name="chassisMass" value="1"/><!--1-->
+	<xacro:property name="jointOffset" value="0.03"/> <!--Simulation: 0.03 Real robot: 0.01-->
 
-	<xacro:property name="casterRadius" value="0.05"/>
+	<xacro:property name="casterRadius" value="0.05"/><!--0.05-->
 	<xacro:property name="casterMass" value="5"/>
 
 	<xacro:property name="wheelWidth" value="0.05"/>
@@ -37,9 +37,7 @@
 		<child link="body_01"/>
 	</joint>
 
-
-	
-	<body_first num="1" nextNum="2"/>
+  <body_first num="1" nextNum="2"/>
     <body_upTo9 num="2" nextNum="3"/>
     <body_upTo9 num="3" nextNum="4"/>
     <body_upTo9 num="4" nextNum="5"/>
@@ -48,13 +46,17 @@
     <body_upTo9 num="7" nextNum="8"/>
     <body_upTo9 num="8" nextNum="9"/>
     <body_9 num="9" nextNum="10"/>
-    <body_above9 num="10" nextNum="11"/>        
-    <body_last_above9 num="11"/>
+    <body_above9 num="10" nextNum="11"/>    
+    <body_above9 num="11" nextNum="12"/>   
+    <body_above9 num="12" nextNum="13"/>   
+    <body_above9 num="13" nextNum="14"/>       
+    <body_last_above9 num="14"/>
+
 
 
   <joint name="camera_joint" type="fixed">
     <origin xyz="${camera_link+chassisLength} 0 ${0.5*camera_link}" rpy="0 0 0"/>
-    <parent link="body_11"/>
+    <parent link="body_14"/>
     <child link="camera_link"/>
   </joint>
 

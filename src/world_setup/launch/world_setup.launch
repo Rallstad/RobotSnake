@@ -1,0 +1,11 @@
+<launch>
+
+  <node pkg="world_setup"
+        type="world_setup"
+        output="screen"
+        name="world_setup"
+        respawn="false"
+        launch-prefix=""
+        required="true">
+  </node>
+</launch>

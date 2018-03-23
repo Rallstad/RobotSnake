@@ -168,7 +168,8 @@ void RVizPublisher::clearMarkerPointData(){
 
 void RVizPublisher::getData(StateSubscriber stateSub){
     //cout << "GETTING DATA" << endl;
-    snakePose = stateSub.getSnakePose();
+   //snakePose = stateSub.getSnakePose();
+    jointPose = stateSub.getJointPose();
     contacts = stateSub.getContacts();
 //    for (int i = 0; i < contacts.normal.size(); i++){
 //        cout << "normals:" << endl;

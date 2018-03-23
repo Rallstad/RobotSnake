@@ -136,6 +136,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/snake/Documents/catkin_ws/build/snakebot_visualizer/cmake_install.cmake")
   INCLUDE("/home/snake/Documents/catkin_ws/build/mocap_optitrack/cmake_install.cmake")
   INCLUDE("/home/snake/Documents/catkin_ws/build/snakebot_gazebo/cmake_install.cmake")
+  INCLUDE("/home/snake/Documents/catkin_ws/build/world_setup/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

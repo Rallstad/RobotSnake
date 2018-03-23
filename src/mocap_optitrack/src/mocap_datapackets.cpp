@@ -116,10 +116,10 @@ void MoCapDataFormat::parse()
   for (int l = 0; l < model.numOtherMarkers; l++)
   {
     // read positions of 'other' markers
-    ROS_ERROR_STREAM("Marker nr: " << l);
-    ROS_ERROR_STREAM(" X: " << model.otherMarkers->positionX);
-    ROS_ERROR_STREAM(" Y: "<< model.otherMarkers->positionY);
-    ROS_ERROR_STREAM(" Z: " << model.otherMarkers->positionZ <<"\n");
+    //ROS_ERROR_STREAM("Marker nr: " << l);
+    //ROS_ERROR_STREAM(" X: " << model.otherMarkers->positionX);
+    //ROS_ERROR_STREAM(" Y: "<< model.otherMarkers->positionY);
+    //ROS_ERROR_STREAM(" Z: " << model.otherMarkers->positionZ <<"\n");
     read_and_seek(model.otherMarkers[l]);
   }
 

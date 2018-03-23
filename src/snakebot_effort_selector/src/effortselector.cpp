@@ -22,6 +22,9 @@ EffortSelector::EffortSelector(ros::NodeHandle handle)
     joint8TorquePub = n.advertise<std_msgs::Float64>("/snakebot/joint_08_effort_controller/command", 1);
     joint9TorquePub = n.advertise<std_msgs::Float64>("/snakebot/joint_09_effort_controller/command", 1);
     joint10TorquePub = n.advertise<std_msgs::Float64>("/snakebot/joint_10_effort_controller/command", 1);
+    joint11TorquePub = n.advertise<std_msgs::Float64>("/snakebot/joint_11_effort_controller/command", 1);
+    joint12TorquePub = n.advertise<std_msgs::Float64>("/snakebot/joint_12_effort_controller/command", 1);
+    joint13TorquePub = n.advertise<std_msgs::Float64>("/snakebot/joint_13_effort_controller/command", 1);
 
     positionControlEffort.resize(numJoints);
     combinedEffort.resize(numJoints);
@@ -81,6 +84,10 @@ void EffortSelector::publishEffort(){
     std_msgs::Float64 msg8;
     std_msgs::Float64 msg9;
     std_msgs::Float64 msg10;
+    std_msgs::Float64 msg11;
+    std_msgs::Float64 msg12;
+    std_msgs::Float64 msg13;
+
 
     msg1.data = combinedEffort[0];
     msg2.data = combinedEffort[1];
@@ -92,6 +99,9 @@ void EffortSelector::publishEffort(){
     msg8.data = combinedEffort[7];
     msg9.data = combinedEffort[8];
     msg10.data = combinedEffort[9];
+    msg11.data = combinedEffort[10];
+    msg12.data = combinedEffort[11];
+    msg13.data = combinedEffort[12];
 
     joint1TorquePub.publish(msg1);
     joint2TorquePub.publish(msg2);
@@ -103,6 +113,9 @@ void EffortSelector::publishEffort(){
     joint8TorquePub.publish(msg8);
     joint9TorquePub.publish(msg9);
     joint10TorquePub.publish(msg10);
+    joint11TorquePub.publish(msg11);
+    joint12TorquePub.publish(msg12);
+    joint13TorquePub.publish(msg13);
 }
 
 // combines effort from the position controller and propulsion controller
@@ -131,6 +144,8 @@ void EffortSelector::propulsionEffortCallback(const snakebot_propulsion_control:
 
 void EffortSelector::positionControlEffortCallback(const snakebot_position_control::PositionControlEffort::ConstPtr &msg){
     if (msg->arraySize != numJoints){
+        cout<< "numjoints: "<< numJoints<<endl;
+        cout<< "msg.arraySize: " <<msg->arraySize<<endl;
         cout << "ERROR: effort vector size not equal to number of joints!" << endl;
         cout << "Cannot publish effort to ros_control" << endl;
         return;

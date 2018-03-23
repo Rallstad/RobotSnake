@@ -60,4 +60,6 @@ else()
   endif()
 endif()
 
+add_compile_options(-std=c++11)
+
 catkin_workspace()

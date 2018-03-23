@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find snakebot_gazebo)/worlds/snakebot.world" />
+        <arg name="gui" value="true" />
+    </include>
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find snakebot_description)/urdf/snakebot.xacro" />
+    <node name="snakebot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model snakebot -x 1.218236  -y 1.881025  -z 0 -J joint_01 0.000000 -J joint_02 0.000000  -J joint_03  6275190594686769491214143062016.000000  -J joint_04  0.000000  -J joint_05  6275171251873655657147347763200.000000  -J joint_06  0.000000  -J joint_07  0.000000  -J joint_08  0.000000  -J joint_09  6274982659445795774996093599744.000000  -J joint_10  0.000000  -J joint_11  -0.142238  -J joint_12  0.000000  -J joint_13  0.000000" />
+</launch>

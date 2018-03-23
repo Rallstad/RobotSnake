@@ -68,6 +68,24 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+geometry_msgs/Pose2D.h
+-
+
 /home/snake/Documents/catkin_ws/devel/include/snakebot_propulsion_control/PropulsionEffort.h
 string
 -
@@ -171,6 +189,8 @@ snakebot_input_interface/Ctrl.h
 /home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/snakebot_input_interface/Ctrl.h
 snakebot_collisions/SnakeContacts.h
 /home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/snakebot_collisions/SnakeContacts.h
+snakebot_kinematics/kinematics.h
+/home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/snakebot_kinematics/kinematics.h
 datatypes.h
 /home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/datatypes.h
 snakebot_robot_pose/Pose.h

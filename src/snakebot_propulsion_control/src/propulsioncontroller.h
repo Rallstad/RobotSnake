@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <sstream>
 #include <cmath>
+#include <math.h>
 #include "ros/ros.h"
 #include "ros/time.h"
 #include "std_msgs/Float64.h"
@@ -141,4 +142,5 @@ public:
 	//Update data:
 	void updateDesiredVelocity(std::vector<double> newDesiredVelocity);
     void updateJointData(std::vector<double> newJointAngles, Vector3d newActualTorque);
+    float reduceForceResolution(float force);
 };

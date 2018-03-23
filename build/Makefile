@@ -2489,6 +2489,32 @@ trajectory_msgs_generate_messages_py/fast:
 	$(MAKE) -f snakebot_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make snakebot_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
 .PHONY : trajectory_msgs_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named world_setup
+
+# Build rule for target.
+world_setup: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 world_setup
+.PHONY : world_setup
+
+# fast build rule for target.
+world_setup/fast:
+	$(MAKE) -f world_setup/CMakeFiles/world_setup.dir/build.make world_setup/CMakeFiles/world_setup.dir/build
+.PHONY : world_setup/fast
+
+#=============================================================================
+# Target rules for targets named world_setup_generate_messages
+
+# Build rule for target.
+world_setup_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 world_setup_generate_messages
+.PHONY : world_setup_generate_messages
+
+# fast build rule for target.
+world_setup_generate_messages/fast:
+	$(MAKE) -f world_setup/CMakeFiles/world_setup_generate_messages.dir/build.make world_setup/CMakeFiles/world_setup_generate_messages.dir/build
+.PHONY : world_setup_generate_messages/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2682,6 +2708,8 @@ help:
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... world_setup"
+	@echo "... world_setup_generate_messages"
 .PHONY : help
 
 

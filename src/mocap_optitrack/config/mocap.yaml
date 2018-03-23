@@ -23,6 +23,21 @@ rigid_bodies:
         pose2d: joint_0/ground_pose
         child_frame_id: joint_0/base_link
         parent_frame_id: world
+    '5':
+        pose: obstacle_1/pose
+        pose2d: obstacle_1/ground_pose
+        child_frame_id: obstacle_1/base_link
+        parent_frame_id: world
+    '6':
+        pose: obstacle_2/pose
+        pose2d: obstacle_2/ground_pose
+        child_frame_id: obstacle_2/base_link
+        parent_frame_id: world
+    '7':
+        pose: obstacle_3/pose
+        pose2d: obstacle_3/ground_pose
+        child_frame_id: obstacle_3/base_link
+        parent_frame_id: world    
 
 optitrack_config:
         multicast_address: 224.0.0.1

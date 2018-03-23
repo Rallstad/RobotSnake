@@ -46,3 +46,16 @@ snakebot:
     type: effort_controllers/JointEffortController
     joint: joint_10
     pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_11_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_11
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_12_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_12
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+  joint_13_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_13
+    pid: {p: 100.0, i: 0.1, d: 1.0}
+

@@ -3,9 +3,25 @@
 StateSubscriber::StateSubscriber(ros::NodeHandle rosNode, int numberOfLinks): rosNode(rosNode), numberOfLinks(numberOfLinks){
     contactsSub = rosNode.subscribe( "/snakebot/collisions", 100, &StateSubscriber::contactCallback, this);
     robotPoseSub = rosNode.subscribe( "snakebot/robot_pose", 100, &StateSubscriber::robotPoseCallback, this);
+    realSnakePoseSub = rosNode.subscribe("snakebot/real_snake_pose",100, &StateSubscriber::jointPoseCallback, this);
     ctrlSub = rosNode.subscribe( "/snakebot/ctrl", 100, &StateSubscriber::ctrlCallback, this);
     effortSub = rosNode.subscribe( "snakebot/propulsion_effort", 100, &StateSubscriber::effortCallback, this);
 }
+
+
+
+
+void StateSubscriber::jointPoseCallback(const snakebot_kinematics::kinematics::ConstPtr &msg){
+    for ( int i=0; i < msg->pose.size(); i++ ) {
+        if(msg->number[i] == 13){
+            jointPose = Pose2d(msg->pose[i].x, msg->pose[i].y, msg->pose[i].theta);
+            return;
+        }
+        cout<< i<<endl; 
+    }
+    cout << "ERROR: there is no tail" << endl;
+}
+
 
 
 void StateSubscriber::robotPoseCallback(const snakebot_robot_pose::Pose::ConstPtr& msg){
@@ -22,6 +38,7 @@ void StateSubscriber::contactCallback(const snakebot_collisions::SnakeContacts::
     contacts.normal.resize(0);
     contacts.position.resize(0);
     contacts.tangent.resize(0);
+    contacts.force.resize(0);
     contacts.force.resize(0);
     for (int i = 0; i < msg->link.size(); i ++){
         snakebot_collisions::LinkContacts link = msg->link[i];
@@ -53,6 +70,11 @@ void StateSubscriber::effortCallback(const snakebot_propulsion_control::Propulsi
 Pose2d StateSubscriber::getSnakePose(){
     return snakePose;
 }
+
+Pose2d StateSubscriber::getJointPose(){
+    return jointPose;
+}
+
 ContactData StateSubscriber::getContacts(){
     return contacts;
 }
