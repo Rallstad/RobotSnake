@@ -114,6 +114,10 @@ std_msgs/String.h
 boost/foreach.hpp
 -
 
+/home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/main.cpp
+kinematics.h
+/home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.h
+
 /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
 geometry_msgs/Pose2D.h
 /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/geometry_msgs/Pose2D.h

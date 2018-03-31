@@ -696,6 +696,19 @@ topic_tools_generate_messages_py/fast:
 .PHONY : topic_tools_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named matlab_communication
+
+# Build rule for target.
+matlab_communication: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 matlab_communication
+.PHONY : matlab_communication
+
+# fast build rule for target.
+matlab_communication/fast:
+	$(MAKE) -f snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build.make snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build
+.PHONY : matlab_communication/fast
+
+#=============================================================================
 # Target rules for targets named _snakebot_position_control_generate_messages_check_deps_PositionControlEffort
 
 # Build rule for target.
@@ -2570,6 +2583,7 @@ help:
 	@echo "... topic_tools_generate_messages_cpp"
 	@echo "... topic_tools_generate_messages_lisp"
 	@echo "... topic_tools_generate_messages_py"
+	@echo "... matlab_communication"
 	@echo "... _snakebot_position_control_generate_messages_check_deps_PositionControlEffort"
 	@echo "... position_control"
 	@echo "... position_controller_class"

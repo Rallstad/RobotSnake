@@ -450,6 +450,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_cpp.dir/DependInfo.cmake"
   "snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_lisp.dir/DependInfo.cmake"
   "snakebot_kinematics/CMakeFiles/topic_tools_generate_messages_py.dir/DependInfo.cmake"
+  "snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/DependInfo.cmake"
   "snakebot_position_control/CMakeFiles/_snakebot_position_control_generate_messages_check_deps_PositionControlEffort.dir/DependInfo.cmake"
   "snakebot_position_control/CMakeFiles/position_control.dir/DependInfo.cmake"
   "snakebot_position_control/CMakeFiles/position_controller_class.dir/DependInfo.cmake"

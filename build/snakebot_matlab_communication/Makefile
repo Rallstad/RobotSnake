@@ -149,6 +149,68 @@ depend:
 	cd /home/snake/Documents/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/rule:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/rule
+.PHONY : snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/rule
+
+# Convenience name for target.
+matlab_communication: snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/rule
+.PHONY : matlab_communication
+
+# fast build rule for target.
+matlab_communication/fast:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build.make snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build
+.PHONY : matlab_communication/fast
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build.make snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build.make snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build.make snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/matlab_communication.o: src/matlab_communication.cpp.o
+.PHONY : src/matlab_communication.o
+
+# target to build an object file
+src/matlab_communication.cpp.o:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build.make snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o
+.PHONY : src/matlab_communication.cpp.o
+
+src/matlab_communication.i: src/matlab_communication.cpp.i
+.PHONY : src/matlab_communication.i
+
+# target to preprocess a source file
+src/matlab_communication.cpp.i:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build.make snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.i
+.PHONY : src/matlab_communication.cpp.i
+
+src/matlab_communication.s: src/matlab_communication.cpp.s
+.PHONY : src/matlab_communication.s
+
+# target to generate assembly for a file
+src/matlab_communication.cpp.s:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/build.make snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.s
+.PHONY : src/matlab_communication.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -160,8 +222,15 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... matlab_communication"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/matlab_communication.o"
+	@echo "... src/matlab_communication.i"
+	@echo "... src/matlab_communication.s"
 .PHONY : help
 
 

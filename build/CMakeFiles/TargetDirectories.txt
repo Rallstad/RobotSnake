@@ -55,6 +55,7 @@
 /home/snake/Documents/catkin_ws/build/snakebot_labview_communication/CMakeFiles/labview_communication.dir
 /home/snake/Documents/catkin_ws/build/snakebot_log/CMakeFiles/log_node.dir
 /home/snake/Documents/catkin_ws/build/snakebot_log/CMakeFiles/logger_class.dir
+/home/snake/Documents/catkin_ws/build/snakebot_matlab_communication/CMakeFiles/matlab_communication.dir
 /home/snake/Documents/catkin_ws/build/mocap_optitrack/src/CMakeFiles/mocap_optitrack_mocap_node.dir
 /home/snake/Documents/catkin_ws/build/snakebot_position_control/CMakeFiles/position_control.dir
 /home/snake/Documents/catkin_ws/build/snakebot_position_control/CMakeFiles/position_controller_class.dir
