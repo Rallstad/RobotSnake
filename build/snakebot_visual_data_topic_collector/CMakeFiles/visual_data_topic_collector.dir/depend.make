@@ -6,7 +6,11 @@ snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Point.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose2D.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/assert.h
@@ -61,13 +65,21 @@ snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/wall_timer.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/wall_timer_options.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/ColorRGBA.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/visualization_msgs/Marker.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/main.cpp.o: /opt/ros/indigo/include/visualization_msgs/MarkerArray.h
 
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/visual_data_topic_collector.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.cpp
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/geometry_msgs/Point.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose2D.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/ros/assert.h
@@ -122,4 +134,8 @@ snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/ros/wall_timer.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/ros/wall_timer_options.h
 snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/std_msgs/ColorRGBA.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/visualization_msgs/Marker.h
+snakebot_visual_data_topic_collector/CMakeFiles/visual_data_topic_collector.dir/src/visual_data_topic_collector.cpp.o: /opt/ros/indigo/include/visualization_msgs/MarkerArray.h
 

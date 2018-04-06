@@ -100,10 +100,10 @@
   "65957b924e9e5ac01b02eafee4ee892a")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<kinematics>)))
   "Returns full string definition for message of type '<kinematics>"
-  (cl:format cl:nil "int32[] number	# link numbers~%geometry_msgs/Pose2D[] pose~%~%================================================================================~%MSG: geometry_msgs/Pose2D~%# This expresses a position and orientation on a 2D manifold.~%~%float64 x~%float64 y~%float64 theta~%~%"))
+  (cl:format cl:nil "int32[] number	# link numbers~%geometry_msgs/Pose2D[] pose~%================================================================================~%MSG: geometry_msgs/Pose2D~%# This expresses a position and orientation on a 2D manifold.~%~%float64 x~%float64 y~%float64 theta~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'kinematics)))
   "Returns full string definition for message of type 'kinematics"
-  (cl:format cl:nil "int32[] number	# link numbers~%geometry_msgs/Pose2D[] pose~%~%================================================================================~%MSG: geometry_msgs/Pose2D~%# This expresses a position and orientation on a 2D manifold.~%~%float64 x~%float64 y~%float64 theta~%~%"))
+  (cl:format cl:nil "int32[] number	# link numbers~%geometry_msgs/Pose2D[] pose~%================================================================================~%MSG: geometry_msgs/Pose2D~%# This expresses a position and orientation on a 2D manifold.~%~%float64 x~%float64 y~%float64 theta~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <kinematics>))
   (cl:+ 0
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'number) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))

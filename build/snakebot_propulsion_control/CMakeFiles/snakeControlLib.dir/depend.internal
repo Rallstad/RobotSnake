@@ -4,11 +4,15 @@
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_propulsion_control/PropulsionEffort.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_pushpoints/Pushpoints.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/ObstaclePose.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/Pose.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/SnakePose.h
  /home/snake/Documents/catkin_ws/src/snakebot_propulsion_control/src/propulsioncontroller.cpp
  /home/snake/Documents/catkin_ws/src/snakebot_propulsion_control/src/propulsioncontroller.h
  /opt/ros/indigo/include/XmlRpcDecl.h
  /opt/ros/indigo/include/XmlRpcValue.h
  /opt/ros/indigo/include/geometry_msgs/Point.h
+ /opt/ros/indigo/include/geometry_msgs/Pose2D.h
  /opt/ros/indigo/include/geometry_msgs/Vector3.h
  /opt/ros/indigo/include/ros/advertise_options.h
  /opt/ros/indigo/include/ros/advertise_service_options.h

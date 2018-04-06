@@ -9,35 +9,80 @@ rigid_bodies:
         child_frame_id: joint_12/base_link
         parent_frame_id: world
     '2':
+        pose: joint_11/pose
+        pose2d: joint_11/ground_pose
+        child_frame_id: joint_11/base_link
+        parent_frame_id: world
+    '3':
+        pose: joint_10/pose
+        pose2d: joint_10/ground_pose
+        child_frame_id: joint_10/base_link
+        parent_frame_id: world
+    '4':
+        pose: joint_9/pose
+        pose2d: joint_9/ground_pose
+        child_frame_id: joint_9/base_link
+        parent_frame_id: world
+    '5':
         pose: joint_8/pose
         pose2d: joint_8/ground_pose
         child_frame_id: joint_8/base_link
         parent_frame_id: world
-    '3':
+    '6':
+        pose: joint_7/pose
+        pose2d: joint_7/ground_pose
+        child_frame_id: joint_7/base_link
+        parent_frame_id: world
+    '7':
+        pose: joint_6/pose
+        pose2d: joint_6/ground_pose
+        child_frame_id: joint_6/base_link
+        parent_frame_id: world
+    '8':
+        pose: joint_5/pose
+        pose2d: joint_5/ground_pose
+        child_frame_id: joint_5/base_link
+        parent_frame_id: world
+    '9':
         pose: joint_4/pose
         pose2d: joint_4/ground_pose
         child_frame_id: joint_4/base_link
         parent_frame_id: world
-    '4':
+    '10':
+        pose: joint_3/pose
+        pose2d: joint_3/ground_pose
+        child_frame_id: joint_3/base_link
+        parent_frame_id: world
+    '11':
+        pose: joint_2/pose
+        pose2d: joint_2/ground_pose
+        child_frame_id: joint_2/base_link
+        parent_frame_id: world
+    '12':
+        pose: joint_1/pose
+        pose2d: joint_1/ground_pose
+        child_frame_id: joint_1/base_link
+        parent_frame_id: world
+    '13':
         pose: joint_0/pose
         pose2d: joint_0/ground_pose
         child_frame_id: joint_0/base_link
         parent_frame_id: world
-    '5':
+    '14':
         pose: obstacle_1/pose
         pose2d: obstacle_1/ground_pose
         child_frame_id: obstacle_1/base_link
         parent_frame_id: world
-    '6':
+    '15':
         pose: obstacle_2/pose
         pose2d: obstacle_2/ground_pose
         child_frame_id: obstacle_2/base_link
-        parent_frame_id: world
-    '7':
+        parent_frame_id: world    
+    '16':
         pose: obstacle_3/pose
         pose2d: obstacle_3/ground_pose
         child_frame_id: obstacle_3/base_link
-        parent_frame_id: world    
+        parent_frame_id: world  
 
 optitrack_config:
         multicast_address: 224.0.0.1

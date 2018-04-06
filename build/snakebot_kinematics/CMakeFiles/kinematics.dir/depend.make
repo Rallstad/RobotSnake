@@ -11,7 +11,10 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/geometry_msgs/Point.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose2D.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/ros/assert.h
@@ -80,11 +83,15 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/ind
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/rosbag/view.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/roslz4/lz4s.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/ColorRGBA.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/Float64MultiArray.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/Int32.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/String.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/visualization_msgs/Marker.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/visualization_msgs/MarkerArray.h
 
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Float64Array.h
@@ -96,7 +103,10 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Docume
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Point.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose2D.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/assert.h
@@ -165,9 +175,13 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/in
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/rosbag/view.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/roslz4/lz4s.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/ColorRGBA.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Float64MultiArray.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Int32.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/String.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/visualization_msgs/Marker.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/visualization_msgs/MarkerArray.h
 

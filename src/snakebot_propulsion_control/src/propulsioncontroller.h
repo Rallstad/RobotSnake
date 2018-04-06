@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include <iostream>
 #include <vector>
 #include <stdio.h>
@@ -13,8 +14,11 @@
 #include "std_msgs/Int8.h"
 #include <snakebot_pushpoints/Pushpoints.h>
 #include "snakebot_propulsion_control/PropulsionEffort.h"
+#include "geometry_msgs/Pose2D.h"
+#include "snakebot_robot_pose/Pose.h"
 using std::cout;
 using std::endl;
+using std::string;
 
 
 struct Pose2D{
@@ -48,12 +52,16 @@ private:
 	//ROS specific
 	ros::NodeHandle n;
     void obstacleDataCallback(const snakebot_pushpoints::Pushpoints::ConstPtr& msg);
+    void snakePoseCallback(const snakebot_robot_pose::Pose::ConstPtr& msg);
+
 //    void positionDataCallback(const snakebot_interface::State::ConstPtr& msg);
     void propulsionForceCallback(const std_msgs::Float64::ConstPtr& msg);
     ros::Subscriber obstacleDataSub;
     ros::Subscriber positionDataSub;
     ros::Subscriber propForceSub;
+    ros::Subscriber robotPoseSub;
     ros::Publisher propulsionEffortPub;
+
 
     //Map from x,y,z,theta to array index
 	static const int x = 0;
@@ -73,6 +81,10 @@ private:
     std::vector< Pose2D > jointPose2D;
     //Index of link closest to propulsion obstacle
     int iPropLink;
+
+    geometry_msgs::Pose2D snakePose[14];
+
+
 	//Normal vectors at contact points:
     Vector3d n1;
     Vector3d n2;
@@ -107,6 +119,7 @@ private:
 	std::vector<double> actualJointAngles;
     Vector3d desiredTorque;
     Vector3d actualTorque;
+
 	//Subscribers
 	ros::Subscriber contactPointDataSub;
     //Calculating force, torque etc.:
@@ -143,4 +156,5 @@ public:
 	void updateDesiredVelocity(std::vector<double> newDesiredVelocity);
     void updateJointData(std::vector<double> newJointAngles, Vector3d newActualTorque);
     float reduceForceResolution(float force);
+    float reduceContactPositionResolution(std::string side, int link_number, bool x,bool y, int pushpoint);
 };

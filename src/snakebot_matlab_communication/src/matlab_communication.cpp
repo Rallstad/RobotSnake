@@ -35,12 +35,13 @@ void Snake::SGDataJoint1Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg
 	}
 	Joint joint(SG,1);
 	if(jointAddedToSnake(1)){
-		for(int i = 0;i<6;i++){
-			this->snakeJoints[1] = SG;
-		}
+		//for(int i = 0;i<6;i++){
+		//	this->snakeJoints[1].push_back(SG);
+		//}
 	}
 	else{
-		std::map<int,Joint>::iterator it = this->snakeJoints.begin();
+		//this->snakeJoints[1] = SGData;
+		std::map<int,vector<int>>::iterator it = this->snakeJoints.begin();
 		
 		//this->snakeJoints.insert(std::pair<int,Joint>(1,Joint(SG,1)));
 	}
@@ -50,11 +51,18 @@ void Snake::SGDataJoint1Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg
 }
 
 bool Snake::jointAddedToSnake(int jointNum){
-	std::map<int,Joint>::iterator it;
+	std::map<int,vector<int>>::iterator it;
 	it = this->snakeJoints.find(jointNum);
 	if(it!=this->snakeJoints.end()){
-		cout<<"jada";
-			return true;
+		cout<<"jada"<<endl;
+		cout<<it->second[0]<<endl;
+		cout<<it->second[1]<<endl;
+		cout<<it->second[2]<<endl;
+		cout<<it->second[3]<<endl;
+		cout<<it->second[4]<<endl;
+		cout<<it->second[5]<<endl;
+		
+		return true;
 	}
 	
 	return false;

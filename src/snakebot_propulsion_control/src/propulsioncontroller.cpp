@@ -6,6 +6,7 @@ PropulsionController::PropulsionController(ros::NodeHandle handle)
 	n = handle;
     obstacleDataSub = n.subscribe("/snakebot/pushpoints", 1000, &PropulsionController::obstacleDataCallback, this);
     propForceSub = n.subscribe("/snakebot/propulsion_force", 1000, &PropulsionController::propulsionForceCallback, this);
+    robotPoseSub = n.subscribe("snakebot/robot_pose", 1000, &PropulsionController::snakePoseCallback,this);
     propulsionEffortPub = n.advertise<snakebot_propulsion_control::PropulsionEffort>("/snakebot/propulsion_effort", 1000);
     obstacleDataInitialized = false;
     positionDataInitialized = false;
@@ -36,23 +37,33 @@ void PropulsionController::obstacleDataCallback(const snakebot_pushpoints::Pushp
     this->t1 = Vector3d(reduceForceResolution(msg->contact_tangents[0].x),reduceForceResolution(msg->contact_tangents[0].y),reduceForceResolution(msg->contact_tangents[0].z));
     this->t2 = Vector3d(reduceForceResolution(msg->contact_tangents[1].x),reduceForceResolution(msg->contact_tangents[1].y),reduceForceResolution(msg->contact_tangents[1].z));
     this->t3 = Vector3d(-reduceForceResolution(msg->contact_tangents[2].x),-reduceForceResolution(msg->contact_tangents[2].y),-reduceForceResolution(msg->contact_tangents[2].z));
-
-    /*this->n1 = Vector3d(msg->contact_normals[0].x, msg->contact_normals[0].y, msg->contact_normals[0].z);
+/*
+    this->n1 = Vector3d(msg->contact_normals[0].x, msg->contact_normals[0].y, msg->contact_normals[0].z);
     this->n2 = Vector3d(msg->contact_normals[1].x, msg->contact_normals[1].y, msg->contact_normals[1].z);
     this->n3 = Vector3d(msg->contact_normals[2].x, msg->contact_normals[2].y, msg->contact_normals[2].z);
     this->t1 = Vector3d(msg->contact_tangents[0].x, msg->contact_tangents[0].y, msg->contact_tangents[0].z);
     this->t2 = Vector3d(msg->contact_tangents[1].x, msg->contact_tangents[1].y, msg->contact_tangents[1].z);
     this->t3 = Vector3d(-msg->contact_tangents[2].x, -msg->contact_tangents[2].y, -msg->contact_tangents[2].z); // Defined opposite direction, see the pdf*/
 
-    this->c1 = Position3d(msg->contact_positions[0].x, msg->contact_positions[0].y, msg->contact_positions[0].z);
+    this->c1 = Position3d(reduceContactPositionResolution(msg->contact_sides[0],msg->link_numbers[0],true,false,0),reduceContactPositionResolution(msg->contact_sides[0],msg->link_numbers[0],false,true,0),0.1);
+    this->c2 = Position3d(reduceContactPositionResolution(msg->contact_sides[1],msg->link_numbers[1],true,false,1),reduceContactPositionResolution(msg->contact_sides[1],msg->link_numbers[1],false,true,1),0.1);
+    this->c3 = Position3d(reduceContactPositionResolution(msg->contact_sides[2],msg->link_numbers[2],true,false,2),reduceContactPositionResolution(msg->contact_sides[2],msg->link_numbers[2],false,true,2),0.1);
+    /*this->c1 = Position3d(msg->contact_positions[0].x, msg->contact_positions[0].y, msg->contact_positions[0].z);
     this->c2 = Position3d(msg->contact_positions[1].x, msg->contact_positions[1].y, msg->contact_positions[1].z);
-    this->c3 = Position3d(msg->contact_positions[2].x, msg->contact_positions[2].y, msg->contact_positions[2].z);
+    this->c3 = Position3d(msg->contact_positions[2].x, msg->contact_positions[2].y, msg->contact_positions[2].z);*/
     this->c3Side = msg->contact_sides[2];
     this->r = Vector3d(c3.x - c2.x, c3.y - c2.y, c3.z - c2.z);
     iPropLink = msg->centerContactLink;
     obstacleDataInitialized = true;
     contactsCallbackTime = ros::Time::now();
     contactsMsgDataTime = msg->header.stamp;
+}
+
+void PropulsionController::snakePoseCallback(const snakebot_robot_pose::Pose::ConstPtr& msg){
+    for(int i=0;i<14;i++){
+        snakePose[i] = msg->snakePose.pose[i];
+        //cout<<i<<" "<<snakePose[i]<<endl;
+    }
 }
 
 float PropulsionController::reduceForceResolution(float force){
@@ -78,6 +89,24 @@ float PropulsionController::reduceForceResolution(float force){
     }    
 }
 
+float PropulsionController::reduceContactPositionResolution(std::string side, int link_number, bool x,bool y, int pushpoint){
+    if(x){
+        if(side == "left"){
+            return snakePose[link_number-1].x-(0.5*linkWidth*sin(snakePose[pushpoint-1].theta));
+        }
+        else if(side == "right"){
+            return snakePose[link_number-1].x+(0.5*linkWidth*sin(snakePose[pushpoint-1].theta));
+        }
+    }
+    if(y){
+        if(side == "left"){
+            return snakePose[link_number-1].y+(0.5*linkWidth*cos(snakePose[pushpoint-1].theta));
+        }
+        else if(side == "right"){
+            return snakePose[link_number-1].y-(0.5*linkWidth*cos(snakePose[pushpoint-1].theta));
+        }
+    }
+}
 
 void PropulsionController::propulsionForceCallback(const std_msgs::Float64::ConstPtr &msg){
     fs = msg->data;

@@ -10,6 +10,7 @@ Snake::Snake(ros::NodeHandle n){
 	jointPoseSub = n.subscribe("/snakebot/snakeJointPose/",100, &Snake::jointPoseCallback,this);
 	matlabTestSub = n.subscribe("/SG_data", 100, &Snake::matlabCallback,this);
 	snakeConfigurationPub = n.advertise<snakebot_kinematics::kinematics>("/snakebot/real_snake_pose",10);
+	snakeJointPosePub = n.advertise<visualization_msgs::MarkerArray>("/snakebot/real_snake_joint_pose",10);
 }
 
 Snake::~Snake(){}
@@ -33,9 +34,9 @@ void Snake::anglesCallback(const snakebot_labview_communication::Float64Array::C
 
 void Snake::jointPoseCallback(const snakebot_visual_data_topic_collector::visual_data_topic_collector::ConstPtr &msg){
 	for(int i=0;i<4;i++){
-		jointPoses[i*4].x = msg->jointposes[i].x;
-		jointPoses[i*4].y = msg->jointposes[i].y;
-		jointPoses[i*4].theta = msg->jointposes[i].theta;
+		jointPoses[i*4].x = msg->jointposes[i*4].x;
+		jointPoses[i*4].y = msg->jointposes[i*4].y;
+		jointPoses[i*4].theta = msg->jointposes[i*4].theta;
 	}
 }
 
@@ -49,16 +50,49 @@ void Snake::publishSnakeConfiguration(){
 	//snakebot_kinematics::kinematics pose;
 	geometry_msgs::Pose2D pose2d;
 	snakebot_kinematics::kinematics positions;
-	for(int joint_num = 1;joint_num<14;joint_num++){
+	for(int joint_num = 1;joint_num <= 13;joint_num++){
 		positions.number.push_back(joint_num);
 		pose2d.x = jointPoses[joint_num-1].x;
 		pose2d.y = jointPoses[joint_num-1].y;
 		positions.pose.push_back(pose2d);
 	} 
 	snakeConfigurationPub.publish(positions);
-
-
 }
+
+void Snake::publishKinematicsSnakeJointPose(){
+	visualization_msgs::MarkerArray markerarray;
+	visualization_msgs::Marker marker;
+	for(int joint_num = 1; joint_num <= 13; joint_num++){
+		marker.header.frame_id = "dummy_link";
+	    marker.header.stamp = ros::Time();
+	    marker.ns = "my_namespace";
+	    marker.id = joint_num;
+	    marker.type = visualization_msgs::Marker::CUBE;
+	    marker.action = visualization_msgs::Marker::ADD;
+	    marker.pose.position.x = jointPoses[joint_num-1].x;
+	    marker.pose.position.y = jointPoses[joint_num-1].y;
+	    marker.pose.position.z = 0;
+	    marker.pose.orientation.x = 0.0;
+	    marker.pose.orientation.y = 0.0;
+	    marker.pose.orientation.z = 0.0;
+	    marker.pose.orientation.w = 1.0;
+	    marker.scale.x = 0.0885;
+	    marker.scale.y = 0.07;
+	    marker.scale.z = 0.07;
+	    marker.color.a = 1.0; // Don't forget to set the alpha!
+	    marker.color.r = 0.0;
+	    marker.color.g = 1.0;
+	    marker.color.b = 0.0;
+	    markerarray.markers.push_back(marker);
+
+
+
+	}
+    //only if using a MESH_RESOURCE marker type:
+        snakeJointPosePub.publish( markerarray );
+} 
+
+
 
 //geometry_msgs::Pose2D Snake::getHeadGroundPose(){
 //	return headGroundPose;
@@ -105,12 +139,14 @@ void Snake::calculateJointPosition(){
 			//Calculate position of joint 11
 			jointPoses[joint_num-1].x = jointPose.x + link_length*cos(theta_sum*M_PI/180);
 			jointPoses[joint_num-1].y = jointPose.y + link_length*sin(theta_sum*M_PI/180);
+			jointPoses[joint_num-1].theta = theta_sum;
 
 			theta_sum += jointAnglesBody[joint_num-1];
 			//cout <<"theta 1: "<<theta_sum<<endl;
 			//Calculate position of joint 10, will be compared with result from joint 8
 			jointPoses[joint_num-2].x = jointPoses[joint_num-1].x + link_length*cos(theta_sum*M_PI/180);
 			jointPoses[joint_num-2].y = jointPoses[joint_num-1].y + link_length*sin(theta_sum*M_PI/180);
+			jointPoses[joint_num-2].theta = theta_sum;
 			//cout<< "Joint: " <<joint_num << " X: " << jointPoses[joint_num].x << " Y: "<< jointPoses[joint_num].y <<endl;
 		}
 
@@ -123,24 +159,28 @@ void Snake::calculateJointPosition(){
 			//cout << theta_sum <<endl;
 			jointPoses[joint_num+1].x = jointPose.x - link_length*cos(theta_sum*M_PI/180);
 			jointPoses[joint_num+1].y = jointPose.y - link_length*sin(theta_sum*M_PI/180);
+			jointPoses[joint_num+1].theta = theta_sum;
 
 			theta_sum -= jointAnglesBody[joint_num+1];
 			//cout <<"theta 2: "<<theta_sum<<endl;
 			// Calculate mean of mid joint 10
 			jointPoses[joint_num+2].x = (jointPoses[joint_num+2].x + jointPoses[joint_num+1].x - link_length*cos(theta_sum*M_PI/180))/2;
 			jointPoses[joint_num+2].y = (jointPoses[joint_num+2].y + jointPoses[joint_num+1].y - link_length*sin(theta_sum*M_PI/180))/2;
+			jointPoses[joint_num+2].theta = theta_sum;
 
 			theta_sum = jointPose.theta;
 			//cout <<"theta 3: "<<theta_sum<<endl;
 			// Calculate position of joint 7
 			jointPoses[joint_num-1].x = jointPose.x + link_length*cos(theta_sum*M_PI/180);
 			jointPoses[joint_num-1].y = jointPose.y + link_length*sin(theta_sum*M_PI/180);
+			jointPoses[joint_num-1].theta = theta_sum;
 
 			theta_sum += jointAnglesBody[joint_num-1];
 			//cout <<"theta 4: "<<theta_sum<<endl;
 			//Calculate position of joint 6, will be compared with result from joint 4
 			jointPoses[joint_num-2].x = jointPoses[joint_num-1].x + link_length*cos(theta_sum*M_PI/180);
 			jointPoses[joint_num-2].y = jointPoses[joint_num-1].y + link_length*sin(theta_sum*M_PI/180);
+			jointPoses[joint_num-2].theta = theta_sum;
 
 			//cout<< "Joint: " <<joint_num << " X: " << jointPositions[joint_num].x << " Y: "<< jointPositions[joint_num].y <<endl;
 		}
@@ -153,24 +193,28 @@ void Snake::calculateJointPosition(){
 			//Calculate position of joint 5
 			jointPoses[joint_num+1].x = jointPose.x - link_length*cos(theta_sum*M_PI/180);
 			jointPoses[joint_num+1].y = jointPose.y - link_length*sin(theta_sum*M_PI/180);
+			jointPoses[joint_num+1].theta = theta_sum;
 
 			theta_sum -= jointAnglesBody[joint_num+1];
 			//cout <<"theta 5: "<<theta_sum<<endl;
 			// Calculate mean of mid joint 6
 			jointPoses[joint_num+2].x = (jointPoses[joint_num+2].x + jointPoses[joint_num+1].x - link_length*cos(theta_sum*M_PI/180))/2;
 			jointPoses[joint_num+2].y = (jointPoses[joint_num+2].y + jointPoses[joint_num+1].y - link_length*sin(theta_sum*M_PI/180))/2;
+			jointPoses[joint_num+2].theta = theta_sum;
 
 			theta_sum = jointPose.theta;
 			//cout <<"theta 6: "<<theta_sum<<endl;
 			// Calculate position of joint 3
 			jointPoses[joint_num-1].x = jointPose.x + link_length*cos(theta_sum*M_PI/180);
 			jointPoses[joint_num-1].y = jointPose.y + link_length*sin(theta_sum*M_PI/180);
+			jointPoses[joint_num-1].theta = theta_sum;
 
 			theta_sum += jointAnglesBody[joint_num-1];
 			//cout <<"theta 7: "<<theta_sum<<endl;
 			//Calculate position of joint 2, will be compared with result from joint 0
 			jointPoses[joint_num-2].x = jointPoses[joint_num-1].x + link_length*cos(theta_sum*M_PI/180);
 			jointPoses[joint_num-2].y = jointPoses[joint_num-1].y + link_length*sin(theta_sum*M_PI/180);
+			jointPoses[joint_num-2].theta = theta_sum;
 
 			//cout<< "Joint: " <<joint_num << " X: " << jointPositions[joint_num].x << " Y: "<< jointPositions[joint_num].y <<endl;
 		}
@@ -182,6 +226,7 @@ void Snake::calculateJointPosition(){
 			//cout<<"theta_sum 0: "<< theta_sum<<endl;
 			jointPoses[joint_num+1].x = jointPose.x - link_length*cos(theta_sum*M_PI/180);
 			jointPoses[joint_num+1].y = jointPose.y - link_length*sin(theta_sum*M_PI/180);
+			jointPoses[joint_num+1].theta = theta_sum;
 
 			theta_sum -= jointAnglesBody[joint_num+2];
 			//cout <<"theta 8: "<<theta_sum<<endl;
@@ -189,6 +234,7 @@ void Snake::calculateJointPosition(){
 			// Calculate mean of mid joint 2
 			jointPoses[joint_num+2].x = (jointPoses[joint_num+2].x + jointPoses[joint_num+1].x - link_length*cos(theta_sum*M_PI/180))/2;
 			jointPoses[joint_num+2].y = (jointPoses[joint_num+2].y + jointPoses[joint_num+1].y - link_length*sin(theta_sum*M_PI/180))/2;
+			jointPoses[joint_num+2].theta = theta_sum;
 
 
 

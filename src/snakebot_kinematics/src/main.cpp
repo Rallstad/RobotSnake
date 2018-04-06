@@ -12,6 +12,7 @@ int main(int argc, char **argv){
     	
         snake.calculateJointPosition();
         snake.publishSnakeConfiguration();
+        snake.publishKinematicsSnakeJointPose();
         snake.writeJointPosesToFile();
 
         //snake.readJointPosesFromBag();

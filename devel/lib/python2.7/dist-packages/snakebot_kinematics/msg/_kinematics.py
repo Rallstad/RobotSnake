@@ -13,7 +13,6 @@ class kinematics(genpy.Message):
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """int32[] number	# link numbers
 geometry_msgs/Pose2D[] pose
-
 ================================================================================
 MSG: geometry_msgs/Pose2D
 # This expresses a position and orientation on a 2D manifold.

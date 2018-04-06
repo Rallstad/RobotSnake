@@ -1,5 +1,5 @@
 #include "visual_data_topic_collector.h"
-
+using namespace std;
 int main(int argc, char **argv){
 
 	int freq = 1000;
@@ -11,8 +11,11 @@ int main(int argc, char **argv){
     while(ros::ok()){
         
         topic_collector.publishJointPose();
+        topic_collector.publishVisualSnakeJointPose();
     	ros::spinOnce();
     	loop_rate.sleep();
+
+
        
     }
 

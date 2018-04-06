@@ -4,18 +4,5 @@
         <arg name="gui" value="true" />
     </include>
     <param name="robot_description" command="$(find xacro)/xacro.py $(find snakebot_description)/urdf/snakebot.xacro" />
-    <node name="snakebot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model snakebot
-    -J joint_01 0.2
-    -J joint_02 0.2  
-    -J joint_03 0.2  
-    -J joint_04 0.2  
-    -J joint_05 0.2  
-    -J joint_06 0.2  
-    -J joint_07 0.2  
-    -J joint_08 -0.2  
-    -J joint_09 -0.2  
-    -J joint_10 -0.2  
-    -J joint_11 -0.2  
-    -J joint_12 -0.2  
-    -J joint_13 -0.2" />
+    <node name="snakebot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model snakebot -x 1.086192  -y 2.430344  -z 0 -J joint_01 92820819935232.000000 -J joint_02 0.000000  -J joint_03  0.000000  -J joint_04  0.000000  -J joint_05  0.000000  -J joint_06  0.000000  -J joint_07  0.000000  -J joint_08  0.000000  -J joint_09  0.000000  -J joint_10  0.000000  -J joint_11  0.000000  -J joint_12  0.000000  -J joint_13  0.000000" />
 </launch>

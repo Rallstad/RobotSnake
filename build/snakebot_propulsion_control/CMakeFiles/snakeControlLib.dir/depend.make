@@ -3,11 +3,15 @@
 
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_propulsion_control/PropulsionEffort.h
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_pushpoints/Pushpoints.h
+snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/ObstaclePose.h
+snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/Pose.h
+snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/SnakePose.h
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_propulsion_control/src/propulsioncontroller.cpp
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_propulsion_control/src/propulsioncontroller.h
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /opt/ros/indigo/include/geometry_msgs/Point.h
+snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /opt/ros/indigo/include/geometry_msgs/Pose2D.h
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h

@@ -5,6 +5,8 @@
 #include "std_msgs/Float64MultiArray.h"
 #include "geometry_msgs/Pose2D.h"
 #include "geometry_msgs/Point.h"
+#include "visualization_msgs/Marker.h"
+#include "visualization_msgs/MarkerArray.h"
 #include "snakebot_kinematics/kinematics.h"
 #include "snakebot_labview_communication/Float64Array.h"
 #include "snakebot_labview_communication/Int32Array.h"
@@ -27,6 +29,7 @@ private:
 	float jointAnglesWorld[13];
 
 	geometry_msgs::Pose2D jointPoses[13];
+	visualization_msgs::MarkerArray jointPose;
 	ros::Subscriber measuredJointAnglesSub;
 	ros::Subscriber headGroundPoseSub;
 	ros::Subscriber jointPoseSub;
@@ -34,6 +37,7 @@ private:
 	ros::Subscriber matlabTestSub;
 
 	ros::Publisher snakeConfigurationPub;
+	ros::Publisher snakeJointPosePub;
 
 	void anglesCallback(const snakebot_labview_communication::Float64Array::ConstPtr &msg);
 	void headGroundPoseCallback(const geometry_msgs::Pose2D::ConstPtr &msg);
@@ -44,6 +48,7 @@ public:
 	void calculateJointAnglesWorld();
 	void calculateJointPosition();
 	void publishSnakeConfiguration();
+	void publishKinematicsSnakeJointPose();
 	void writeJointPosesToFile();
 	//geometry_msgs::Pose2D getHeadGroundPose();
 	geometry_msgs::Pose2D getjointPose(int joint_num);

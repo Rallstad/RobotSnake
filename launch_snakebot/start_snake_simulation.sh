@@ -4,8 +4,12 @@
 gnome-terminal --tab -e ~/Documents/catkin_ws/launch_snakebot/gazebo.sh &
 sleep 3
 gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/labview_communication.sh &
+
+sleep 3
 gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/mocap_optitrack.sh &
-#gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/world_setup.sh &
+
+sleep 3
+gnome-terminal -e ~/Documents/catkin_ws/launch_snakebot/world_setup.sh &
 
 
 

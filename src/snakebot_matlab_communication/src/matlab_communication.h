@@ -22,7 +22,7 @@ struct Joint{
 
 class Snake{
 private:
-	std::map<int,Joint> snakeJoints;
+	std::map<int,vector<int>> snakeJoints;
 
 	ros::Subscriber SGDataJoint1Sub;
 	ros::Subscriber SGDataJoint2Sub;

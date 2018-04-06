@@ -22,6 +22,7 @@ private:
 	bool obstacle2PoseAcquired = false;
 	bool obstacle3PoseAcquired = false;
 	bool snakeHeadPoseAcquired = false;
+	bool jointStatesInit = false;
 
 	ros::NodeHandle n;
 	ros::Subscriber obstacle1Sub;
@@ -245,6 +246,8 @@ void world_setup::writeObstacleFile(){
 
 
 void world_setup::simulateSnake(){
+	int counter = 0;
+
 	const char* demoStart = 
 		"<launch>"	  
 		"<include file=\"$(find gazebo_ros)/launch/empty_world.launch\">"	    
@@ -270,7 +273,19 @@ void world_setup::simulateSnake(){
 		cout<<"jointStates12: "<<jointStates[11]<<endl;
 		cout<<"jointStates13: "<<jointStates[12]<<endl;
 
-
+	while(jointStatesInit == false){
+		for(int joint_num = 0; joint_num >=12; joint_num++){
+			if(jointStates[joint_num] < 0 || jointStates[joint_num] > 90){
+				cout << "jointStates not yet initialized!" << endl;
+			}
+			else{
+				counter ++;
+			}
+			if(counter == 13){
+				jointStatesInit = true;
+			}
+		}
+	}
 
 	TiXmlDocument doc( "/home/snake/Documents/catkin_ws/src/snakebot_gazebo/launch/snakebot_world.launch" );
 
@@ -294,22 +309,22 @@ void world_setup::simulateSnake(){
 		}
 
 	char xyzStr[512]; // This can be done easier I think. Something may be superfluous
-	char kisBuf[512];
+	char buff[512];
 	sprintf(xyzStr, "%s %f %s %f %s %f %s %f %s %f %s %f %s %f %s %f %s %f %s %f %s %f %s %f %s %f %s %f %s %f" ,"-urdf -param robot_description -model snakebot -x" ,snakeHead.x,
 		" -y",snakeHead.y, " -z 0 -J joint_01", jointStates[0], "-J joint_02", jointStates[1], " -J joint_03 ", jointStates[2], " -J joint_04 ", jointStates[3], " -J joint_05 ", jointStates[4],
 		 " -J joint_06 ", jointStates[5], " -J joint_07 ", jointStates[6], " -J joint_08 ", jointStates[7], " -J joint_09 ", jointStates[8], " -J joint_10 ", jointStates[9],
 		  " -J joint_11 ", jointStates[10], " -J joint_12 ", jointStates[11], " -J joint_13 ", jointStates[12]);
 
-	snprintf(kisBuf, sizeof(kisBuf), "%s", xyzStr);
+	snprintf(buff, sizeof(buff), "%s", xyzStr);
 
-	//cout<<kisBuf<<endl;
+	//cout<<buff<<endl;
 	TiXmlNode* node = 0;
 	TiXmlElement* todoElement = 0;
 	TiXmlElement* itemElement = 0;
 	node = doc.FirstChild( "launch" )->FirstChild("node")->ToElement();
 	itemElement = node->ToElement();
 	assert(itemElement);
-	itemElement->SetAttribute("args", kisBuf);
+	itemElement->SetAttribute("args", buff);
 
 	doc.SaveFile();
 	

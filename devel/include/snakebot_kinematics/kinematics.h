@@ -145,7 +145,6 @@ struct Definition< ::snakebot_kinematics::kinematics_<ContainerAllocator> >
   {
     return "int32[] number	# link numbers\n\
 geometry_msgs/Pose2D[] pose\n\
-\n\
 ================================================================================\n\
 MSG: geometry_msgs/Pose2D\n\
 # This expresses a position and orientation on a 2D manifold.\n\
