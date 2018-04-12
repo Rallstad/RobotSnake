@@ -64,5 +64,8 @@ snakebot_pushpoints/CMakeFiles/pushpoints.dir/src/main.cpp.o: /opt/ros/indigo/in
 snakebot_pushpoints/CMakeFiles/pushpoints.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/wall_timer.h
 snakebot_pushpoints/CMakeFiles/pushpoints.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/wall_timer_options.h
 snakebot_pushpoints/CMakeFiles/pushpoints.dir/src/main.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
+snakebot_pushpoints/CMakeFiles/pushpoints.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
 snakebot_pushpoints/CMakeFiles/pushpoints.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
+snakebot_pushpoints/CMakeFiles/pushpoints.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
+snakebot_pushpoints/CMakeFiles/pushpoints.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
 

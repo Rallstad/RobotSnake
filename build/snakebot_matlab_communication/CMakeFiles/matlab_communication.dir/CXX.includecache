@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/main.cpp
+matlab_communication.h
+/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/matlab_communication.h
+
 /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/matlab_communication.cpp
 matlab_communication.h
 /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/matlab_communication.h
@@ -23,6 +27,8 @@ ros/ros.h
 /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/ros/ros.h
 std_msgs/UInt16MultiArray.h
 /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/std_msgs/UInt16MultiArray.h
+std_msgs/Float32MultiArray.h
+/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/std_msgs/Float32MultiArray.h
 
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h
@@ -669,6 +675,24 @@ ros/forwards.h
 /opt/ros/indigo/include/ros/ros/forwards.h
 
 /opt/ros/indigo/include/rosconsole/macros_generated.h
+
+/opt/ros/indigo/include/std_msgs/Float32MultiArray.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/MultiArrayLayout.h
+-
 
 /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
 string

@@ -2,7 +2,7 @@
 
 Snake::Snake(ros::NodeHandle n){
 
-	SGDataJoint1Sub = n.subscribe("from_matlab/SG_joint1", 10, &Snake::SGDataJoint1Callback, this);
+	SGDataJoint1Sub = n.subscribe("from_matlab/SG", 10, &Snake::SGDataJoint1Callback, this);
 	/*SGDataJoint2Sub = n.subscribe("from_matlab/SG_joint2", 100, &Snake::SGDataJoint2Callback, this);
 	SGDataJoint3Sub = n.subscribe("from_matlab/SG_joint3", 100, &Snake::SGDataJoint3Callback, this);
 	SGDataJoint4Sub = n.subscribe("from_matlab/SG_joint4", 100, &Snake::SGDataJoint4Callback, this);
@@ -20,47 +20,32 @@ Snake::Snake(ros::NodeHandle n){
 
 Snake::~Snake(){}
 
-void Snake::SGDataJoint1Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg){
-	int fx, fy, fz, tx, ty, tz;
-	fx = msg->data[0];
-	fy = msg->data[1];
-	fz = msg->data[2];
-	tx = msg->data[3];
-	ty = msg->data[4];
-	tz = msg->data[5];
-	int SGData [6] = {fx, fy, fz, tx, ty, tz};
-	vector<int> SG;
-	for(int i=0;i<6;i++){
-		SG.push_back(SGData[i]);
-	}
-	Joint joint(SG,1);
-	if(jointAddedToSnake(1)){
-		//for(int i = 0;i<6;i++){
-		//	this->snakeJoints[1].push_back(SG);
-		//}
-	}
-	else{
-		//this->snakeJoints[1] = SGData;
-		std::map<int,vector<int>>::iterator it = this->snakeJoints.begin();
-		
-		//this->snakeJoints.insert(std::pair<int,Joint>(1,Joint(SG,1)));
-	}
-	//cout<<"message received";
-	//cout<<msg->data[0];
+void Snake::SGDataJoint1Callback(const std_msgs::Float32MultiArray::ConstPtr &msg){
 
+	int SGdata;
+	vector<int> SG;
+	if(jointAddedToSnake(1)){
+		this->snakeJoints.erase(this->snakeJoints.begin(),this->snakeJoints.end());
+	}
+	for(int i=0;i<msg->data.size();i++){
+		cout<<"joint: "<< i<<" "<<msg->data[i]<<endl;
+		SGdata = msg->data[i];
+		this->snakeJoints[1].push_back(SGdata);
+	}
+	cout<<endl;
 }
 
 bool Snake::jointAddedToSnake(int jointNum){
 	std::map<int,vector<int>>::iterator it;
 	it = this->snakeJoints.find(jointNum);
 	if(it!=this->snakeJoints.end()){
-		cout<<"jada"<<endl;
+		/*cout<<"jada"<<endl;
 		cout<<it->second[0]<<endl;
 		cout<<it->second[1]<<endl;
 		cout<<it->second[2]<<endl;
 		cout<<it->second[3]<<endl;
 		cout<<it->second[4]<<endl;
-		cout<<it->second[5]<<endl;
+		cout<<it->second[5]<<endl;*/
 		
 		return true;
 	}

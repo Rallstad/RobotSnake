@@ -60,6 +60,7 @@ snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o
  /opt/ros/indigo/include/ros/wall_timer.h
  /opt/ros/indigo/include/ros/wall_timer_options.h
  /opt/ros/indigo/include/rosconsole/macros_generated.h
+ /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
  /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
  /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
  /opt/ros/indigo/include/std_msgs/UInt16MultiArray.h
@@ -122,6 +123,7 @@ snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_com
  /opt/ros/indigo/include/ros/wall_timer.h
  /opt/ros/indigo/include/ros/wall_timer_options.h
  /opt/ros/indigo/include/rosconsole/macros_generated.h
+ /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
  /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
  /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
  /opt/ros/indigo/include/std_msgs/UInt16MultiArray.h

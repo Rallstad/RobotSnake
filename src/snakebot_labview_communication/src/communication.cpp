@@ -34,7 +34,6 @@ Communication::Communication(ros::NodeHandle n)
 void Communication::ROS_RefAnglesCallback(const std_msgs::Float64MultiArray::ConstPtr& inMsg){
     snakebot_labview_communication::Float64Array outMsg;
     outMsg.data = inMsg->data;
-
     LabVIEW_RefAnglesPub.publish(outMsg);
 }
 

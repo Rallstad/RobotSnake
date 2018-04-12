@@ -59,6 +59,7 @@ snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/wall_timer.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/wall_timer_options.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
+snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/UInt16MultiArray.h
@@ -121,6 +122,7 @@ snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_com
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/ros/wall_timer.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/ros/wall_timer_options.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
+snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/std_msgs/UInt16MultiArray.h

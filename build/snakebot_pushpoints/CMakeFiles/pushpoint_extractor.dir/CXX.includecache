@@ -93,6 +93,8 @@ snakebot_collisions/SnakeContacts.h
 /home/snake/Documents/catkin_ws/src/snakebot_pushpoints/src/snakebot_collisions/SnakeContacts.h
 snakebot_pushpoints/Pushpoints.h
 /home/snake/Documents/catkin_ws/src/snakebot_pushpoints/src/snakebot_pushpoints/Pushpoints.h
+std_msgs/Float32MultiArray.h
+/home/snake/Documents/catkin_ws/src/snakebot_pushpoints/src/std_msgs/Float32MultiArray.h
 
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h
@@ -772,6 +774,24 @@ ros/forwards.h
 
 /opt/ros/indigo/include/rosconsole/macros_generated.h
 
+/opt/ros/indigo/include/std_msgs/Float32MultiArray.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/MultiArrayLayout.h
+-
+
 /opt/ros/indigo/include/std_msgs/Header.h
 string
 -
@@ -786,5 +806,39 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
+-
+
+/opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/MultiArrayDimension.h
 -
 

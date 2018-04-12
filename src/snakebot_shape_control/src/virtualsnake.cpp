@@ -292,6 +292,8 @@ void VirtualSnake::findDesiredJointPositions(){
 }
 
 void VirtualSnake::findDesiredJointAngles(){
+    cout<<"obstacleready: "<<obstacleDataReady<<endl;
+    cout<<"robotPoseReady: " <<robotPoseReady<<endl; 
     if (!(obstacleDataReady && robotPoseReady)){
         cout << "obstacle or link data not available" << endl;
         return;

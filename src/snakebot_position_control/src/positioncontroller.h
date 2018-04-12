@@ -43,6 +43,7 @@ private:
     ros::Subscriber jointStateSub;
     ros::Publisher desiredPositionPub;
     ros::Publisher effortPub;
+    ros::Publisher LabViewDesiredPositionPub;
 
     std::vector<std::vector<double>> jointMappingMatrix;
     void setMappingMatrix();

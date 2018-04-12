@@ -2,6 +2,7 @@
 
 PushpointExtractor::PushpointExtractor(ros::NodeHandle n, int numberOfLinks): n(n), numberOfLinks(numberOfLinks), threePushPointsFound(false){
     snakeContactsSub = n.subscribe("/snakebot/collisions", 1, &PushpointExtractor::snakeContactsCallback, this);
+    SGSub = n.subscribe("from_matlab/SG", 1, &PushpointExtractor::mambaExtractPushPoints, this);
     pushPointPub = n.advertise<snakebot_pushpoints::Pushpoints>("/snakebot/pushpoints", 1);
 
     LabVIEW_PushPointsPub = n.advertise<snakebot_pushpoints::Pushpoints>("LabVIEW_ROS/from_ROS_push_points", 1);
@@ -81,4 +82,55 @@ snakebot_pushpoints::Pushpoints PushpointExtractor::extractPushpoints(const snak
     }
     return pushPointMsg;
 
+}
+void PushpointExtractor::mambaExtractPushPoints(const std_msgs::Float32MultiArray::ConstPtr& sgMsg){
+    bool firstPushpoint = true;
+    std::string contactside;
+    std::vector<std::string> pushpointsside;
+    std::vector<int> pushpointsjoint;    
+    for(int i=sgMsg->data.size();i>0;i-=1){
+        //cout<<i<<endl;
+        if(firstPushpoint){
+            if(sgMsg->data[i-1]< -0.5){
+                pushpointsside.push_back("right");
+                pushpointsjoint.push_back(i-1);
+                contactside = "right";
+            }
+            else if(sgMsg->data[i-1] > 0.5){
+                pushpointsside.push_back("left");
+                pushpointsjoint.push_back(i-1);
+                contactside = "left";
+            }
+            firstPushpoint = false;
+        }
+        if(!firstPushpoint && contactside =="left"){
+            if(sgMsg->data[i-1]< -0.5){
+                pushpointsside.push_back("right");
+                pushpointsjoint.push_back(i-1);
+                contactside = "right";
+            }
+        }
+        if(!firstPushpoint && contactside == "right"){
+            if(sgMsg->data[i-1]> 0.5){
+                pushpointsside.push_back("left");
+                pushpointsjoint.push_back(i-1);
+                contactside = "left";
+            }
+        }
+    }
+    if(pushpointsjoint.size()>= 3){
+        cout<<pushpointsjoint.size()<<" pushpoints found"<<endl;
+        for(int i=0;i<pushpointsjoint.size(); i++){
+            cout<<"Pushpoints: "<<pushpointsjoint[i]<<endl;
+            cout<<pushpointsside[i]<<endl;
+        }
+    }
+    else if(pushpointsjoint.size()<3){
+        cout<<pushpointsjoint.size()<<" pushpoints found"<<endl;
+        for(int i=0;i<pushpointsjoint.size();i++){
+            cout<<"Pushpoints: "<<pushpointsjoint[i]<<endl;
+            cout<<pushpointsside[i]<<endl;
+            cout<<"too few"<<endl;
+        }
+    }
 }

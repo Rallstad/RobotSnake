@@ -19,7 +19,7 @@ PositionController::PositionController(ros::NodeHandle handle, double stepLength
     jointStateSub = n.subscribe("/snakebot/joint_states", 1, &PositionController::jointStateCallback, this);
     desiredPositionPub = n.advertise<std_msgs::Float64MultiArray>("/snakebot/desired_joint_positions", 1);
     effortPub = n.advertise<snakebot_position_control::PositionControlEffort>("/snakebot/position_controller_effort", 1);
-
+    LabViewDesiredPositionPub = n.advertise<std_msgs::Float64MultiArray>("/LabVIEW_ROS/from_ROS_reference_angles",1);
     desiredPosition.resize(numJoints);
     currentPosition.resize(numJoints);
     currentVelocity.resize(numJoints);
@@ -52,7 +52,12 @@ PositionController::~PositionController()
 void PositionController::desiredPositionCallback(const std_msgs::Float64MultiArray::ConstPtr &msg){
     desiredPosition = msg->data;
     desiredPositionReady = true;
-    cout<<"desiredmsgsize "<<msg->data.size()<<endl;
+    std_msgs::Float64MultiArray LabViewDesiredPosition;
+    for(int i=0;i<msg->data.size();i++){
+        LabViewDesiredPosition.data = desiredPosition;//msg->data[i];
+    }
+    LabViewDesiredPositionPub.publish(LabViewDesiredPosition);
+   // cout<<"desiredmsgsize "<<msg->data.size()<<endl;
    // cout<<"desiredPositionReady: " << desiredPositionReady;
     //cout<<"currentPositionReady: " <<currentPositionReady;
 }
@@ -88,6 +93,10 @@ void PositionController::calculateAndPublishEffort(){
         errorPrev = desiredPosition - currentPosition; // to prevent a jump when the controller first starts
         firstRun = false;
     }
+   // for(int i=0;i<desiredPosition.size();i++){
+     //  cout<< i<<" : "<< desiredPosition[i]<<endl;
+    //}
+    //cout<<endl;
     error = desiredPosition - currentPosition;
     //cout << "desiredsize: "<<desiredPosition.size()<<endl;
     //cout << "currentsize: "<<currentPosition.size()<<endl;

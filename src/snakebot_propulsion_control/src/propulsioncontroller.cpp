@@ -67,7 +67,7 @@ void PropulsionController::snakePoseCallback(const snakebot_robot_pose::Pose::Co
 }
 
 float PropulsionController::reduceForceResolution(float force){
-    if(force >= -1.0 && force <= -0.5){
+    if(force >= -1.0 && force <= -0.50){
         //return -0.75;
         return -0.80;
     }

@@ -7,6 +7,7 @@
 
 #include "ros/ros.h"
 #include "std_msgs/UInt16MultiArray.h"
+#include "std_msgs/Float32MultiArray.h"
 
 
 using std::cout;
@@ -37,6 +38,8 @@ private:
 	ros::Subscriber SGDataJoint11Sub;
 	ros::Subscriber SGDataJoint12Sub;
 	ros::Subscriber SGDataJoint13Sub;
+
+	ros::Publisher SGPub;
 	
 	
 
@@ -46,7 +49,7 @@ public:
 
 	bool jointAddedToSnake(int jointNum);
 
-	void SGDataJoint1Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
+	void SGDataJoint1Callback(const std_msgs::Float32MultiArray::ConstPtr &msg);
 	void SGDataJoint2Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
 	void SGDataJoint3Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
 	void SGDataJoint4Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
