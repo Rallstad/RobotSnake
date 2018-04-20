@@ -11,7 +11,7 @@ int main(int argc, char **argv){
     while(ros::ok()){
         
         topic_collector.publishJointPose();
-        topic_collector.publishVisualSnakeJointPose();
+        topic_collector.publishObstacles();
     	ros::spinOnce();
     	loop_rate.sleep();
 

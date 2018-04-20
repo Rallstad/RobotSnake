@@ -3,6 +3,6 @@ prefix=/home/snake/Documents/catkin_ws/install
 Name: snakebot_matlab_communication
 Description: Description of snakebot_matlab_communication
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/snake/Documents/catkin_ws/install/lib 
-Requires: 
+Cflags: -I/home/snake/Documents/catkin_ws/install/include
+Libs: -L/home/snake/Documents/catkin_ws/install/lib -lsnakebot_matlab_communication
+Requires: roscpp rospy std_msgs message_runtime

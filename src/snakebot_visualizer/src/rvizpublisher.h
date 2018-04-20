@@ -1,18 +1,49 @@
 #pragma once
 
 #include <ros/ros.h>
-#include <visualization_msgs/Marker.h>
+#include "geometry_msgs/Pose2D.h"
+#include "geometry_msgs/Point.h"
+#include "visualization_msgs/Marker.h"
+#include "visualization_msgs/MarkerArray.h"
+#include "snakebot_labview_communication/Float64Array.h"
+#include "snakebot_labview_communication/Int32Array.h"
+#include "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h"
+#include "/home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.h"
+#include "/home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/rvizpublisher.h"
 #include "statesubscriber.h"
 #include "datatypes.h"
+//#include "tf/Quaternion.h"
+
 
 using std::cout;
 using std::endl;
 
 class RVizPublisher{
 private:
+    visualization_msgs::MarkerArray visualJointPose;
+    visualization_msgs::MarkerArray kinematicsJointPose;
+    visualization_msgs::MarkerArray obstaclePosition;
+
+    geometry_msgs::Pose2D kinematicsJointPoses[13];
+    geometry_msgs::Pose2D visualJointPoses[13];
+    geometry_msgs::Pose2D obstaclePositions[3];
+    float sgData[13];
+
+
+
     ros::NodeHandle rosNode;
 
-    ros::Publisher 	rvizPub;
+    ros::Subscriber obstacleSub;
+    ros::Subscriber visualJointPoseSub;
+    ros::Subscriber kinematicsJointPoseSub;
+    ros::Subscriber sgDataSub;
+
+    ros::Publisher rvizPub;
+    ros::Publisher rvizVisualJointPub;
+    ros::Publisher rvizKinematicsJointPub;
+    ros::Publisher rvizObstaclePub;
+    ros::Publisher rvizNormalForcePub;
+    ros::Publisher rvizTangentForcePub;
 
     visualization_msgs::Marker normalsMarker;
     visualization_msgs::Marker resultantNormalsMarker;
@@ -35,8 +66,20 @@ private:
     void clearMarkerPointData();
     void updateMarkers();
 
+    void obstaclesCallback(const snakebot_visual_data_topic_collector::obstacles::ConstPtr &msg);
+    void visualJointsCallback(const snakebot_visual_data_topic_collector::jointposes::ConstPtr &msg);
+    void kinematicsJointsCallback(const snakebot_kinematics::kinematics::ConstPtr &msg);
+    void sgDataCallback(const std_msgs::Float32MultiArray::ConstPtr &msg);
+
+
 public:
     RVizPublisher(ros::NodeHandle rosNodeHandle, int numberOfLinks);
+    ~RVizPublisher();
     void publishToRViz();
     void getData(StateSubscriber stateSub);
+    void publishVisualObstacle();
+    void publishVisualTangentForce();
+    void publishVisualNormalForce();
+    void publishVisualSnakeJointPose();
+    void publishKinematicsSnakeJointPose();
 };

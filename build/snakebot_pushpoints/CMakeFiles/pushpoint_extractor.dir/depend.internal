@@ -4,6 +4,8 @@
 snakebot_pushpoints/CMakeFiles/pushpoint_extractor.dir/src/pushpointextractor.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/LinkContacts.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/SnakeContacts.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_pushpoints/Pushpoints.h
  /home/snake/Documents/catkin_ws/src/snakebot_pushpoints/src/pushpointextractor.cpp
  /home/snake/Documents/catkin_ws/src/snakebot_pushpoints/src/pushpointextractor.h

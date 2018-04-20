@@ -4,10 +4,19 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <string>
+#include <math.h>
 
 #include "ros/ros.h"
 #include "std_msgs/UInt16MultiArray.h"
 #include "std_msgs/Float32MultiArray.h"
+#include <snakebot_kinematics/kinematics.h>
+#include "geometry_msgs/Pose2D.h"
+#include "geometry_msgs/Vector3.h"
+#include "geometry_msgs/Point.h"
+#include <snakebot_matlab_communication/collision.h>
+#include <snakebot_matlab_communication/collisionList.h>
+
 
 
 using std::cout;
@@ -15,17 +24,13 @@ using std::endl;
 
 using namespace std;
 
-struct Joint{
-	std::vector<int> SGData;
-	int jointID;
-	Joint(std::vector<int> SG, int ID):SGData(SG),jointID(ID){}
-};
-
 class Snake{
 private:
-	std::map<int,vector<int>> snakeJoints;
+	geometry_msgs::Pose2D jointPoses [13];
+	float SGData [13];
+	float linkWidth = 0.07;
 
-	ros::Subscriber SGDataJoint1Sub;
+	ros::Subscriber SGDataJointSub;
 	ros::Subscriber SGDataJoint2Sub;
 	ros::Subscriber SGDataJoint3Sub;
 	ros::Subscriber SGDataJoint4Sub;
@@ -39,17 +44,18 @@ private:
 	ros::Subscriber SGDataJoint12Sub;
 	ros::Subscriber SGDataJoint13Sub;
 
-	ros::Publisher SGPub;
+	ros::Subscriber SnakePoseSub;
 	
+	ros::Publisher SGPub;
+	ros::Publisher CollisionListPub;
 	
 
 public:
 	Snake(ros::NodeHandle n);
 	~Snake();
 
-	bool jointAddedToSnake(int jointNum);
 
-	void SGDataJoint1Callback(const std_msgs::Float32MultiArray::ConstPtr &msg);
+	void SGDataJointCallback(const std_msgs::Float32MultiArray::ConstPtr &msg);
 	void SGDataJoint2Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
 	void SGDataJoint3Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
 	void SGDataJoint4Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
@@ -62,6 +68,14 @@ public:
 	void SGDataJoint11Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
 	void SGDataJoint12Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
 	void SGDataJoint13Callback(const std_msgs::UInt16MultiArray::ConstPtr &msg);
-	
 
+	
+	void SnakePoseCallback(const snakebot_kinematics::kinematics::ConstPtr& msg);
+
+	void publishCollisions();
+
+	string getContactSide(float contactForce);
+	geometry_msgs::Vector3 getContactNormal(string contactSide, float jointAngle);
+	geometry_msgs::Vector3 getContactTangent(string contactSide, float jointAngle);
+	geometry_msgs::Point getContactPosition(string contactSide, geometry_msgs::Pose2D jointPose);
 };

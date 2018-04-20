@@ -1,15 +1,16 @@
 #include "pushpointextractor.h"
 
 PushpointExtractor::PushpointExtractor(ros::NodeHandle n, int numberOfLinks): n(n), numberOfLinks(numberOfLinks), threePushPointsFound(false){
-    snakeContactsSub = n.subscribe("/snakebot/collisions", 1, &PushpointExtractor::snakeContactsCallback, this);
-    SGSub = n.subscribe("from_matlab/SG", 1, &PushpointExtractor::mambaExtractPushPoints, this);
+   // snakeContactsSub = n.subscribe("/snakebot/collisions", 1, &PushpointExtractor::snakeContactsCallback, this);
+    snakeContactsMatlabSub = n.subscribe("/snakebot/collisionsFromMatlab", 1, &PushpointExtractor::snakeContactsCallback,this);
+    //SGSub = n.subscribe("from_matlab/SG", 1, &PushpointExtractor::mambaExtractPushPoints, this);
     pushPointPub = n.advertise<snakebot_pushpoints::Pushpoints>("/snakebot/pushpoints", 1);
 
     LabVIEW_PushPointsPub = n.advertise<snakebot_pushpoints::Pushpoints>("LabVIEW_ROS/from_ROS_push_points", 1);
 }
 
-
-void PushpointExtractor::snakeContactsCallback(const snakebot_collisions::SnakeContacts::ConstPtr &contactMsg){
+//parameter changed from snakebot_pushpoints
+void PushpointExtractor::snakeContactsCallback(const snakebot_matlab_communication::collisionList::ConstPtr &contactMsg){
     snakebot_pushpoints::Pushpoints pushPointMsg;
     pushPointMsg = extractPushpoints(contactMsg);
     if (threePushPointsFound == true){
@@ -22,8 +23,8 @@ void PushpointExtractor::publishPushPoints(snakebot_pushpoints::Pushpoints pushP
 
     LabVIEW_PushPointsPub.publish(pushPointMsg);
 }
-
-snakebot_pushpoints::Pushpoints PushpointExtractor::extractPushpoints(const snakebot_collisions::SnakeContacts::ConstPtr& contactMsg){
+//parameter changed from snakebot_pushpoints
+snakebot_pushpoints::Pushpoints PushpointExtractor::extractPushpoints(const snakebot_matlab_communication::collisionList::ConstPtr& contactMsg){
     snakebot_pushpoints::Pushpoints pushPointMsg;
     std::string obstacleSide = "empty";
     int pushPointsAdded = 0;

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "snakebot_visual_data_topic_collector: 1 messages, 0 services")
+message(STATUS "snakebot_visual_data_topic_collector: 2 messages, 0 services")
 
 set(MSG_I_FLAGS "-Isnakebot_visual_data_topic_collector:/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg")
 
@@ -15,9 +15,14 @@ add_custom_target(snakebot_visual_data_topic_collector_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg" NAME_WE)
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg" NAME_WE)
 add_custom_target(_snakebot_visual_data_topic_collector_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_visual_data_topic_collector" "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg" "geometry_msgs/Pose2D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_visual_data_topic_collector" "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg" "geometry_msgs/Pose2D"
+)
+
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg" NAME_WE)
+add_custom_target(_snakebot_visual_data_topic_collector_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_visual_data_topic_collector" "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg" "geometry_msgs/Pose2D"
 )
 
 #
@@ -27,7 +32,13 @@ add_custom_target(_snakebot_visual_data_topic_collector_generate_messages_check_
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(snakebot_visual_data_topic_collector
-  "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg"
+  "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/snakebot_visual_data_topic_collector
+)
+_generate_msg_cpp(snakebot_visual_data_topic_collector
+  "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/snakebot_visual_data_topic_collector
@@ -47,7 +58,9 @@ add_custom_target(snakebot_visual_data_topic_collector_generate_messages_cpp
 add_dependencies(snakebot_visual_data_topic_collector_generate_messages snakebot_visual_data_topic_collector_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg" NAME_WE)
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg" NAME_WE)
+add_dependencies(snakebot_visual_data_topic_collector_generate_messages_cpp _snakebot_visual_data_topic_collector_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg" NAME_WE)
 add_dependencies(snakebot_visual_data_topic_collector_generate_messages_cpp _snakebot_visual_data_topic_collector_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -60,7 +73,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS snakebot_visual_data_topic_collecto
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(snakebot_visual_data_topic_collector
-  "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg"
+  "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/snakebot_visual_data_topic_collector
+)
+_generate_msg_lisp(snakebot_visual_data_topic_collector
+  "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/snakebot_visual_data_topic_collector
@@ -80,7 +99,9 @@ add_custom_target(snakebot_visual_data_topic_collector_generate_messages_lisp
 add_dependencies(snakebot_visual_data_topic_collector_generate_messages snakebot_visual_data_topic_collector_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg" NAME_WE)
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg" NAME_WE)
+add_dependencies(snakebot_visual_data_topic_collector_generate_messages_lisp _snakebot_visual_data_topic_collector_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg" NAME_WE)
 add_dependencies(snakebot_visual_data_topic_collector_generate_messages_lisp _snakebot_visual_data_topic_collector_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -93,7 +114,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS snakebot_visual_data_topic_collecto
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(snakebot_visual_data_topic_collector
-  "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg"
+  "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/snakebot_visual_data_topic_collector
+)
+_generate_msg_py(snakebot_visual_data_topic_collector
+  "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/snakebot_visual_data_topic_collector
@@ -113,7 +140,9 @@ add_custom_target(snakebot_visual_data_topic_collector_generate_messages_py
 add_dependencies(snakebot_visual_data_topic_collector_generate_messages snakebot_visual_data_topic_collector_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg" NAME_WE)
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg" NAME_WE)
+add_dependencies(snakebot_visual_data_topic_collector_generate_messages_py _snakebot_visual_data_topic_collector_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg" NAME_WE)
 add_dependencies(snakebot_visual_data_topic_collector_generate_messages_py _snakebot_visual_data_topic_collector_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

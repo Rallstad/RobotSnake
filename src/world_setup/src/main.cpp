@@ -41,7 +41,7 @@ public:
 	world_setup(ros::NodeHandle nodeHandle);
 	void writeObstacleFile();
 	bool getPoseAcquired(int obstacle_num);
-	void simulateSnake();
+	void spawnRealSnakeStartingConfiguration();
 
 };
 
@@ -51,7 +51,7 @@ world_setup::world_setup(ros::NodeHandle nodeHandle){
 	obstacle1Sub = n.subscribe("/obstacle_1/ground_pose", 10, &world_setup::Obstacle1PoseCallback, this);
 	obstacle2Sub = n.subscribe("/obstacle_2/ground_pose", 10, &world_setup::Obstacle2PoseCallback, this);
 	obstacle3Sub = n.subscribe("/obstacle_3/ground_pose", 10, &world_setup::Obstacle3PoseCallback, this);
-	snakeHeadSub = n.subscribe("/joint_12/ground_pose", 10, &world_setup::joint_0Callback, this);
+	snakeHeadSub = n.subscribe("/joint_0/ground_pose", 10, &world_setup::joint_0Callback, this);
 	snakeJointPositionSub = n.subscribe("/LabVIEW_ROS/from_LabVIEW_measured_angles", 20, &world_setup::jointStateCallback, this);
 }
 
@@ -245,7 +245,7 @@ void world_setup::writeObstacleFile(){
 }
 
 
-void world_setup::simulateSnake(){
+void world_setup::spawnRealSnakeStartingConfiguration(){
 	int counter = 0;
 
 	const char* demoStart = 
@@ -343,7 +343,7 @@ int main(int argc, char **argv){
 		ros::spinOnce();
 		//build_simple_doc();
 		if(World_setup.getPoseAcquired(1) && World_setup.getPoseAcquired(2) && World_setup.getPoseAcquired(3) && World_setup.getPoseAcquired(4)){
-			World_setup.simulateSnake();
+			World_setup.spawnRealSnakeStartingConfiguration();
 			World_setup.writeObstacleFile();
 			fileWritten = 1;
 		}

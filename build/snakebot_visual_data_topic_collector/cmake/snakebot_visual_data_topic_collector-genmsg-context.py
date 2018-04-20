@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg"
+messages_str = "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg;/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg"
 services_str = ""
 pkg_name = "snakebot_visual_data_topic_collector"
 dependencies_str = "std_msgs;geometry_msgs"

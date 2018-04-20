@@ -17,7 +17,6 @@ void StateSubscriber::jointPoseCallback(const snakebot_kinematics::kinematics::C
             jointPose = Pose2d(msg->pose[i].x, msg->pose[i].y, msg->pose[i].theta);
             return;
         }
-        cout<< i<<endl; 
     }
     cout << "ERROR: there is no tail" << endl;
 }

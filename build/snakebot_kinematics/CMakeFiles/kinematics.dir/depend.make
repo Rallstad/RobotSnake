@@ -4,7 +4,8 @@
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Float64Array.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Int32Array.h
-snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/visual_data_topic_collector.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/jointposes.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/obstacles.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.cpp
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
@@ -84,6 +85,7 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/ind
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/roslz4/lz4s.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/ColorRGBA.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/Float64MultiArray.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/indigo/include/std_msgs/Int32.h
@@ -96,7 +98,8 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/kinematics.cpp.o: /opt/ros/ind
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Float64Array.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Int32Array.h
-snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/visual_data_topic_collector.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/jointposes.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/obstacles.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/main.cpp
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
@@ -176,6 +179,7 @@ snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/in
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/roslz4/lz4s.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/ColorRGBA.h
+snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Float64MultiArray.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 snakebot_kinematics/CMakeFiles/kinematics.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Int32.h

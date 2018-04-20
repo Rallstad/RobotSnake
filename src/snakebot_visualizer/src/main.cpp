@@ -27,6 +27,11 @@ int main( int argc, char** argv )
     while (ros::ok()){
         //cout << "in while loop" << endl;
         rvizPublisher.getData(stateSubscriber);
+        rvizPublisher.publishVisualSnakeJointPose();
+        rvizPublisher.publishVisualNormalForce();
+        rvizPublisher.publishVisualTangentForce();
+        rvizPublisher.publishVisualObstacle();
+        rvizPublisher.publishKinematicsSnakeJointPose();
         //cout << "successfull getData" << endl;
         rvizPublisher.publishToRViz();
         //cout << "done publishing data " << endl;

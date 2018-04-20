@@ -29,11 +29,12 @@ private:
 	float jointAnglesWorld[13];
 
 	geometry_msgs::Pose2D jointPoses[13];
-	visualization_msgs::MarkerArray jointPose;
-	ros::Subscriber measuredJointAnglesSub;
-	ros::Subscriber headGroundPoseSub;
-	ros::Subscriber jointPoseSub;
+	geometry_msgs::Pose2D jointPosesPrev[13];
+	//visualization_msgs::MarkerArray jointPose;
 
+	ros::Subscriber measuredJointAnglesSub;
+	//ros::Subscriber headGroundPoseSub;
+	ros::Subscriber jointPoseSub;
 	ros::Subscriber matlabTestSub;
 
 	ros::Publisher snakeConfigurationPub;
@@ -41,14 +42,14 @@ private:
 
 	void anglesCallback(const snakebot_labview_communication::Float64Array::ConstPtr &msg);
 	void headGroundPoseCallback(const geometry_msgs::Pose2D::ConstPtr &msg);
-	void jointPoseCallback(const snakebot_visual_data_topic_collector::visual_data_topic_collector::ConstPtr &msg);
+	void jointPoseCallback(const snakebot_visual_data_topic_collector::jointposes::ConstPtr &msg);
 	void matlabCallback(const geometry_msgs::Point::ConstPtr &msg);
 
 public:
 	void calculateJointAnglesWorld();
 	void calculateJointPosition();
 	void publishSnakeConfiguration();
-	void publishKinematicsSnakeJointPose();
+	//void publishKinematicsSnakeJointPose();
 	void writeJointPosesToFile();
 	//geometry_msgs::Pose2D getHeadGroundPose();
 	geometry_msgs::Pose2D getjointPose(int joint_num);

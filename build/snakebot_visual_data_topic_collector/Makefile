@@ -150,18 +150,32 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector.dir/rule:
-	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector.dir/rule
-.PHONY : snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector.dir/rule
+snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes.dir/rule:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes.dir/rule
+.PHONY : snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes.dir/rule
 
 # Convenience name for target.
-_snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector: snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector.dir/rule
-.PHONY : _snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector
+_snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes: snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes.dir/rule
+.PHONY : _snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes
 
 # fast build rule for target.
-_snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector/fast:
-	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector.dir/build.make snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector.dir/build
-.PHONY : _snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector/fast
+_snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes/fast:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes.dir/build.make snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes.dir/build
+.PHONY : _snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes/fast
+
+# Convenience name for target.
+snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles.dir/rule:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles.dir/rule
+.PHONY : snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles.dir/rule
+
+# Convenience name for target.
+_snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles: snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles.dir/rule
+.PHONY : _snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles
+
+# fast build rule for target.
+_snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles/fast:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles.dir/build.make snakebot_visual_data_topic_collector/CMakeFiles/_snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles.dir/build
+.PHONY : _snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles/fast
 
 # Convenience name for target.
 snakebot_visual_data_topic_collector/CMakeFiles/snakebot_visual_data_topic_collector_gencpp.dir/rule:
@@ -329,7 +343,8 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... _snakebot_visual_data_topic_collector_generate_messages_check_deps_visual_data_topic_collector"
+	@echo "... _snakebot_visual_data_topic_collector_generate_messages_check_deps_jointposes"
+	@echo "... _snakebot_visual_data_topic_collector_generate_messages_check_deps_obstacles"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"

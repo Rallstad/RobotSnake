@@ -45,24 +45,34 @@ CMAKE_BINARY_DIR = /home/snake/Documents/catkin_ws/build
 # Include the progress variables for this target.
 include snakebot_visual_data_topic_collector/CMakeFiles/snakebot_visual_data_topic_collector_generate_messages_py.dir/progress.make
 
-snakebot_visual_data_topic_collector/CMakeFiles/snakebot_visual_data_topic_collector_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_visual_data_topic_collector.py
+snakebot_visual_data_topic_collector/CMakeFiles/snakebot_visual_data_topic_collector_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_jointposes.py
+snakebot_visual_data_topic_collector/CMakeFiles/snakebot_visual_data_topic_collector_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_obstacles.py
 snakebot_visual_data_topic_collector/CMakeFiles/snakebot_visual_data_topic_collector_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/__init__.py
 
-/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_visual_data_topic_collector.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
-/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_visual_data_topic_collector.py: /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg
-/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_visual_data_topic_collector.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_jointposes.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_jointposes.py: /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_jointposes.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG snakebot_visual_data_topic_collector/visual_data_topic_collector"
-	cd /home/snake/Documents/catkin_ws/build/snakebot_visual_data_topic_collector && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/visual_data_topic_collector.msg -Isnakebot_visual_data_topic_collector:/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_visual_data_topic_collector -o /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG snakebot_visual_data_topic_collector/jointposes"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_visual_data_topic_collector && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/jointposes.msg -Isnakebot_visual_data_topic_collector:/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_visual_data_topic_collector -o /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg
+
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_obstacles.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_obstacles.py: /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_obstacles.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG snakebot_visual_data_topic_collector/obstacles"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_visual_data_topic_collector && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg/obstacles.msg -Isnakebot_visual_data_topic_collector:/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_visual_data_topic_collector -o /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg
 
 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
-/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/__init__.py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_visual_data_topic_collector.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/__init__.py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_jointposes.py
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/__init__.py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_obstacles.py
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python msg __init__.py for snakebot_visual_data_topic_collector"
 	cd /home/snake/Documents/catkin_ws/build/snakebot_visual_data_topic_collector && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg --initpy
 
 snakebot_visual_data_topic_collector_generate_messages_py: snakebot_visual_data_topic_collector/CMakeFiles/snakebot_visual_data_topic_collector_generate_messages_py
-snakebot_visual_data_topic_collector_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_visual_data_topic_collector.py
+snakebot_visual_data_topic_collector_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_jointposes.py
+snakebot_visual_data_topic_collector_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/_obstacles.py
 snakebot_visual_data_topic_collector_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_visual_data_topic_collector/msg/__init__.py
 snakebot_visual_data_topic_collector_generate_messages_py: snakebot_visual_data_topic_collector/CMakeFiles/snakebot_visual_data_topic_collector_generate_messages_py.dir/build.make
 .PHONY : snakebot_visual_data_topic_collector_generate_messages_py
