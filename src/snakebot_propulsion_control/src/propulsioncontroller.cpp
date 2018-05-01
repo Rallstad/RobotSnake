@@ -8,15 +8,14 @@ PropulsionController::PropulsionController(ros::NodeHandle handle)
     propForceSub = n.subscribe("/snakebot/propulsion_force", 1000, &PropulsionController::propulsionForceCallback, this);
     robotPoseSub = n.subscribe("snakebot/robot_pose", 1000, &PropulsionController::snakePoseCallback,this);
     propulsionEffortPub = n.advertise<snakebot_propulsion_control::PropulsionEffort>("/snakebot/propulsion_effort", 1000);
+    propulsionEffortMambaPub = n.advertise<std_msgs::Float64MultiArray>("/snakebot/propulsion_effort_to_matlab", 1000);
     obstacleDataInitialized = false;
     positionDataInitialized = false;
     propForceReceived = false;
 
     //Set length of vectors
 }
-PropulsionController::~PropulsionController()
-{
-}
+PropulsionController::~PropulsionController(){}
 
 void PropulsionController::setPhysicalSpec(double totalMass, double linkLength, double linkWidth, double linkHeight, double linkToJointLength){
     this->totalMass = totalMass;
@@ -193,13 +192,15 @@ void PropulsionController::publishTorque(){
     if (c3Side == "left"){
         if (desiredTorque.z < 0.0){
             cout << "Left, desiredTorqueZ = " <<desiredTorque.z << " Calculated torque is in wrong direction, won't publish" <<endl;
-            return;
+            desiredTorque.z = -desiredTorque.z;
+            //return;
         }
     }
     else if (c3Side == "right"){
         if (desiredTorque.z > 0.0){
             cout << "Right, desiredTorqueZ = " <<desiredTorque.z << " Calculated torque is in wrong direction, won't publish" <<endl;
-            return;
+            desiredTorque.z = -desiredTorque.z;
+            //return;
         }
     }
     std::stringstream ss;
@@ -208,11 +209,25 @@ void PropulsionController::publishTorque(){
     ROS_INFO("%s", output.c_str());
 
     // Normal mode:
+    if(desiredTorque.z > 900){
+        desiredTorque.z = 900;
+    }
+    if(desiredTorque.z < -900){
+        desiredTorque.z = -900;
+    }
     snakebot_propulsion_control::PropulsionEffort msg;
     msg.jointNum = torqueJoint;
     msg.effort = desiredTorque.z;
     msg.pubTime = ros::Time::now();
     propulsionEffortPub.publish(msg);
+
+    std_msgs::Float64MultiArray message;
+    message.data.push_back(desiredTorque.z);
+    message.data.push_back(torqueJoint);
+    propulsionEffortMambaPub.publish(message);
+
+
+
 
 }
 

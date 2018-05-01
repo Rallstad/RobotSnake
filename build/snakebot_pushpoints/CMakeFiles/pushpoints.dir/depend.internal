@@ -4,14 +4,17 @@
 snakebot_pushpoints/CMakeFiles/pushpoints.dir/src/main.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/LinkContacts.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/SnakeContacts.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_pushpoints/Pushpoints.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/obstacles.h
  /home/snake/Documents/catkin_ws/src/snakebot_pushpoints/src/main.cpp
  /home/snake/Documents/catkin_ws/src/snakebot_pushpoints/src/pushpointextractor.h
  /opt/ros/indigo/include/XmlRpcDecl.h
  /opt/ros/indigo/include/XmlRpcValue.h
  /opt/ros/indigo/include/geometry_msgs/Point.h
+ /opt/ros/indigo/include/geometry_msgs/Pose2D.h
  /opt/ros/indigo/include/geometry_msgs/Vector3.h
  /opt/ros/indigo/include/ros/advertise_options.h
  /opt/ros/indigo/include/ros/advertise_service_options.h

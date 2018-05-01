@@ -15,7 +15,6 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
-#include <std_msgs/Header.h>
 #include <geometry_msgs/Vector3.h>
 #include <geometry_msgs/Vector3.h>
 #include <geometry_msgs/Point.h>
@@ -28,16 +27,14 @@ struct collision_
   typedef collision_<ContainerAllocator> Type;
 
   collision_()
-    : header()
-    , link(0)
+    : link(0)
     , contact_sides()
     , contact_normals()
     , contact_tangents()
     , contact_positions()  {
     }
   collision_(const ContainerAllocator& _alloc)
-    : header(_alloc)
-    , link(0)
+    : link(0)
     , contact_sides(_alloc)
     , contact_normals(_alloc)
     , contact_tangents(_alloc)
@@ -46,9 +43,6 @@ struct collision_
     }
 
 
-
-   typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
-  _header_type header;
 
    typedef int32_t _link_type;
   _link_type link;
@@ -98,7 +92,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
+// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
 // {'geometry_msgs': ['/opt/ros/indigo/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/indigo/share/std_msgs/cmake/../msg'], 'snakebot_matlab_communication': ['/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
@@ -128,12 +122,12 @@ struct IsMessage< ::snakebot_matlab_communication::collision_<ContainerAllocator
 
 template <class ContainerAllocator>
 struct HasHeader< ::snakebot_matlab_communication::collision_<ContainerAllocator> >
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
 struct HasHeader< ::snakebot_matlab_communication::collision_<ContainerAllocator> const>
-  : TrueType
+  : FalseType
   { };
 
 
@@ -142,12 +136,12 @@ struct MD5Sum< ::snakebot_matlab_communication::collision_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "e501bfb903e4dfcb8c45d45d37b998c0";
+    return "971ce8441001f4aa8ad2474de0c41c08";
   }
 
   static const char* value(const ::snakebot_matlab_communication::collision_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xe501bfb903e4dfcbULL;
-  static const uint64_t static_value2 = 0x8c45d45d37b998c0ULL;
+  static const uint64_t static_value1 = 0x971ce8441001f4aaULL;
+  static const uint64_t static_value2 = 0x8ad2474de0c41c08ULL;
 };
 
 template<class ContainerAllocator>
@@ -166,9 +160,7 @@ struct Definition< ::snakebot_matlab_communication::collision_<ContainerAllocato
 {
   static const char* value()
   {
-    return "Header header\n\
-\n\
-#link number\n\
+    return "#link number\n\
 int32 link\n\
 \n\
 #contact side (left or right)\n\
@@ -182,24 +174,6 @@ geometry_msgs/Vector3[] contact_tangents\n\
 \n\
 #positions\n\
 geometry_msgs/Point[] contact_positions\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-\n\
 ================================================================================\n\
 MSG: geometry_msgs/Vector3\n\
 # This represents a vector in free space. \n\
@@ -236,7 +210,6 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.header);
       stream.next(m.link);
       stream.next(m.contact_sides);
       stream.next(m.contact_normals);
@@ -260,9 +233,6 @@ struct Printer< ::snakebot_matlab_communication::collision_<ContainerAllocator> 
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::snakebot_matlab_communication::collision_<ContainerAllocator>& v)
   {
-    s << indent << "header: ";
-    s << std::endl;
-    Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "link: ";
     Printer<int32_t>::stream(s, indent + "  ", v.link);
     s << indent << "contact_sides[]" << std::endl;

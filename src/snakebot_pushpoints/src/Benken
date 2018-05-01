@@ -1,0 +1,204 @@
+#include "pushpointextractor.h"
+
+PushpointExtractor::PushpointExtractor(ros::NodeHandle n, int numberOfLinks): n(n), numberOfLinks(numberOfLinks), threePushPointsFound(false){
+   // snakeContactsSub = n.subscribe("/snakebot/collisions", 1, &PushpointExtractor::snakeContactsCallback, this);
+    snakeContactsMatlabSub = n.subscribe("/snakebot/collisionsFromMatlab", 1, &PushpointExtractor::snakeContactsCallback,this);
+    snakeConfigurationSub = n.subscribe("/snakebot/real_snake_pose", 100, &PushpointExtractor::snakePoseCallback,this);
+    obstacleSub = n.subscribe("/snakebot/obstaclePosition", 100, &PushpointExtractor::obstacleCallback, this);
+
+    //SGSub = n.subscribe("from_matlab/SG", 1, &PushpointExtractor::mambaExtractPushPoints, this);
+    pushPointPub = n.advertise<snakebot_pushpoints::Pushpoints>("/snakebot/pushpoints", 1);
+    pushpointCandidatesPub = n.advertise<snakebot_pushpoints::pushpointCandidates>("/snakebot/pushpointCandidates",10);
+    LabVIEW_PushPointsPub = n.advertise<snakebot_pushpoints::Pushpoints>("LabVIEW_ROS/from_ROS_push_points", 1);
+
+    oppositeSide = true;
+
+}
+
+//parameter changed from snakebot_pushpoints
+void PushpointExtractor::snakeContactsCallback(const snakebot_matlab_communication::collisionList::ConstPtr &contactMsg){
+    snakebot_pushpoints::Pushpoints pushPointMsg;
+    pushPointMsg = extractPushpoints(contactMsg);
+    if (threePushPointsFound == true){
+        publishPushPoints(pushPointMsg);
+    }
+}
+
+void PushpointExtractor::publishPushPoints(snakebot_pushpoints::Pushpoints pushPointMsg){
+    pushPointPub.publish(pushPointMsg);
+
+    //LabVIEW_PushPointsPub.publish(pushPointMsg);
+}
+//parameter changed from snakebot_pushpoints
+snakebot_pushpoints::Pushpoints PushpointExtractor::extractPushpoints(const snakebot_matlab_communication::collisionList::ConstPtr& contactMsg){
+    snakebot_pushpoints::Pushpoints pushPointMsg;
+    std::string obstacleSide = "empty";
+    int pushPointsAdded = 0;
+    for (int i = 0 ; (i < contactMsg->link.size()) && (pushPointsAdded < 3) ; i++){
+        if (pushPointsAdded == 2){
+            pushPointMsg.centerContactLink = pushPointMsg.link_numbers[1];
+        }
+        for (int j = 0 ; j < contactMsg->link[i].contact_normals.size() ; j++){
+            if (i == jointCandidates[pushPointsAdded]){//obstacleSide == "empty" && ){
+                pushPointMsg.contact_normals.push_back(contactMsg->link[i].contact_normals[j]);
+                pushPointMsg.contact_tangents.push_back(contactMsg->link[i].contact_tangents[j]);
+                pushPointMsg.contact_positions.push_back(contactMsg->link[i].contact_positions[j]);
+                pushPointMsg.link_numbers.push_back(contactMsg->link[i].link);
+                obstacleSide = contactMsg->link[i].contact_sides[j];
+                pushPointMsg.contact_sides.push_back(obstacleSide);
+                pushPointsAdded++;
+                break;
+            }
+            if (obstacleSide == "left"){
+                if (contactMsg->link[i].contact_sides[j] == "left"){
+                    continue;
+                }
+                else if (i == jointCandidates[pushPointsAdded]){//contactMsg->link[i].contact_sides[j] == "right" && ){
+                    pushPointMsg.contact_normals.push_back(contactMsg->link[i].contact_normals[j]);
+                    pushPointMsg.contact_tangents.push_back(contactMsg->link[i].contact_tangents[j]);
+                    pushPointMsg.contact_positions.push_back(contactMsg->link[i].contact_positions[j]);
+                    pushPointMsg.link_numbers.push_back(contactMsg->link[i].link);
+                    obstacleSide = contactMsg->link[i].contact_sides[j];
+                    pushPointMsg.contact_sides.push_back(obstacleSide);
+                    pushPointsAdded++;
+                    break;
+                }
+            }
+            if (obstacleSide == "right"){
+                if (contactMsg->link[i].contact_sides[j] == "right"){
+                    continue;
+                }
+                else if (i == jointCandidates[pushPointsAdded]){//contactMsg->link[i].contact_sides[j] == "left" && ){
+                    pushPointMsg.contact_normals.push_back(contactMsg->link[i].contact_normals[j]);
+                    pushPointMsg.contact_tangents.push_back(contactMsg->link[i].contact_tangents[j]);
+                    pushPointMsg.contact_positions.push_back(contactMsg->link[i].contact_positions[j]);
+                    pushPointMsg.link_numbers.push_back(contactMsg->link[i].link);
+                    obstacleSide = contactMsg->link[i].contact_sides[j];
+                    pushPointMsg.contact_sides.push_back(obstacleSide);
+                    pushPointsAdded++;
+                    break;
+                }
+            }
+        }
+    }
+    if (pushPointsAdded == 3){
+        threePushPointsFound = true;
+    }
+    else{
+        threePushPointsFound = false;
+    }
+    return pushPointMsg;
+
+}
+void PushpointExtractor::mambaExtractPushPoints(const std_msgs::Float32MultiArray::ConstPtr& sgMsg){
+    bool firstPushpoint = true;
+    std::string contactside;
+    std::vector<std::string> pushpointsside;
+    std::vector<int> pushpointsjoint;    
+    for(int i=sgMsg->data.size();i>0;i-=1){
+        //cout<<i<<endl;
+        if(firstPushpoint){
+            if(sgMsg->data[i-1]< -0.5){
+                pushpointsside.push_back("right");
+                pushpointsjoint.push_back(i-1);
+                contactside = "right";
+            }
+            else if(sgMsg->data[i-1] > 0.5){
+                pushpointsside.push_back("left");
+                pushpointsjoint.push_back(i-1);
+                contactside = "left";
+            }
+            firstPushpoint = false;
+        }
+        if(!firstPushpoint && contactside =="left"){
+            if(sgMsg->data[i-1]< -0.5){
+                pushpointsside.push_back("right");
+                pushpointsjoint.push_back(i-1);
+                contactside = "right";
+            }
+        }
+        if(!firstPushpoint && contactside == "right"){
+            if(sgMsg->data[i-1]> 0.5){
+                pushpointsside.push_back("left");
+                pushpointsjoint.push_back(i-1);
+                contactside = "left";
+            }
+        }
+    }
+    if(pushpointsjoint.size()>= 3){
+        cout<<pushpointsjoint.size()<<" pushpoints found"<<endl;
+        for(int i=0;i<pushpointsjoint.size(); i++){
+            cout<<"Pushpoints: "<<pushpointsjoint[i]<<endl;
+            cout<<pushpointsside[i]<<endl;
+        }
+    }
+    else if(pushpointsjoint.size()<3){
+        cout<<pushpointsjoint.size()<<" pushpoints found"<<endl;
+        for(int i=0;i<pushpointsjoint.size();i++){
+            cout<<"Pushpoints: "<<pushpointsjoint[i]<<endl;
+            cout<<pushpointsside[i]<<endl;
+            cout<<"too few"<<endl;
+        }
+    }
+}
+
+void PushpointExtractor::snakePoseCallback(const snakebot_kinematics::kinematics::ConstPtr& msg){
+    for(int joint_num = 0; joint_num < 13; joint_num++){
+        jointPoses[joint_num].x = msg->pose[joint_num].x;
+        jointPoses[joint_num].y = msg->pose[joint_num].y;
+        //jointPoses[joint_num].theta = msg->pose[joint_num].theta;
+    }
+}
+
+void PushpointExtractor::obstacleCallback(const snakebot_visual_data_topic_collector::obstacles::ConstPtr& msg){
+    for(int obstacle_num = 0; obstacle_num < 3; obstacle_num++){
+        obstacles[obstacle_num].x = msg->obstacles[obstacle_num].x;
+        obstacles[obstacle_num].y = msg->obstacles[obstacle_num].y;
+    }
+}
+
+
+float PushpointExtractor::getJointDistance2Obstacle(int joint, int obstacle){
+    float distance = sqrt(pow((jointPoses[joint].x - obstacles[obstacle].x),2) + pow((jointPoses[joint].y - obstacles[obstacle].y),2));
+    return distance;
+}
+
+void PushpointExtractor::getJointCandidate(){
+    int jointCandidate;
+    std::string side = "none";
+    std::string prevSide = "none";
+    for(int obstacle_num = 0; obstacle_num < 3; obstacle_num++){
+        float shortestDistance = 1000;
+        for(int joint_num = 0; joint_num < 13; joint_num++){
+            float distance = getJointDistance2Obstacle(joint_num, obstacle_num);
+            float x = obstacles[obstacle_num].x - jointPoses[joint_num].x;
+            float y = obstacles[obstacle_num].y - jointPoses[joint_num].y;
+            int angle = atan2(y,x);
+
+            if(angle >= 0){
+                side = "left";
+            }
+            else{
+                side = "right";
+            }
+
+            if(distance < shortestDistance && distance < 0.2 && side != prevSide){
+                prevSide = side;
+                shortestDistance = distance;
+                jointCandidate = joint_num;
+            }
+
+        }
+        jointCandidates[obstacle_num] = jointCandidate;
+    }
+    
+}
+
+void PushpointExtractor::publishJointCandidates(){
+    snakebot_pushpoints::pushpointCandidates candidate;
+    for(int i = 0; i <= 2; i++){
+        candidate.pushpointcandidates.push_back(jointCandidates[i]);
+    }
+    pushpointCandidatesPub.publish(candidate);
+
+}

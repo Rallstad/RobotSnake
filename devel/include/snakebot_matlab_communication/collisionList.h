@@ -114,12 +114,12 @@ struct MD5Sum< ::snakebot_matlab_communication::collisionList_<ContainerAllocato
 {
   static const char* value()
   {
-    return "eb54f2a861e5f515767b913743cb8728";
+    return "21fc1fc203c31c1d074c8b6e77572699";
   }
 
   static const char* value(const ::snakebot_matlab_communication::collisionList_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xeb54f2a861e5f515ULL;
-  static const uint64_t static_value2 = 0x767b913743cb8728ULL;
+  static const uint64_t static_value1 = 0x21fc1fc203c31c1dULL;
+  static const uint64_t static_value2 = 0x074c8b6e77572699ULL;
 };
 
 template<class ContainerAllocator>
@@ -141,8 +141,6 @@ struct Definition< ::snakebot_matlab_communication::collisionList_<ContainerAllo
     return "snakebot_matlab_communication/collision[] link\n\
 ================================================================================\n\
 MSG: snakebot_matlab_communication/collision\n\
-Header header\n\
-\n\
 #link number\n\
 int32 link\n\
 \n\
@@ -157,24 +155,6 @@ geometry_msgs/Vector3[] contact_tangents\n\
 \n\
 #positions\n\
 geometry_msgs/Point[] contact_positions\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-\n\
 ================================================================================\n\
 MSG: geometry_msgs/Vector3\n\
 # This represents a vector in free space. \n\

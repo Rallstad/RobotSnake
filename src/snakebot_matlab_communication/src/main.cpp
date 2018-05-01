@@ -12,6 +12,8 @@ int main(int argc, char **argv){
     	ros::spinOnce();
     	loop_rate.sleep();
         snake.publishCollisions();
+        snake.getJointCandidate();
+        snake.publishJointCandidates();
     }
 
 	return 0;

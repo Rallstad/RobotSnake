@@ -1,5 +1,3 @@
-Header header
-
 #link number
 int32 link
 

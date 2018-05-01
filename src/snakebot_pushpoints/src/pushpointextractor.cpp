@@ -3,15 +3,20 @@
 PushpointExtractor::PushpointExtractor(ros::NodeHandle n, int numberOfLinks): n(n), numberOfLinks(numberOfLinks), threePushPointsFound(false){
    // snakeContactsSub = n.subscribe("/snakebot/collisions", 1, &PushpointExtractor::snakeContactsCallback, this);
     snakeContactsMatlabSub = n.subscribe("/snakebot/collisionsFromMatlab", 1, &PushpointExtractor::snakeContactsCallback,this);
+    //snakeConfigurationSub = n.subscribe("/snakebot/real_snake_pose", 100, &PushpointExtractor::snakePoseCallback,this);
+    
+
     //SGSub = n.subscribe("from_matlab/SG", 1, &PushpointExtractor::mambaExtractPushPoints, this);
     pushPointPub = n.advertise<snakebot_pushpoints::Pushpoints>("/snakebot/pushpoints", 1);
-
+    
     LabVIEW_PushPointsPub = n.advertise<snakebot_pushpoints::Pushpoints>("LabVIEW_ROS/from_ROS_push_points", 1);
+
 }
 
 //parameter changed from snakebot_pushpoints
 void PushpointExtractor::snakeContactsCallback(const snakebot_matlab_communication::collisionList::ConstPtr &contactMsg){
     snakebot_pushpoints::Pushpoints pushPointMsg;
+
     pushPointMsg = extractPushpoints(contactMsg);
     if (threePushPointsFound == true){
         publishPushPoints(pushPointMsg);
@@ -21,7 +26,7 @@ void PushpointExtractor::snakeContactsCallback(const snakebot_matlab_communicati
 void PushpointExtractor::publishPushPoints(snakebot_pushpoints::Pushpoints pushPointMsg){
     pushPointPub.publish(pushPointMsg);
 
-    LabVIEW_PushPointsPub.publish(pushPointMsg);
+    //LabVIEW_PushPointsPub.publish(pushPointMsg);
 }
 //parameter changed from snakebot_pushpoints
 snakebot_pushpoints::Pushpoints PushpointExtractor::extractPushpoints(const snakebot_matlab_communication::collisionList::ConstPtr& contactMsg){
@@ -39,6 +44,8 @@ snakebot_pushpoints::Pushpoints PushpointExtractor::extractPushpoints(const snak
                 pushPointMsg.contact_positions.push_back(contactMsg->link[i].contact_positions[j]);
                 pushPointMsg.link_numbers.push_back(contactMsg->link[i].link);
                 obstacleSide = contactMsg->link[i].contact_sides[j];
+                //cout<<"contactmsg_contactside: "<<contactMsg->link[i].contact_sides[j];
+                cout<<"Obstacleside: "<<obstacleSide<<endl;
                 pushPointMsg.contact_sides.push_back(obstacleSide);
                 pushPointsAdded++;
                 break;
@@ -53,6 +60,7 @@ snakebot_pushpoints::Pushpoints PushpointExtractor::extractPushpoints(const snak
                     pushPointMsg.contact_positions.push_back(contactMsg->link[i].contact_positions[j]);
                     pushPointMsg.link_numbers.push_back(contactMsg->link[i].link);
                     obstacleSide = contactMsg->link[i].contact_sides[j];
+                    cout<<"Obstacleside: "<<obstacleSide<<endl;
                     pushPointMsg.contact_sides.push_back(obstacleSide);
                     pushPointsAdded++;
                     break;
@@ -68,13 +76,16 @@ snakebot_pushpoints::Pushpoints PushpointExtractor::extractPushpoints(const snak
                     pushPointMsg.contact_positions.push_back(contactMsg->link[i].contact_positions[j]);
                     pushPointMsg.link_numbers.push_back(contactMsg->link[i].link);
                     obstacleSide = contactMsg->link[i].contact_sides[j];
+                    cout<<"Obstacleside: "<<obstacleSide<<endl;
                     pushPointMsg.contact_sides.push_back(obstacleSide);
                     pushPointsAdded++;
                     break;
                 }
             }
         }
+
     }
+    cout<<"pushpoints: "<<pushPointsAdded<<endl;
     if (pushPointsAdded == 3){
         threePushPointsFound = true;
     }
@@ -84,6 +95,7 @@ snakebot_pushpoints::Pushpoints PushpointExtractor::extractPushpoints(const snak
     return pushPointMsg;
 
 }
+
 void PushpointExtractor::mambaExtractPushPoints(const std_msgs::Float32MultiArray::ConstPtr& sgMsg){
     bool firstPushpoint = true;
     std::string contactside;

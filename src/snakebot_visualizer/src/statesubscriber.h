@@ -25,7 +25,7 @@ private:
     void robotPoseCallback(const snakebot_robot_pose::Pose::ConstPtr& msg);
     void contactCallback(const snakebot_collisions::SnakeContacts::ConstPtr& msg);
     void effortCallback(const snakebot_propulsion_control::PropulsionEffort::ConstPtr& msg);
-    void jointPoseCallback(const snakebot_kinematics::kinematics::ConstPtr &msg);
+    //void jointPoseCallback(const snakebot_kinematics::kinematics::ConstPtr &msg);
     void rotateContacts( ContactData& contacts, double da);
     void translateContactPositions( ContactData& contacts, double dx, double dy, double dz );
 

@@ -7,17 +7,14 @@ import struct
 
 import snakebot_matlab_communication.msg
 import geometry_msgs.msg
-import std_msgs.msg
 
 class collisionList(genpy.Message):
-  _md5sum = "eb54f2a861e5f515767b913743cb8728"
+  _md5sum = "21fc1fc203c31c1d074c8b6e77572699"
   _type = "snakebot_matlab_communication/collisionList"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """snakebot_matlab_communication/collision[] link
 ================================================================================
 MSG: snakebot_matlab_communication/collision
-Header header
-
 #link number
 int32 link
 
@@ -32,24 +29,6 @@ geometry_msgs/Vector3[] contact_tangents
 
 #positions
 geometry_msgs/Point[] contact_positions
-================================================================================
-MSG: std_msgs/Header
-# Standard metadata for higher-level stamped data types.
-# This is generally used to communicate timestamped data 
-# in a particular coordinate frame.
-# 
-# sequence ID: consecutively increasing ID 
-uint32 seq
-#Two-integer timestamp that is expressed as:
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')
-# time-handling sugar is provided by the client library
-time stamp
-#Frame this data is associated with
-# 0: no frame
-# 1: global frame
-string frame_id
-
 ================================================================================
 MSG: geometry_msgs/Vector3
 # This represents a vector in free space. 
@@ -109,20 +88,6 @@ float64 z
       length = len(self.link)
       buff.write(_struct_I.pack(length))
       for val1 in self.link:
-        _v1 = val1.header
-        buff.write(_struct_I.pack(_v1.seq))
-        _v2 = _v1.stamp
-        _x = _v2
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
-        _x = _v1.frame_id
-        length = len(_x)
-        if python3 or type(_x) == unicode:
-          _x = _x.encode('utf-8')
-          length = len(_x)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *_x))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, _x))
         buff.write(_struct_i.pack(val1.link))
         length = len(val1.contact_sides)
         buff.write(_struct_I.pack(length))
@@ -168,24 +133,6 @@ float64 z
       self.link = []
       for i in range(0, length):
         val1 = snakebot_matlab_communication.msg.collision()
-        _v3 = val1.header
-        start = end
-        end += 4
-        (_v3.seq,) = _struct_I.unpack(str[start:end])
-        _v4 = _v3.stamp
-        _x = _v4
-        start = end
-        end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
-        start = end
-        end += 4
-        (length,) = _struct_I.unpack(str[start:end])
-        start = end
-        end += length
-        if python3:
-          _v3.frame_id = str[start:end].decode('utf-8')
-        else:
-          _v3.frame_id = str[start:end]
         start = end
         end += 4
         (val1.link,) = _struct_i.unpack(str[start:end])
@@ -253,20 +200,6 @@ float64 z
       length = len(self.link)
       buff.write(_struct_I.pack(length))
       for val1 in self.link:
-        _v5 = val1.header
-        buff.write(_struct_I.pack(_v5.seq))
-        _v6 = _v5.stamp
-        _x = _v6
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
-        _x = _v5.frame_id
-        length = len(_x)
-        if python3 or type(_x) == unicode:
-          _x = _x.encode('utf-8')
-          length = len(_x)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *_x))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, _x))
         buff.write(_struct_i.pack(val1.link))
         length = len(val1.contact_sides)
         buff.write(_struct_I.pack(length))
@@ -313,24 +246,6 @@ float64 z
       self.link = []
       for i in range(0, length):
         val1 = snakebot_matlab_communication.msg.collision()
-        _v7 = val1.header
-        start = end
-        end += 4
-        (_v7.seq,) = _struct_I.unpack(str[start:end])
-        _v8 = _v7.stamp
-        _x = _v8
-        start = end
-        end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
-        start = end
-        end += 4
-        (length,) = _struct_I.unpack(str[start:end])
-        start = end
-        end += length
-        if python3:
-          _v7.frame_id = str[start:end].decode('utf-8')
-        else:
-          _v7.frame_id = str[start:end]
         start = end
         end += 4
         (val1.link,) = _struct_i.unpack(str[start:end])
@@ -389,5 +304,4 @@ float64 z
 
 _struct_I = genpy.struct_I
 _struct_i = struct.Struct("<i")
-_struct_2I = struct.Struct("<2I")
 _struct_3d = struct.Struct("<3d")

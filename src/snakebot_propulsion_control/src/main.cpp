@@ -14,10 +14,10 @@ int main(int argc, char **argv)
 {
     //Initialization
     double totalMass = 1*14; //Hardcoded for 1kg times 14 links. Inaccurate
-    double linkLength = 0.2;
-    double linkWidth = 0.1;
-    double linkHeight = 0.1;
-    double jointOffset = 0.03;
+    double linkLength = 0.0885;
+    double linkWidth = 0.07;
+    double linkHeight = 0.07;
+    double jointOffset = 0.01;
     double linkToJointLength = (linkLength/2) + jointOffset;
     int freq = 100;
 	ros::init(argc, argv, "position_torque_controller");

@@ -75,8 +75,8 @@ public:
 RobotPose::RobotPose(ros::NodeHandle nodeHandle, int numLinks){
     n = nodeHandle;
     numberOfLinks = numLinks;
-    double linkLength = 0.2;
-    double offset = 0.03;
+    double linkLength = 0.0885;
+    double offset = 0.01;
     l = 0.5*linkLength + offset;
 
     posePub = n.advertise<snakebot_robot_pose::Pose>("/snakebot/robot_pose", 1);

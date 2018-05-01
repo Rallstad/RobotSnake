@@ -19,6 +19,7 @@ Topic_collector::Topic_collector(ros::NodeHandle n){
 	obstacle2Sub = n.subscribe("obstacle_2/ground_pose", 100, &Topic_collector::obstacle2Callback, this);
 	obstacle3Sub = n.subscribe("obstacle_3/ground_pose", 100, &Topic_collector::obstacle3Callback, this);
 
+
 	//jointPosePub = n.advertise<snakebot_visual_data_topic_collector::visual_data_topic_collector>("/test",10);
 	jointPosePub = n.advertise<snakebot_visual_data_topic_collector::jointposes>("/snakebot/visualSnakeJointPose",100);
 	obstaclePub = n.advertise<snakebot_visual_data_topic_collector::obstacles>("/snakebot/obstaclePosition",100);

@@ -4,6 +4,8 @@
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h
+snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/pushpointCandidates.h
+snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/obstacles.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/main.cpp
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/matlab_communication.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
@@ -66,7 +68,6 @@ snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/wall_timer_options.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
-snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o: /opt/ros/indigo/include/std_msgs/UInt16MultiArray.h
@@ -74,6 +75,8 @@ snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h
+snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/pushpointCandidates.h
+snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/obstacles.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/matlab_communication.cpp
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/matlab_communication.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
@@ -136,7 +139,6 @@ snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_com
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/ros/wall_timer_options.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
-snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o: /opt/ros/indigo/include/std_msgs/UInt16MultiArray.h

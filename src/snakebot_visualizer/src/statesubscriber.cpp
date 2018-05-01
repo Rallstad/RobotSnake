@@ -3,7 +3,7 @@
 StateSubscriber::StateSubscriber(ros::NodeHandle rosNode, int numberOfLinks): rosNode(rosNode), numberOfLinks(numberOfLinks){
     contactsSub = rosNode.subscribe( "/snakebot/collisions", 100, &StateSubscriber::contactCallback, this);
     robotPoseSub = rosNode.subscribe( "snakebot/robot_pose", 100, &StateSubscriber::robotPoseCallback, this);
-    realSnakePoseSub = rosNode.subscribe("snakebot/real_snake_pose",100, &StateSubscriber::jointPoseCallback, this);
+    //realSnakePoseSub = rosNode.subscribe("snakebot/real_snake_pose",100, &StateSubscriber::jointPoseCallback, this);
     ctrlSub = rosNode.subscribe( "/snakebot/ctrl", 100, &StateSubscriber::ctrlCallback, this);
     effortSub = rosNode.subscribe( "snakebot/propulsion_effort", 100, &StateSubscriber::effortCallback, this);
 }
@@ -11,7 +11,8 @@ StateSubscriber::StateSubscriber(ros::NodeHandle rosNode, int numberOfLinks): ro
 
 
 
-void StateSubscriber::jointPoseCallback(const snakebot_kinematics::kinematics::ConstPtr &msg){
+// Think this function is crap
+/*void StateSubscriber::jointPoseCallback(const snakebot_kinematics::kinematics::ConstPtr &msg){
     for ( int i=0; i < msg->pose.size(); i++ ) {
         if(msg->number[i] == 13){
             jointPose = Pose2d(msg->pose[i].x, msg->pose[i].y, msg->pose[i].theta);
@@ -19,7 +20,7 @@ void StateSubscriber::jointPoseCallback(const snakebot_kinematics::kinematics::C
         }
     }
     cout << "ERROR: there is no tail" << endl;
-}
+}*/
 
 
 

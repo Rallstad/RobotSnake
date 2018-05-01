@@ -22,6 +22,22 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
+/home/snake/Documents/catkin_ws/devel/include/snakebot_propulsion_control/PropulsionEffortMamba.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/snake/Documents/catkin_ws/devel/include/snakebot_pushpoints/Pushpoints.h
 string
 -
@@ -133,6 +149,8 @@ std_msgs/Int8.h
 /home/snake/Documents/catkin_ws/src/snakebot_propulsion_control/src/std_msgs/Int8.h
 snakebot_pushpoints/Pushpoints.h
 -
+snakebot_propulsion_control/PropulsionEffortMamba.h
+/home/snake/Documents/catkin_ws/src/snakebot_propulsion_control/src/snakebot_propulsion_control/PropulsionEffortMamba.h
 snakebot_propulsion_control/PropulsionEffort.h
 /home/snake/Documents/catkin_ws/src/snakebot_propulsion_control/src/snakebot_propulsion_control/PropulsionEffort.h
 geometry_msgs/Pose2D.h

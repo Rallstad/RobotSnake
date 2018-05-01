@@ -4,6 +4,7 @@ Snake::Snake(ros::NodeHandle n){
 
 	SGDataJointSub = n.subscribe("from_matlab/SG", 10, &Snake::SGDataJointCallback, this);
 	SnakePoseSub = n.subscribe("/snakebot/real_snake_pose", 10, &Snake::SnakePoseCallback, this);
+	obstacleSub = n.subscribe("/snakebot/obstaclePosition", 100, &Snake::obstacleCallback, this);
 	//SGPub = n.advertise()
 	//CollisionPub = n.advertise...
 	/*SGDataJoint2Sub = n.subscribe("from_matlab/SG_joint2", 100, &Snake::SGDataJoint2Callback, this);
@@ -18,7 +19,8 @@ Snake::Snake(ros::NodeHandle n){
 	SGDataJoint11Sub = n.subscribe("from_matlab/SG_joint11", 100, &Snake::SGDataJoint11Callback, this);
 	SGDataJoint12Sub = n.subscribe("from_matlab/SG_joint12", 100, &Snake::SGDataJoint12Callback, this);
 	SGDataJoint13Sub = n.subscribe("from_matlab/SG_joint13", 100, &Snake::SGDataJoint13Callback, this);*/
-	CollisionListPub = n.advertise<snakebot_matlab_communication::collisionList>("/snakebot/collisionsFromMatlab",10);
+	CollisionListPub = n.advertise<snakebot_matlab_communication::collisionList>("/snakebot/collisionsFromMatlab",13);
+	pushpointCandidatesPub = n.advertise<snakebot_matlab_communication::pushpointCandidates>("/snakebot/pushpointCandidates",10);
 
 	
 }
@@ -26,7 +28,7 @@ Snake::Snake(ros::NodeHandle n){
 Snake::~Snake(){}
 
 void Snake::SGDataJointCallback(const std_msgs::Float32MultiArray::ConstPtr &msg){
-	for(int jointNum = 0;jointNum<msg->data.size();jointNum++){
+	for(int jointNum = msg->data.size()-1;jointNum >= 0; jointNum--){
 		this->SGData[jointNum] = msg->data[jointNum];
 	}
 }
@@ -41,31 +43,70 @@ void Snake::SnakePoseCallback(const snakebot_kinematics::kinematics::ConstPtr& m
 
 void Snake::publishCollisions(){
 	//Because of how the pushpointextractor finds pushpoints, the order of the joints has to be reversed
-	snakebot_matlab_communication::collision msg;
+	
 	snakebot_matlab_communication::collisionList list;
-	for(int jointNum = 0; jointNum <12; jointNum++){
-		
+	int tempJoint = 0;
+	for(int jointNum = 0; jointNum <=12; jointNum++){
+
+		snakebot_matlab_communication::collision msg;
 		msg.link = jointNum;
-		msg.contact_sides.push_back(getContactSide(SGData[jointNum]));
-		msg.contact_normals.push_back(getContactNormal(getContactSide(SGData[jointNum]),jointPoses[jointNum].theta));
-		msg.contact_tangents.push_back(getContactTangent(getContactSide(SGData[jointNum]), jointPoses[jointNum].theta));
-		msg.contact_positions.push_back(getContactPosition(getContactSide(SGData[jointNum]), jointPoses[jointNum]));
+
+		geometry_msgs::Vector3 normal_vector = getContactNormal(getContactSide(jointNum),jointPoses[jointNum].theta);
+		string side = getContactSide(tempJoint);
+		string tempSide = getContactSide(tempJoint + 1);
+		if(side == tempSide){
+			tempJoint ++;
+		}
+		else{
+			msg.contact_sides.push_back(side);
+			if(sqrt(normal_vector.x*normal_vector.x + normal_vector.y*normal_vector.y + normal_vector.z*normal_vector.z)>0){
+			msg.contact_normals.push_back(getContactNormal(getContactSide(jointNum),jointPoses[jointNum].theta));	
+		}
+			tempJoint ++;
+		}
+		
+		
+		//msg.contact_normals.push_back(getContactNormal(getContactSide(jointNum),jointPoses[jointNum].theta));
+		msg.contact_tangents.push_back(getContactTangent(getContactSide(jointNum), jointPoses[jointNum].theta));
+		msg.contact_positions.push_back(getContactPosition(getContactSide(jointNum), jointPoses[jointNum]));
 		list.link.push_back(msg);
 	}
 	CollisionListPub.publish(list);
 	//CollisionPub.pub(msg);
 }
 
-string Snake::getContactSide(float contactForce){
-	if(contactForce > 0.5){
-		return "left";
+string Snake::getContactSide(int joint_num){
+	float distance = 1000;
+	int closest_obstacle = 10;
+	for(int obstacle_num = 0;obstacle_num<3;obstacle_num++){
+		if(getJointDistance2Obstacle(joint_num,obstacle_num) < distance){
+			distance = getJointDistance2Obstacle(joint_num,obstacle_num);
+			closest_obstacle = obstacle_num;
+		}
 	}
-	else if(contactForce < -0.5){
-		return "right";
+	float x = obstacles[closest_obstacle].x - jointPoses[joint_num].x;
+    float y = obstacles[closest_obstacle].y - jointPoses[joint_num].y;
+    float angle = atan2(y,x);
+    if(distance < 0.20){
+		if(angle >= 0){
+	    	return "left";
+	    }
+	    else{
+			return "right";
+	    }
 	}
 	else{
 		return "none";
 	}
+	/*if(contactForce > 0.0){
+		return "left";
+	}
+	else if(contactForce < -0.0){
+		return "right";
+	}
+	else{
+		return "none";
+	}*/
 }
 
 geometry_msgs::Vector3 Snake::getContactNormal(string contactSide, float jointAngle){
@@ -123,4 +164,74 @@ geometry_msgs::Point Snake::getContactPosition(string contactSide, geometry_msgs
 		contactpos.z = 0.0;	
 	}
 	return contactpos;
+}
+
+
+void Snake::obstacleCallback(const snakebot_visual_data_topic_collector::obstacles::ConstPtr& msg){
+    for(int obstacle_num = 0; obstacle_num < 3; obstacle_num++){
+        obstacles[obstacle_num].x = msg->obstacles[obstacle_num].x;
+        obstacles[obstacle_num].y = msg->obstacles[obstacle_num].y;
+    }
+}
+
+float Snake::getJointDistance2Obstacle(int joint, int obstacle){
+    float distance = sqrt(pow((jointPoses[joint].x - obstacles[obstacle].x),2) + pow((jointPoses[joint].y - obstacles[obstacle].y),2));
+    return distance;
+}
+
+void Snake::getJointCandidate(){
+    int jointCandidate;
+    std::string side = "none";
+    std::string prevSide = "none";
+    for(int obstacle_num = 0; obstacle_num < 3; obstacle_num++){
+        float shortestDistance = 1000;
+        for(int joint_num = 0; joint_num < 13; joint_num++){
+            float distance = getJointDistance2Obstacle(joint_num, obstacle_num);
+            float x = obstacles[obstacle_num].x - jointPoses[joint_num].x;
+            float y = obstacles[obstacle_num].y - jointPoses[joint_num].y;
+            float angle = atan2(y,x);
+            //cout << "obstacle_num: " << obstacle_num<< " angle: "<< angle<<endl;
+
+            if(distance < shortestDistance && distance < 0.20){
+                shortestDistance = distance;
+                jointCandidate = joint_num;
+
+                if(angle >= 0){
+                    side = "left";
+                }
+                else{
+                    side = "right";
+                }
+            }
+
+
+        }        
+        contactSides.push_back(side);
+             //cout<<"side: "<<side<<endl;
+        if(prevSide != side){
+            prevSide = side;
+            for(int joint_candidate = 0; joint_candidate < sizeof(jointCandidates)/sizeof(jointCandidates[0]); joint_candidate++){
+                if(jointCandidates[joint_candidate] != jointCandidate){
+                    jointCandidates[obstacle_num] = jointCandidate;
+                    
+                   
+                }
+            }
+        }
+        else{
+            prevSide = side;
+            jointCandidates[obstacle_num] = -1;
+        }     
+    }
+    cout << "-----------------------------------"<<endl;
+   // cout << "jointCandidates: "<< jointCandidates[0]<< jointCandidates[1]<< jointCandidates[2]<<endl;
+    //cout << "numberOfCandidates: " << sizeof(jointCandidates)/sizeof(jointCandidates[0]) << endl;
+}
+
+void Snake::publishJointCandidates(){
+    snakebot_matlab_communication::pushpointCandidates candidate;
+    for(int i = 0; i <= 2; i++){
+        candidate.pushpointcandidates.push_back(jointCandidates[i]);
+    }
+    pushpointCandidatesPub.publish(candidate);
 }

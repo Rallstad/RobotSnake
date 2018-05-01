@@ -4,8 +4,9 @@ RVizPublisher::RVizPublisher(ros::NodeHandle rosNodeHandle, int numberOfLinks): 
 
     obstacleSub = rosNode.subscribe("/snakebot/obstaclePosition",100, &RVizPublisher::obstaclesCallback, this);
     visualJointPoseSub = rosNode.subscribe("/snakebot/visualSnakeJointPose",100, &RVizPublisher::visualJointsCallback, this);
-    sgDataSub = rosNode.subscribe("/from_matlab/SG",100, &RVizPublisher::sgDataCallback, this);
+    sgDataSub = rosNode.subscribe("/from_matlab/SG_unfiltered",100, &RVizPublisher::sgDataCallback, this);
     kinematicsJointPoseSub = rosNode.subscribe("/snakebot/real_snake_pose",100, &RVizPublisher::kinematicsJointsCallback, this);
+    jointCandidateSub = rosNode.subscribe("/snakebot/pushpointCandidates", 100, &RVizPublisher::jointCandidateCallback, this);
 
     rvizPub = rosNode.advertise<visualization_msgs::Marker>("visualization_marker", 100);
     rvizVisualJointPub = rosNode.advertise<visualization_msgs::MarkerArray>("/snakebot/visualSnakeJointPoseToRviz",100);
@@ -21,7 +22,7 @@ RVizPublisher::RVizPublisher(ros::NodeHandle rosNodeHandle, int numberOfLinks): 
                     allForcesMarker.header.frame_id =
                         resultantForceMarker.header.frame_id =
                             ctrlMarker.header.frame_id =
-                                effortMarker.header.frame_id = "/dummy_link";
+                                effortMarker.header.frame_id = "/world";
     normalsMarker.ns = "normals";
     resultantNormalsMarker.ns = "sum of normals";
     tangentsMarker.ns = "tangents";
@@ -100,6 +101,10 @@ RVizPublisher::RVizPublisher(ros::NodeHandle rosNodeHandle, int numberOfLinks): 
     effortMarker.color.r = 1.0;
     effortMarker.color.g = 1.0;
     effortMarker.color.a = 1.0;
+
+    foundMidPoint = false;
+    ros::Duration(5).sleep();
+
 }
 RVizPublisher::~RVizPublisher(){}
 
@@ -217,8 +222,22 @@ void RVizPublisher::kinematicsJointsCallback(const snakebot_kinematics::kinemati
 }
 
 void RVizPublisher::sgDataCallback(const std_msgs::Float32MultiArray::ConstPtr &msg){
-    for(int joint_num = 0; joint_num < msg->data.size();joint_num++){
+    for(int joint_num = msg->data.size()-1; joint_num >= 0; joint_num--){
         sgData[joint_num] = msg->data[joint_num];
+        //cout << "msg->data.size(): "<<msg->data.size()<<endl;
+    }
+    if(foundMidPoint == false){
+        for(int joint_num = 0; joint_num <= 12; joint_num++){
+            forceMidpoint[joint_num] = sgData[joint_num];
+            cout<<"force midppoint: "<<forceMidpoint[joint_num]<<endl;
+        }
+        foundMidPoint = true;
+    }
+}
+
+void RVizPublisher::jointCandidateCallback(const snakebot_pushpoints::pushpointCandidates::ConstPtr &msg){
+    for(int candidate = 0; candidate < 3; candidate++){
+        pushpointCandidates[candidate] = msg->pushpointcandidates[candidate];
     }
 }
 
@@ -245,8 +264,8 @@ void RVizPublisher::publishVisualSnakeJointPose(){
         marker.scale.z = 0.01;
         marker.color.a = 1.0; // Don't forget to set the alpha!
         marker.color.r = 1.0;
-        marker.color.g = 0.0;
-        marker.color.b = 0.0;
+        marker.color.g = 1.0;
+        marker.color.b = 1.0;
         markerarray.markers.push_back(marker);
 
     }
@@ -255,112 +274,56 @@ void RVizPublisher::publishVisualSnakeJointPose(){
         rvizVisualJointPub.publish( markerarray );
 } 
 
-void RVizPublisher::publishVisualNormalForce(){
+void RVizPublisher::publishKinematicsSnakeJointPose(){
     visualization_msgs::MarkerArray markerarray;
     visualization_msgs::Marker marker;
     for(int joint_num = 1; joint_num <= 13; joint_num++){
         marker.header.frame_id = "world";
         marker.header.stamp = ros::Time();
-        marker.ns = "normal_forces";
+        marker.ns = "kinematics_joints";
         marker.id = joint_num;
-        marker.type = visualization_msgs::Marker::ARROW;
+        marker.type = visualization_msgs::Marker::CUBE;
         marker.action = visualization_msgs::Marker::ADD;
+
+         //cout<<"joint_num: "<<joint_num <<" "<<kinematicsJointPoses[joint_num-1].theta<<endl;
+
         marker.pose.position.x = kinematicsJointPoses[joint_num-1].x;
         marker.pose.position.y = kinematicsJointPoses[joint_num-1].y;
         marker.pose.position.z = 0.035;
-        marker.pose.orientation.x = 0.0;
-        marker.pose.orientation.y = 0.0;
 
-        if(sgData[joint_num-1] <= -0.70 && sgData[joint_num-1] >= -0.90){
-            marker.pose.orientation.z = sin(((kinematicsJointPoses[joint_num-1].theta/2)-90)*(M_PI/180));
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-            marker.scale.x = 1.0;
-        }
-        else if(sgData[joint_num-1] <= -0.15 && sgData[joint_num-1] >= -0.25){
-            marker.pose.orientation.z = sin(((kinematicsJointPoses[joint_num-1].theta/2)-90)*(M_PI/180));
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-            marker.scale.x = 0.3;
-        }
-        else if(sgData[joint_num-1] <= 0.35 && sgData[joint_num-1] >= 0.25){
-            marker.pose.orientation.z = sin(((kinematicsJointPoses[joint_num-1].theta/2)+90)*(M_PI/180));
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-            marker.scale.x = 0.3;
-        }
-        else if(sgData[joint_num-1] <= 0.80 && sgData[joint_num-1] >= 0.60){
-            marker.pose.orientation.z = sin(((kinematicsJointPoses[joint_num-1].theta/2)+90)*(M_PI/180));
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-            marker.scale.x = 1.0;
-        }
-        else{
-            marker.pose.orientation.z = 0.0;
-            marker.pose.orientation.w = 0.0;
-            marker.scale.x = 0.00;
-        }
-            
-        
-        marker.scale.y = 0.005;
-        marker.scale.z = 0.005;
-        marker.color.a = 1.0; // Don't forget to set the alpha!
-        marker.color.r = 0.0;
-        marker.color.g = 1.0;
-        marker.color.b = 0.0;
-        markerarray.markers.push_back(marker);
-
-    }
-
-    //only if using a MESH_RESOURCE marker type:
-    rvizNormalForcePub.publish( markerarray );
-} 
+        /*tf::Quaternion Q = tf::createQuaternionFromRPY(0,0,(kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        marker.pose.orientation.x = Q.x;
+        marker.pose.orientation.y = Q.y;
+        marker.pose.orientation.z = Q.z;
+        marker.pose.orientation.w = Q.w;*/
 
 
-void RVizPublisher::publishVisualTangentForce(){
-    visualization_msgs::MarkerArray markerarray;
-    visualization_msgs::Marker marker;
-    for(int joint_num = 1; joint_num <= 13; joint_num++){
-        marker.header.frame_id = "world";
-        marker.header.stamp = ros::Time();
-        marker.ns = "tangent_forces";
-        marker.id = joint_num;
-        marker.type = visualization_msgs::Marker::ARROW;
-        marker.action = visualization_msgs::Marker::ADD;
-        marker.pose.position.x = kinematicsJointPoses[joint_num-1].x;
-        marker.pose.position.y = kinematicsJointPoses[joint_num-1].y;
-        marker.pose.position.z = 0.035;
         marker.pose.orientation.x = 0.0;
         marker.pose.orientation.y = 0.0;
         marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
         marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        
-        if(sgData[joint_num-1] <= -0.70 && sgData[joint_num-1] >= -0.90){
-            marker.scale.x = 1.0;
-        }
-        else if(sgData[joint_num-1] <= -0.15 && sgData[joint_num-1] >= -0.25){
-            marker.scale.x = 0.3;
-        }
-        else if(sgData[joint_num-1] <= 0.35 && sgData[joint_num-1] >= 0.25){
-            marker.scale.x = 0.3;
-        }
-        else if(sgData[joint_num-1] <= 0.80 && sgData[joint_num-1] >= 0.60){
-            marker.scale.x = 1.0;
-        }
-        else{
-            marker.scale.x = 0.00;
-        }
-        marker.scale.y = 0.005;
-        marker.scale.z = 0.005;
+        marker.scale.x = 0.01;
+        marker.scale.y = 0.01;
+        marker.scale.z = 0.01;
         marker.color.a = 1.0; // Don't forget to set the alpha!
+
         marker.color.r = 0.0;
-        marker.color.g = 0.0;
-        marker.color.b = 1.0;
+        marker.color.g = 1.0;
+        marker.color.b = 0.0;    
+
+        for(int i = 0; i < sizeof(pushpointCandidates)/sizeof(pushpointCandidates[0]); i++){  
+            if((joint_num-1) == pushpointCandidates[i]){     
+                marker.color.r = 0.0;
+                marker.color.g = 0.0;
+                marker.color.b = 1.0;
+                break;
+            }
+        }
         markerarray.markers.push_back(marker);
-
     }
-
     //only if using a MESH_RESOURCE marker type:
-    rvizTangentForcePub.publish( markerarray );
+    rvizKinematicsJointPub.publish( markerarray );
 } 
-
-
 
 void RVizPublisher::publishVisualObstacle(){
     visualization_msgs::MarkerArray markerarray;
@@ -396,46 +359,85 @@ void RVizPublisher::publishVisualObstacle(){
 
 }
 
-void RVizPublisher::publishKinematicsSnakeJointPose(){
+
+
+void RVizPublisher::publishVisualNormalForce(){
+
     visualization_msgs::MarkerArray markerarray;
     visualization_msgs::Marker marker;
     for(int joint_num = 1; joint_num <= 13; joint_num++){
         marker.header.frame_id = "world";
         marker.header.stamp = ros::Time();
-        marker.ns = "kinematics_joints";
+        marker.ns = "normal_forces";
         marker.id = joint_num;
-        marker.type = visualization_msgs::Marker::CUBE;
+        marker.type = visualization_msgs::Marker::ARROW;
         marker.action = visualization_msgs::Marker::ADD;
-
-         cout<<"joint_num: "<<joint_num <<" "<<kinematicsJointPoses[joint_num-1].theta<<endl;
-
         marker.pose.position.x = kinematicsJointPoses[joint_num-1].x;
         marker.pose.position.y = kinematicsJointPoses[joint_num-1].y;
         marker.pose.position.z = 0.035;
-
-        /*tf::Quaternion Q = tf::createQuaternionFromRPY(0,0,(kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        marker.pose.orientation.x = Q.x;
-        marker.pose.orientation.y = Q.y;
-        marker.pose.orientation.z = Q.z;
-        marker.pose.orientation.w = Q.w;*/
+        marker.pose.orientation.x = 0.0;
+        marker.pose.orientation.y = 0.0;
+       
 
 
+        if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) <= 0) {
+            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))-1;
+            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        }
+
+        else if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) > 0){
+            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))+1;
+            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        }
+
+        marker.scale.x = (sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000;
+        marker.scale.y = 0.005;
+        marker.scale.z = 0.005;
+        marker.color.a = 1.0; // Don't forget to set the alpha!
+        marker.color.r = 1.0;
+        marker.color.g = 0.0;
+        marker.color.b = 0.0;
+        markerarray.markers.push_back(marker);
+
+    }
+
+    //only if using a MESH_RESOURCE marker type:
+    rvizNormalForcePub.publish( markerarray );
+} 
+
+
+void RVizPublisher::publishVisualTangentForce(){
+    visualization_msgs::MarkerArray markerarray;
+    visualization_msgs::Marker marker;
+    for(int joint_num = 1; joint_num <= 13; joint_num++){
+        marker.header.frame_id = "world";
+        marker.header.stamp = ros::Time();
+        marker.ns = "tangent_forces";
+        marker.id = joint_num;
+        marker.type = visualization_msgs::Marker::ARROW;
+        marker.action = visualization_msgs::Marker::ADD;
+        marker.pose.position.x = kinematicsJointPoses[joint_num-1].x;
+        marker.pose.position.y = kinematicsJointPoses[joint_num-1].y;
+        marker.pose.position.z = 0.035;
         marker.pose.orientation.x = 0.0;
         marker.pose.orientation.y = 0.0;
         marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
         marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        marker.scale.x = 0.01;
-        marker.scale.y = 0.01;
-        marker.scale.z = 0.01;
-        marker.color.a = 1.0; // Don't forget to set the alpha!
-        marker.color.r = 0.0;
-        marker.color.g = 1.0;
-        marker.color.b = 0.0;
-
         
+        marker.scale.x = (sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000;
+        marker.scale.y = 0.005;
+        marker.scale.z = 0.005;
+        marker.color.a = 1.0; // Don't forget to set the alpha!
+        marker.color.r = 1.0;
+        marker.color.g = 0.0;
+        marker.color.b = 1.0;
         markerarray.markers.push_back(marker);
 
     }
+
     //only if using a MESH_RESOURCE marker type:
-    rvizKinematicsJointPub.publish( markerarray );
+    rvizTangentForcePub.publish( markerarray );
 } 
+
+
+

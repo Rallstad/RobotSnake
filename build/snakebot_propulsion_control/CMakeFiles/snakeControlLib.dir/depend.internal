@@ -3,6 +3,7 @@
 
 snakebot_propulsion_control/CMakeFiles/snakeControlLib.dir/src/propulsioncontroller.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_propulsion_control/PropulsionEffort.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_propulsion_control/PropulsionEffortMamba.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_pushpoints/Pushpoints.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/ObstaclePose.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/Pose.h

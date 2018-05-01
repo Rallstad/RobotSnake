@@ -56,7 +56,7 @@ void Snake::publishSnakeConfiguration(){
 		pose2d.y = jointPoses[joint_num].y;
 		pose2d.theta = jointPoses[joint_num].theta;
 		positions.pose.push_back(pose2d);
-		cout<<joint_num<< ": x: " <<pose2d.x<<" y: "<<pose2d.y<<" theta: "<<pose2d.theta<<endl;
+		//cout<<joint_num<< ": x: " <<pose2d.x<<" y: "<<pose2d.y<<" theta: "<<pose2d.theta<<endl;
 	} 
 	snakeConfigurationPub.publish(positions);
 }

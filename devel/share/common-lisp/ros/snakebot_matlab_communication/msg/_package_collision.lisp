@@ -1,7 +1,5 @@
 (cl:in-package snakebot_matlab_communication-msg)
-(cl:export '(HEADER-VAL
-          HEADER
-          LINK-VAL
+(cl:export '(LINK-VAL
           LINK
           CONTACT_SIDES-VAL
           CONTACT_SIDES

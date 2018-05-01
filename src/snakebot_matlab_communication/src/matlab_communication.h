@@ -10,10 +10,12 @@
 #include "ros/ros.h"
 #include "std_msgs/UInt16MultiArray.h"
 #include "std_msgs/Float32MultiArray.h"
-#include <snakebot_kinematics/kinematics.h>
 #include "geometry_msgs/Pose2D.h"
 #include "geometry_msgs/Vector3.h"
 #include "geometry_msgs/Point.h"
+#include "snakebot_matlab_communication/pushpointCandidates.h"
+#include <snakebot_kinematics/kinematics.h>
+#include <snakebot_visual_data_topic_collector/obstacles.h>
 #include <snakebot_matlab_communication/collision.h>
 #include <snakebot_matlab_communication/collisionList.h>
 
@@ -26,7 +28,13 @@ using namespace std;
 
 class Snake{
 private:
+
+	int jointCandidates[3];
+    std::vector<std::string> contactSides;
 	geometry_msgs::Pose2D jointPoses [13];
+    geometry_msgs::Pose2D obstacles[3];
+
+
 	float SGData [13];
 	float linkWidth = 0.07;
 
@@ -43,11 +51,13 @@ private:
 	ros::Subscriber SGDataJoint11Sub;
 	ros::Subscriber SGDataJoint12Sub;
 	ros::Subscriber SGDataJoint13Sub;
+	ros::Subscriber obstacleSub;
 
 	ros::Subscriber SnakePoseSub;
 	
 	ros::Publisher SGPub;
 	ros::Publisher CollisionListPub;
+	ros::Publisher pushpointCandidatesPub;
 	
 
 public:
@@ -73,8 +83,12 @@ public:
 	void SnakePoseCallback(const snakebot_kinematics::kinematics::ConstPtr& msg);
 
 	void publishCollisions();
+	void publishJointCandidates();
+	void getJointCandidate();
+	float getJointDistance2Obstacle(int joint, int obstacle);
+	void obstacleCallback(const snakebot_visual_data_topic_collector::obstacles::ConstPtr& msg);
 
-	string getContactSide(float contactForce);
+	string getContactSide(int jointNum);
 	geometry_msgs::Vector3 getContactNormal(string contactSide, float jointAngle);
 	geometry_msgs::Vector3 getContactTangent(string contactSide, float jointAngle);
 	geometry_msgs::Point getContactPosition(string contactSide, geometry_msgs::Pose2D jointPose);

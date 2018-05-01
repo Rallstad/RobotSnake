@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "snakebot_matlab_communication: 2 messages, 0 services")
+message(STATUS "snakebot_matlab_communication: 3 messages, 0 services")
 
 set(MSG_I_FLAGS "-Isnakebot_matlab_communication:/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg")
 
@@ -17,12 +17,17 @@ add_custom_target(snakebot_matlab_communication_generate_messages ALL)
 
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" NAME_WE)
 add_custom_target(_snakebot_matlab_communication_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_matlab_communication" "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" "geometry_msgs/Vector3:std_msgs/Header:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_matlab_communication" "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" "geometry_msgs/Vector3:geometry_msgs/Point"
+)
+
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" NAME_WE)
+add_custom_target(_snakebot_matlab_communication_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_matlab_communication" "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" ""
 )
 
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" NAME_WE)
 add_custom_target(_snakebot_matlab_communication_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_matlab_communication" "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" "geometry_msgs/Vector3:std_msgs/Header:snakebot_matlab_communication/collision:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_matlab_communication" "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" "geometry_msgs/Vector3:geometry_msgs/Point:snakebot_matlab_communication/collision"
 )
 
 #
@@ -34,13 +39,19 @@ add_custom_target(_snakebot_matlab_communication_generate_messages_check_deps_${
 _generate_msg_cpp(snakebot_matlab_communication
   "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/snakebot_matlab_communication
+)
+_generate_msg_cpp(snakebot_matlab_communication
+  "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/snakebot_matlab_communication
 )
 _generate_msg_cpp(snakebot_matlab_communication
   "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/snakebot_matlab_communication
 )
 
@@ -60,6 +71,8 @@ add_dependencies(snakebot_matlab_communication_generate_messages snakebot_matlab
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_cpp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" NAME_WE)
+add_dependencies(snakebot_matlab_communication_generate_messages_cpp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_cpp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 
@@ -75,13 +88,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS snakebot_matlab_communication_gener
 _generate_msg_lisp(snakebot_matlab_communication
   "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/snakebot_matlab_communication
+)
+_generate_msg_lisp(snakebot_matlab_communication
+  "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/snakebot_matlab_communication
 )
 _generate_msg_lisp(snakebot_matlab_communication
   "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/snakebot_matlab_communication
 )
 
@@ -101,6 +120,8 @@ add_dependencies(snakebot_matlab_communication_generate_messages snakebot_matlab
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_lisp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" NAME_WE)
+add_dependencies(snakebot_matlab_communication_generate_messages_lisp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_lisp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 
@@ -116,13 +137,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS snakebot_matlab_communication_gener
 _generate_msg_py(snakebot_matlab_communication
   "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/snakebot_matlab_communication
+)
+_generate_msg_py(snakebot_matlab_communication
+  "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/snakebot_matlab_communication
 )
 _generate_msg_py(snakebot_matlab_communication
   "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/snakebot_matlab_communication
 )
 
@@ -141,6 +168,8 @@ add_dependencies(snakebot_matlab_communication_generate_messages snakebot_matlab
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" NAME_WE)
+add_dependencies(snakebot_matlab_communication_generate_messages_py _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_py _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_py _snakebot_matlab_communication_generate_messages_check_deps_${_filename})

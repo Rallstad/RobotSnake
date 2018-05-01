@@ -46,31 +46,38 @@ CMAKE_BINARY_DIR = /home/snake/Documents/catkin_ws/build
 include snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_cpp.dir/progress.make
 
 snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
+snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/pushpointCandidates.h
 snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h
 
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg
-/home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from snakebot_matlab_communication/collision.msg"
 	cd /home/snake/Documents/catkin_ws/build/snakebot_matlab_communication && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg -Isnakebot_matlab_communication:/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_matlab_communication -o /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication -e /opt/ros/indigo/share/gencpp/cmake/..
 
+/home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/pushpointCandidates.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/pushpointCandidates.h: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg
+/home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/pushpointCandidates.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from snakebot_matlab_communication/pushpointCandidates.msg"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_matlab_communication && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg -Isnakebot_matlab_communication:/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_matlab_communication -o /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication -e /opt/ros/indigo/share/gencpp/cmake/..
+
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg
-/home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-/home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg
+/home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from snakebot_matlab_communication/collisionList.msg"
 	cd /home/snake/Documents/catkin_ws/build/snakebot_matlab_communication && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg -Isnakebot_matlab_communication:/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_matlab_communication -o /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication -e /opt/ros/indigo/share/gencpp/cmake/..
 
 snakebot_matlab_communication_generate_messages_cpp: snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_cpp
 snakebot_matlab_communication_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
+snakebot_matlab_communication_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/pushpointCandidates.h
 snakebot_matlab_communication_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h
 snakebot_matlab_communication_generate_messages_cpp: snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_cpp.dir/build.make
 .PHONY : snakebot_matlab_communication_generate_messages_cpp

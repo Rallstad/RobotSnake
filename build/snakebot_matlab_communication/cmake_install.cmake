@@ -36,6 +36,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/snakebot_matlab_communication/msg" TYPE FILE FILES
     "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg"
     "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg"
+    "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

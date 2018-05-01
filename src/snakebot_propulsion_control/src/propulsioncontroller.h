@@ -13,6 +13,7 @@
 #include "std_msgs/Float64MultiArray.h"
 #include "std_msgs/Int8.h"
 #include <snakebot_pushpoints/Pushpoints.h>
+#include "snakebot_propulsion_control/PropulsionEffortMamba.h"
 #include "snakebot_propulsion_control/PropulsionEffort.h"
 #include "geometry_msgs/Pose2D.h"
 #include "snakebot_robot_pose/Pose.h"
@@ -60,7 +61,9 @@ private:
     ros::Subscriber positionDataSub;
     ros::Subscriber propForceSub;
     ros::Subscriber robotPoseSub;
+
     ros::Publisher propulsionEffortPub;
+    ros::Publisher propulsionEffortMambaPub;
 
 
     //Map from x,y,z,theta to array index
