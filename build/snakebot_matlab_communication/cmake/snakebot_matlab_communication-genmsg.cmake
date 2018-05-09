@@ -20,14 +20,14 @@ add_custom_target(_snakebot_matlab_communication_generate_messages_check_deps_${
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_matlab_communication" "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" "geometry_msgs/Vector3:geometry_msgs/Point"
 )
 
-get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" NAME_WE)
-add_custom_target(_snakebot_matlab_communication_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_matlab_communication" "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" ""
-)
-
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" NAME_WE)
 add_custom_target(_snakebot_matlab_communication_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_matlab_communication" "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" "geometry_msgs/Vector3:geometry_msgs/Point:snakebot_matlab_communication/collision"
+)
+
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg" NAME_WE)
+add_custom_target(_snakebot_matlab_communication_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "snakebot_matlab_communication" "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg" ""
 )
 
 #
@@ -43,7 +43,7 @@ _generate_msg_cpp(snakebot_matlab_communication
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/snakebot_matlab_communication
 )
 _generate_msg_cpp(snakebot_matlab_communication
-  "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg"
+  "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/snakebot_matlab_communication
@@ -71,9 +71,9 @@ add_dependencies(snakebot_matlab_communication_generate_messages snakebot_matlab
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_cpp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" NAME_WE)
-add_dependencies(snakebot_matlab_communication_generate_messages_cpp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" NAME_WE)
+add_dependencies(snakebot_matlab_communication_generate_messages_cpp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_cpp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -92,7 +92,7 @@ _generate_msg_lisp(snakebot_matlab_communication
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/snakebot_matlab_communication
 )
 _generate_msg_lisp(snakebot_matlab_communication
-  "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg"
+  "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/snakebot_matlab_communication
@@ -120,9 +120,9 @@ add_dependencies(snakebot_matlab_communication_generate_messages snakebot_matlab
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_lisp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" NAME_WE)
-add_dependencies(snakebot_matlab_communication_generate_messages_lisp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" NAME_WE)
+add_dependencies(snakebot_matlab_communication_generate_messages_lisp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_lisp _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -141,7 +141,7 @@ _generate_msg_py(snakebot_matlab_communication
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/snakebot_matlab_communication
 )
 _generate_msg_py(snakebot_matlab_communication
-  "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg"
+  "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/snakebot_matlab_communication
@@ -169,9 +169,9 @@ add_dependencies(snakebot_matlab_communication_generate_messages snakebot_matlab
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_py _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg" NAME_WE)
-add_dependencies(snakebot_matlab_communication_generate_messages_py _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg" NAME_WE)
+add_dependencies(snakebot_matlab_communication_generate_messages_py _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg" NAME_WE)
 add_dependencies(snakebot_matlab_communication_generate_messages_py _snakebot_matlab_communication_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

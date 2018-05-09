@@ -2,7 +2,7 @@
 
 PushpointExtractor::PushpointExtractor(ros::NodeHandle n, int numberOfLinks): n(n), numberOfLinks(numberOfLinks), threePushPointsFound(false){
    // snakeContactsSub = n.subscribe("/snakebot/collisions", 1, &PushpointExtractor::snakeContactsCallback, this);
-    snakeContactsMatlabSub = n.subscribe("/snakebot/collisionsFromMatlab", 1, &PushpointExtractor::snakeContactsCallback,this);
+    snakeContactsMatlabSub = n.subscribe("/snakebot/collisionsMamba", 1, &PushpointExtractor::snakeContactsCallback,this);
     //snakeConfigurationSub = n.subscribe("/snakebot/real_snake_pose", 100, &PushpointExtractor::snakePoseCallback,this);
     
 

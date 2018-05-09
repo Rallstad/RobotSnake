@@ -150,6 +150,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_closestJoints.dir/rule:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_closestJoints.dir/rule
+.PHONY : snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_closestJoints.dir/rule
+
+# Convenience name for target.
+_snakebot_matlab_communication_generate_messages_check_deps_closestJoints: snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_closestJoints.dir/rule
+.PHONY : _snakebot_matlab_communication_generate_messages_check_deps_closestJoints
+
+# fast build rule for target.
+_snakebot_matlab_communication_generate_messages_check_deps_closestJoints/fast:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_closestJoints.dir/build.make snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_closestJoints.dir/build
+.PHONY : _snakebot_matlab_communication_generate_messages_check_deps_closestJoints/fast
+
+# Convenience name for target.
 snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_collision.dir/rule:
 	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_collision.dir/rule
 .PHONY : snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_collision.dir/rule
@@ -176,20 +190,6 @@ _snakebot_matlab_communication_generate_messages_check_deps_collisionList: snake
 _snakebot_matlab_communication_generate_messages_check_deps_collisionList/fast:
 	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_collisionList.dir/build.make snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_collisionList.dir/build
 .PHONY : _snakebot_matlab_communication_generate_messages_check_deps_collisionList/fast
-
-# Convenience name for target.
-snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates.dir/rule:
-	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates.dir/rule
-.PHONY : snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates.dir/rule
-
-# Convenience name for target.
-_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates: snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates.dir/rule
-.PHONY : _snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates
-
-# fast build rule for target.
-_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates/fast:
-	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates.dir/build.make snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates.dir/build
-.PHONY : _snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates/fast
 
 # Convenience name for target.
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/rule:
@@ -357,9 +357,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... _snakebot_matlab_communication_generate_messages_check_deps_closestJoints"
 	@echo "... _snakebot_matlab_communication_generate_messages_check_deps_collision"
 	@echo "... _snakebot_matlab_communication_generate_messages_check_deps_collisionList"
-	@echo "... _snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"

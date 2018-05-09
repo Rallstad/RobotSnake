@@ -2,19 +2,20 @@
 
 int main(int argc, char **argv){
 
-	int freq = 1000;
+    int freq = 1000;
     ros::init(argc, argv, "matlab_communication");
     ros::NodeHandle n;
     Snake snake(n);
     ros::Rate loop_rate(freq);
 
     while(ros::ok()){
-    	ros::spinOnce();
-    	loop_rate.sleep();
+        ros::spinOnce();
+        loop_rate.sleep();
         snake.publishCollisions();
-        snake.getJointCandidate();
+        snake.getClosestJoint();
         snake.publishJointCandidates();
+        
     }
 
-	return 0;
+    return 0;
 }

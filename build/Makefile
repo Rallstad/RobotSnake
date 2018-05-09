@@ -696,6 +696,19 @@ topic_tools_generate_messages_py/fast:
 .PHONY : topic_tools_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named _snakebot_matlab_communication_generate_messages_check_deps_closestJoints
+
+# Build rule for target.
+_snakebot_matlab_communication_generate_messages_check_deps_closestJoints: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _snakebot_matlab_communication_generate_messages_check_deps_closestJoints
+.PHONY : _snakebot_matlab_communication_generate_messages_check_deps_closestJoints
+
+# fast build rule for target.
+_snakebot_matlab_communication_generate_messages_check_deps_closestJoints/fast:
+	$(MAKE) -f snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_closestJoints.dir/build.make snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_closestJoints.dir/build
+.PHONY : _snakebot_matlab_communication_generate_messages_check_deps_closestJoints/fast
+
+#=============================================================================
 # Target rules for targets named _snakebot_matlab_communication_generate_messages_check_deps_collision
 
 # Build rule for target.
@@ -720,19 +733,6 @@ _snakebot_matlab_communication_generate_messages_check_deps_collisionList: cmake
 _snakebot_matlab_communication_generate_messages_check_deps_collisionList/fast:
 	$(MAKE) -f snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_collisionList.dir/build.make snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_collisionList.dir/build
 .PHONY : _snakebot_matlab_communication_generate_messages_check_deps_collisionList/fast
-
-#=============================================================================
-# Target rules for targets named _snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates
-
-# Build rule for target.
-_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates
-.PHONY : _snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates
-
-# fast build rule for target.
-_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates/fast:
-	$(MAKE) -f snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates.dir/build.make snakebot_matlab_communication/CMakeFiles/_snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates.dir/build
-.PHONY : _snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates/fast
 
 #=============================================================================
 # Target rules for targets named matlab_communication
@@ -2726,9 +2726,9 @@ help:
 	@echo "... topic_tools_generate_messages_cpp"
 	@echo "... topic_tools_generate_messages_lisp"
 	@echo "... topic_tools_generate_messages_py"
+	@echo "... _snakebot_matlab_communication_generate_messages_check_deps_closestJoints"
 	@echo "... _snakebot_matlab_communication_generate_messages_check_deps_collision"
 	@echo "... _snakebot_matlab_communication_generate_messages_check_deps_collisionList"
-	@echo "... _snakebot_matlab_communication_generate_messages_check_deps_pushpointCandidates"
 	@echo "... matlab_communication"
 	@echo "... snakebot_matlab_communication_gencpp"
 	@echo "... snakebot_matlab_communication_generate_messages"

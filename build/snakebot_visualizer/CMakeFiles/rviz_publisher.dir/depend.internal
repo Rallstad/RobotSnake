@@ -8,11 +8,11 @@ snakebot_visualizer/CMakeFiles/rviz_publisher.dir/src/rvizpublisher.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Float64Array.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Int32Array.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/closestJoints.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_propulsion_control/PropulsionEffort.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_pushpoints/Pushpoints.h
- /home/snake/Documents/catkin_ws/devel/include/snakebot_pushpoints/pushpointCandidates.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/ObstaclePose.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/Pose.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/SnakePose.h

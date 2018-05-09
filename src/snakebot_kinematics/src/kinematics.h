@@ -7,10 +7,14 @@
 #include "geometry_msgs/Point.h"
 #include "visualization_msgs/Marker.h"
 #include "visualization_msgs/MarkerArray.h"
+
 #include "snakebot_kinematics/kinematics.h"
+
 #include "snakebot_labview_communication/Float64Array.h"
 #include "snakebot_labview_communication/Int32Array.h"
+
 #include "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h"
+
 #include "ros/ros.h"
 #include "rosbag/bag.h"
 #include "rosbag/view.h"

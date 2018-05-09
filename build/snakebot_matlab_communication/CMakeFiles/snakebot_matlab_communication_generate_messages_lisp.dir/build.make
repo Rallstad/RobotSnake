@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /home/snake/Documents/catkin_ws/build
 include snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_lisp.dir/progress.make
 
 snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/collision.lisp
-snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/pushpointCandidates.lisp
+snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/closestJoints.lisp
 snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/collisionList.lisp
 
 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/collision.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
@@ -57,11 +57,11 @@ snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from snakebot_matlab_communication/collision.msg"
 	cd /home/snake/Documents/catkin_ws/build/snakebot_matlab_communication && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg -Isnakebot_matlab_communication:/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_matlab_communication -o /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg
 
-/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/pushpointCandidates.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
-/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/pushpointCandidates.lisp: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/closestJoints.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/closestJoints.lisp: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from snakebot_matlab_communication/pushpointCandidates.msg"
-	cd /home/snake/Documents/catkin_ws/build/snakebot_matlab_communication && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg -Isnakebot_matlab_communication:/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_matlab_communication -o /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from snakebot_matlab_communication/closestJoints.msg"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_matlab_communication && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg -Isnakebot_matlab_communication:/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_matlab_communication -o /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg
 
 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/collisionList.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/collisionList.lisp: /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg
@@ -74,7 +74,7 @@ snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_
 
 snakebot_matlab_communication_generate_messages_lisp: snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_lisp
 snakebot_matlab_communication_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/collision.lisp
-snakebot_matlab_communication_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/pushpointCandidates.lisp
+snakebot_matlab_communication_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/closestJoints.lisp
 snakebot_matlab_communication_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_matlab_communication/msg/collisionList.lisp
 snakebot_matlab_communication_generate_messages_lisp: snakebot_matlab_communication/CMakeFiles/snakebot_matlab_communication_generate_messages_lisp.dir/build.make
 .PHONY : snakebot_matlab_communication_generate_messages_lisp

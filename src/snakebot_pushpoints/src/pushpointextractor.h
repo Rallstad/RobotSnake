@@ -26,7 +26,6 @@ private:
     int jointCandidates[3];
     geometry_msgs::Pose2D jointPoses[13];
     geometry_msgs::Pose2D obstacles[3];
-    std::vector<std::string> contactSides;
 
     ros::NodeHandle n;
     ros::Subscriber snakeContactsSub;

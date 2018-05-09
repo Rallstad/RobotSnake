@@ -7,7 +7,7 @@
 #include "visualization_msgs/MarkerArray.h"
 #include "snakebot_labview_communication/Float64Array.h"
 #include "snakebot_labview_communication/Int32Array.h"
-#include "snakebot_pushpoints/pushpointCandidates.h"
+#include "snakebot_matlab_communication/closestJoints.h"
 #include "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h"
 #include "/home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.h"
 #include "/home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/rvizpublisher.h"
@@ -31,7 +31,8 @@ private:
     geometry_msgs::Pose2D obstaclePositions[3];
     float sgData[13];
     float forceMidpoint[13];
-    int pushpointCandidates[3];
+    int closestJoints[3];
+    int pushPoints[3];
     bool foundMidPoint;
 
 
@@ -42,7 +43,8 @@ private:
     ros::Subscriber visualJointPoseSub;
     ros::Subscriber kinematicsJointPoseSub;
     ros::Subscriber sgDataSub;
-    ros::Subscriber jointCandidateSub;
+    ros::Subscriber closestJointsSub;
+    ros::Subscriber pushpointSub;
 
     ros::Publisher rvizPub;
     ros::Publisher rvizVisualJointPub;
@@ -62,12 +64,12 @@ private:
 
     int                     numberOfLinks;
 
-    Pose2d					snakePose;
+    Pose2d                  snakePose;
     Pose2d                  jointPose;
-    ContactData				contacts;
-    double					ctrlA, ctrlV;
+    ContactData             contacts;
+    double                  ctrlA, ctrlV;
     unsigned int            propulsionJoint;
-    double					effort;
+    double                  effort;
 
     void clearMarkerPointData();
     void updateMarkers();
@@ -76,7 +78,8 @@ private:
     void visualJointsCallback(const snakebot_visual_data_topic_collector::jointposes::ConstPtr &msg);
     void kinematicsJointsCallback(const snakebot_kinematics::kinematics::ConstPtr &msg);
     void sgDataCallback(const std_msgs::Float32MultiArray::ConstPtr &msg);
-    void jointCandidateCallback(const snakebot_pushpoints::pushpointCandidates::ConstPtr &msg);
+    void closestJointCallback(const snakebot_matlab_communication::closestJoints::ConstPtr &msg);
+    void pushpointsCallback(const snakebot_pushpoints::Pushpoints::ConstPtr &msg);
 
 
 public:

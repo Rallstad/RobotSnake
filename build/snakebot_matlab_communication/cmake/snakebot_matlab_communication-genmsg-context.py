@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/pushpointCandidates.msg"
+messages_str = "/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collision.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/collisionList.msg;/home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/msg/closestJoints.msg"
 services_str = ""
 pkg_name = "snakebot_matlab_communication"
 dependencies_str = "std_msgs;geometry_msgs"

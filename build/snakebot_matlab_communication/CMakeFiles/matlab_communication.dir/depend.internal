@@ -3,9 +3,9 @@
 
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/closestJoints.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h
- /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/pushpointCandidates.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/obstacles.h
  /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/main.cpp
  /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/matlab_communication.h
@@ -69,14 +69,15 @@ snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/main.cpp.o
  /opt/ros/indigo/include/ros/wall_timer_options.h
  /opt/ros/indigo/include/rosconsole/macros_generated.h
  /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
+ /opt/ros/indigo/include/std_msgs/Float64MultiArray.h
  /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
  /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
  /opt/ros/indigo/include/std_msgs/UInt16MultiArray.h
 snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_communication.cpp.o
  /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
+ /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/closestJoints.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collisionList.h
- /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/pushpointCandidates.h
  /home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/obstacles.h
  /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/matlab_communication.cpp
  /home/snake/Documents/catkin_ws/src/snakebot_matlab_communication/src/matlab_communication.h
@@ -140,6 +141,7 @@ snakebot_matlab_communication/CMakeFiles/matlab_communication.dir/src/matlab_com
  /opt/ros/indigo/include/ros/wall_timer_options.h
  /opt/ros/indigo/include/rosconsole/macros_generated.h
  /opt/ros/indigo/include/std_msgs/Float32MultiArray.h
+ /opt/ros/indigo/include/std_msgs/Float64MultiArray.h
  /opt/ros/indigo/include/std_msgs/MultiArrayDimension.h
  /opt/ros/indigo/include/std_msgs/MultiArrayLayout.h
  /opt/ros/indigo/include/std_msgs/UInt16MultiArray.h

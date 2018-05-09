@@ -53,7 +53,7 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    collision.msg
    collisionList.msg
-   pushpointCandidates.msg
+   closestJoints.msg
 #   Message2.msg
  )
 

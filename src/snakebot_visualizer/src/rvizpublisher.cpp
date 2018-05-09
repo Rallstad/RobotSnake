@@ -6,7 +6,9 @@ RVizPublisher::RVizPublisher(ros::NodeHandle rosNodeHandle, int numberOfLinks): 
     visualJointPoseSub = rosNode.subscribe("/snakebot/visualSnakeJointPose",100, &RVizPublisher::visualJointsCallback, this);
     sgDataSub = rosNode.subscribe("/from_matlab/SG_unfiltered",100, &RVizPublisher::sgDataCallback, this);
     kinematicsJointPoseSub = rosNode.subscribe("/snakebot/real_snake_pose",100, &RVizPublisher::kinematicsJointsCallback, this);
-    jointCandidateSub = rosNode.subscribe("/snakebot/pushpointCandidates", 100, &RVizPublisher::jointCandidateCallback, this);
+    closestJointsSub = rosNode.subscribe("/snakebot/closestJoints", 100, &RVizPublisher::closestJointCallback, this);
+    pushpointSub = rosNode.subscribe("/snakebot/pushpoints", 100, &RVizPublisher::pushpointsCallback, this);
+
 
     rvizPub = rosNode.advertise<visualization_msgs::Marker>("visualization_marker", 100);
     rvizVisualJointPub = rosNode.advertise<visualization_msgs::MarkerArray>("/snakebot/visualSnakeJointPoseToRviz",100);
@@ -22,7 +24,7 @@ RVizPublisher::RVizPublisher(ros::NodeHandle rosNodeHandle, int numberOfLinks): 
                     allForcesMarker.header.frame_id =
                         resultantForceMarker.header.frame_id =
                             ctrlMarker.header.frame_id =
-                                effortMarker.header.frame_id = "/world";
+                                effortMarker.header.frame_id = "/dummy_link";
     normalsMarker.ns = "normals";
     resultantNormalsMarker.ns = "sum of normals";
     tangentsMarker.ns = "tangents";
@@ -103,8 +105,6 @@ RVizPublisher::RVizPublisher(ros::NodeHandle rosNodeHandle, int numberOfLinks): 
     effortMarker.color.a = 1.0;
 
     foundMidPoint = false;
-    ros::Duration(5).sleep();
-
 }
 RVizPublisher::~RVizPublisher(){}
 
@@ -235,10 +235,17 @@ void RVizPublisher::sgDataCallback(const std_msgs::Float32MultiArray::ConstPtr &
     }
 }
 
-void RVizPublisher::jointCandidateCallback(const snakebot_pushpoints::pushpointCandidates::ConstPtr &msg){
+void RVizPublisher::closestJointCallback(const snakebot_matlab_communication::closestJoints::ConstPtr &msg){
     for(int candidate = 0; candidate < 3; candidate++){
-        pushpointCandidates[candidate] = msg->pushpointcandidates[candidate];
+        closestJoints[candidate] = msg->closestjoints[candidate];
     }
+}
+
+void RVizPublisher::pushpointsCallback(const snakebot_pushpoints::Pushpoints::ConstPtr &msg){
+    for(int candidate = 0; candidate < 3; candidate++){
+        pushPoints[candidate] = msg->link_numbers[candidate];
+    }
+    
 }
 
 
@@ -311,13 +318,29 @@ void RVizPublisher::publishKinematicsSnakeJointPose(){
         marker.color.g = 1.0;
         marker.color.b = 0.0;    
 
-        for(int i = 0; i < sizeof(pushpointCandidates)/sizeof(pushpointCandidates[0]); i++){  
-            if((joint_num-1) == pushpointCandidates[i]){     
+        for(int i = 0; i < sizeof(closestJoints)/sizeof(closestJoints[0]); i++){  
+            if((joint_num-1) != pushPoints[i] && (joint_num-1) == closestJoints[i]){     
                 marker.color.r = 0.0;
                 marker.color.g = 0.0;
                 marker.color.b = 1.0;
                 break;
             }
+            else if((joint_num-1) == pushPoints[i] && (joint_num-1) == closestJoints[i]){
+                marker.color.r = 1.0;
+                marker.color.g = 0.0;
+                marker.color.b = 1.0;
+                break;
+            }
+
+            else if((joint_num-1) == pushPoints[i] && (joint_num-1) != closestJoints[i]){
+                marker.color.r = 1.0;
+                marker.color.g = 0.0;
+                marker.color.b = 0.0;
+                break;
+            }
+
+
+
         }
         markerarray.markers.push_back(marker);
     }
@@ -377,18 +400,9 @@ void RVizPublisher::publishVisualNormalForce(){
         marker.pose.position.z = 0.035;
         marker.pose.orientation.x = 0.0;
         marker.pose.orientation.y = 0.0;
+        marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
        
-
-
-        if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) <= 0) {
-            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))-1;
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        }
-
-        else if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) > 0){
-            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))+1;
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        }
 
         marker.scale.x = (sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000;
         marker.scale.y = 0.005;
@@ -421,8 +435,20 @@ void RVizPublisher::publishVisualTangentForce(){
         marker.pose.position.z = 0.035;
         marker.pose.orientation.x = 0.0;
         marker.pose.orientation.y = 0.0;
-        marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+
+
+        if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) <= 0) {
+            cout<<"LESS"<<endl;
+            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))-1;
+            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        }
+
+        else if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) > 0){
+            cout<<"MORE"<<endl;
+
+            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))+1;
+            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        }
         
         marker.scale.x = (sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000;
         marker.scale.y = 0.005;

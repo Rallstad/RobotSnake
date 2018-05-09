@@ -118,6 +118,22 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
+/home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/closestJoints.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/collision.h
 string
 -
@@ -196,22 +212,6 @@ geometry_msgs/Vector3.h
 geometry_msgs/Vector3.h
 -
 geometry_msgs/Point.h
--
-
-/home/snake/Documents/catkin_ws/devel/include/snakebot_pushpoints/pushpointCandidates.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
 -
 
 /home/snake/Documents/catkin_ws/devel/include/snakebot_robot_pose/ObstaclePose.h
@@ -425,8 +425,8 @@ snakebot_labview_communication/Float64Array.h
 /home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/snakebot_labview_communication/Float64Array.h
 snakebot_labview_communication/Int32Array.h
 /home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/snakebot_labview_communication/Int32Array.h
-snakebot_pushpoints/pushpointCandidates.h
-/home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/snakebot_pushpoints/pushpointCandidates.h
+snakebot_matlab_communication/closestJoints.h
+/home/snake/Documents/catkin_ws/src/snakebot_visualizer/src/snakebot_matlab_communication/closestJoints.h
 /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
 -
 /home/snake/Documents/catkin_ws/src/snakebot_kinematics/src/kinematics.h
