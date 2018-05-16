@@ -30,14 +30,14 @@ void PropulsionController::setPhysicalSpec(double totalMass, double linkLength, 
 // CALLBACK FUNCTIONS //////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////////////
 void PropulsionController::obstacleDataCallback(const snakebot_pushpoints::Pushpoints::ConstPtr& msg){
-
+/*
     this->n1 = Vector3d(reduceForceResolution(msg->contact_normals[0].x),reduceForceResolution(msg->contact_normals[0].y),reduceForceResolution(msg->contact_normals[0].z));
     this->n2 = Vector3d(reduceForceResolution(msg->contact_normals[1].x),reduceForceResolution(msg->contact_normals[1].y),reduceForceResolution(msg->contact_normals[1].z));
     this->n3 = Vector3d(reduceForceResolution(msg->contact_normals[2].x),reduceForceResolution(msg->contact_normals[2].y),reduceForceResolution(msg->contact_normals[2].z));
     this->t1 = Vector3d(reduceForceResolution(msg->contact_tangents[0].x),reduceForceResolution(msg->contact_tangents[0].y),reduceForceResolution(msg->contact_tangents[0].z));
     this->t2 = Vector3d(reduceForceResolution(msg->contact_tangents[1].x),reduceForceResolution(msg->contact_tangents[1].y),reduceForceResolution(msg->contact_tangents[1].z));
     this->t3 = Vector3d(-reduceForceResolution(msg->contact_tangents[2].x),-reduceForceResolution(msg->contact_tangents[2].y),-reduceForceResolution(msg->contact_tangents[2].z));
-/*
+*/
     this->n1 = Vector3d(msg->contact_normals[0].x, msg->contact_normals[0].y, msg->contact_normals[0].z);
     this->n2 = Vector3d(msg->contact_normals[1].x, msg->contact_normals[1].y, msg->contact_normals[1].z);
     this->n3 = Vector3d(msg->contact_normals[2].x, msg->contact_normals[2].y, msg->contact_normals[2].z);
@@ -45,12 +45,13 @@ void PropulsionController::obstacleDataCallback(const snakebot_pushpoints::Pushp
     this->t2 = Vector3d(msg->contact_tangents[1].x, msg->contact_tangents[1].y, msg->contact_tangents[1].z);
     this->t3 = Vector3d(-msg->contact_tangents[2].x, -msg->contact_tangents[2].y, -msg->contact_tangents[2].z); // Defined opposite direction, see the pdf*/
 
-    this->c1 = Position3d(reduceContactPositionResolution(msg->contact_sides[0],msg->link_numbers[0],true,false,0),reduceContactPositionResolution(msg->contact_sides[0],msg->link_numbers[0],false,true,0),0.1);
+    /*this->c1 = Position3d(reduceContactPositionResolution(msg->contact_sides[0],msg->link_numbers[0],true,false,0),reduceContactPositionResolution(msg->contact_sides[0],msg->link_numbers[0],false,true,0),0.1);
     this->c2 = Position3d(reduceContactPositionResolution(msg->contact_sides[1],msg->link_numbers[1],true,false,1),reduceContactPositionResolution(msg->contact_sides[1],msg->link_numbers[1],false,true,1),0.1);
     this->c3 = Position3d(reduceContactPositionResolution(msg->contact_sides[2],msg->link_numbers[2],true,false,2),reduceContactPositionResolution(msg->contact_sides[2],msg->link_numbers[2],false,true,2),0.1);
-    /*this->c1 = Position3d(msg->contact_positions[0].x, msg->contact_positions[0].y, msg->contact_positions[0].z);
+    */
+    this->c1 = Position3d(msg->contact_positions[0].x, msg->contact_positions[0].y, msg->contact_positions[0].z);
     this->c2 = Position3d(msg->contact_positions[1].x, msg->contact_positions[1].y, msg->contact_positions[1].z);
-    this->c3 = Position3d(msg->contact_positions[2].x, msg->contact_positions[2].y, msg->contact_positions[2].z);*/
+    this->c3 = Position3d(msg->contact_positions[2].x, msg->contact_positions[2].y, msg->contact_positions[2].z);
     this->c3Side = msg->contact_sides[2];
     this->r = Vector3d(c3.x - c2.x, c3.y - c2.y, c3.z - c2.z);
     iPropLink = msg->centerContactLink;

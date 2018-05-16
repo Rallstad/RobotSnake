@@ -6,23 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/visual_data_topic_collector.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-geometry_msgs/Pose2D.h
--
+/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/main.cpp
+visual_data_topic_collector.h
+/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
 
 /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.cpp
 visual_data_topic_collector.h

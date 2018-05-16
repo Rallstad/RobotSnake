@@ -1,6 +1,5 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/snakebot_visual_data_topic_collector_generate_messages_cpp"
-  "/home/snake/Documents/catkin_ws/devel/include/snakebot_visual_data_topic_collector/visual_data_topic_collector.h"
 )
 
 # Per-language clean rules from dependency scanning.

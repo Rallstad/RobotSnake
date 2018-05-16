@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(snakebot_visual_data_topic_collector_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/snake/Documents/catkin_ws/devel/include " STREQUAL " ")
+if(NOT " " STREQUAL " ")
   set(snakebot_visual_data_topic_collector_INCLUDE_DIRS "")
-  set(_include_dirs "/home/snake/Documents/catkin_ws/devel/include")
+  set(_include_dirs "")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
