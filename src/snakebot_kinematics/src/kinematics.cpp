@@ -53,7 +53,6 @@ void Snake::obstacleCallback(const snakebot_visual_data_topic_collector::obstacl
 		obstaclePoses[i].x = msg->obstacles[i].x;
 		obstaclePoses[i].y = msg->obstacles[i].y;
 		obstacleNumber[i] = i+1;
-		cout<<"i: "<<i<<endl;
 	}
 }
 

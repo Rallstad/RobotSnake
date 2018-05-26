@@ -66,9 +66,9 @@ void PositionController::labviewPositionCallback(const snakebot_labview_communic
     std::vector<double> PositionMsg;
     for(int i=0;i<=12;i++){
         PositionMsg.push_back(inMsg->data[i]*3.1415/180);
-        cout<<"hei"<<endl;
     }
     currentPosition = PositionMsg;
+    currentPositionReady = true;
     calculateAndPublishEffort();    
 }
 
@@ -99,6 +99,7 @@ void PositionController::jointStateCallback(const sensor_msgs::JointState::Const
 // //////////////////////////////////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////////////////////////////////
 void PositionController::calculateAndPublishEffort(){
+    //cout<<"heiehi"<<endl;
     if (!(desiredPositionReady && currentPositionReady))
         return;
     if (firstRun){
@@ -109,6 +110,7 @@ void PositionController::calculateAndPublishEffort(){
      //  cout<< i<<" : "<< desiredPosition[i]<<endl;
     //}
     //cout<<endl;
+    cout<<"got here"<<endl;
     error = desiredPosition - currentPosition;
     //cout << "desiredsize: "<<desiredPosition.size()<<endl;
     //cout << "currentsize: "<<currentPosition.size()<<endl;

@@ -47,10 +47,12 @@ void VirtualSnake::robotPoseCallback(const snakebot_kinematics::snake_obstacles:
         linkOrientation.push_back(msg->snakePose.pose[i].theta);
 
     }
-    if ((contactLinkPosition.size() != 3) || (contactLinkOrientation.size() != 3) || (linkPosition.size() != numberOfLinks) || (linkOrientation.size() != numberOfLinks)){
+    if ((contactLinkPosition.size() != 3) || (contactLinkOrientation.size() != 3) || (linkPosition.size() != numberOfLinks-1) || (linkOrientation.size() != numberOfLinks-1)){
+        cout<<"robot false"<<endl;
         robotPoseReady = false;
     }
     else {
+        cout<<"robot true"<<endl;
         robotPoseReady = true;
     }
     for (int i = 0; i < msg->obstaclePose.number.size(); i++){
@@ -114,7 +116,7 @@ void VirtualSnake::generateShapeCurve(){ // With cosint method the snake must go
     Point2d postC3;
     std::vector<Point2d> obst;
     if (obstaclePosition.size() >= 5){
-        preC1 = obstaclePosition[3];
+        preC1 = obstaclePosition[0];
         postC3 = obstaclePosition[4];
         obst.push_back(preC1);obst.push_back(c1);obst.push_back(c2);obst.push_back(c3);obst.push_back(postC3);
     }
@@ -135,7 +137,7 @@ void VirtualSnake::generateShapeCurve(){ // With cosint method the snake must go
     tk::spline shapeSpline;
     shapeSpline.set_points(x,y);
 
-    if (linkPosition.size() == numberOfLinks){
+    if (linkPosition.size() == numberOfLinks-1){
         for (double xx = -1; xx < 4; xx += 0.001){
             xi.push_back(xx);
         }
@@ -276,7 +278,7 @@ void VirtualSnake::findDesiredJointPositions(){
     }
     jointPositions.push_back(tail);
     for (int i = startIndex; i < shapeCurve.size(); i++){
-        if (jointPositions.size() > numberOfLinks){
+        if (jointPositions.size() > numberOfLinks-1){
             cout << "count enough joints" << endl;
             break;
         }
@@ -336,7 +338,7 @@ void VirtualSnake::findDesiredJointAngles(){
         cout << linkPosition[i].y << " ";
     }
     cout << "];" << endl;
-    for (int i = 0; i < int(linkAngles.size()) - 1; i++){
+    for (int i = 0; i < int(linkAngles.size()) ; i++){
         jointSetPoint.push_back(linkAngles[i+1] - linkAngles[i]);
     }
 }
@@ -346,7 +348,7 @@ void VirtualSnake::findDesiredJointAngles(){
 void VirtualSnake::zeroPadJointSetPoints(){
     //cout << "zero padded ";
     int zeroPadCount = 0;   
-    for (int i = jointSetPoint.size(); i < numberOfLinks-1; i++){
+    for (int i = jointSetPoint.size(); i < numberOfLinks-2; i++){
         jointSetPoint.push_back(0.0);
         zeroPadCount++;
     }
@@ -355,13 +357,14 @@ void VirtualSnake::zeroPadJointSetPoints(){
 
 void VirtualSnake::publishSetPoints(){
     zeroPadJointSetPoints();
-    if (jointSetPoint.size() < numberOfLinks-1){
+    if (jointSetPoint.size() < numberOfLinks-2){
         cout << "ERROR: set point size does not equal number of joints" << endl;
         return;
     }
 
     std_msgs::Float64MultiArray msg;
     for (int i = 0; i < jointSetPoint.size(); i++){
+        cout<<i<<endl;
         msg.data.push_back(jointSetPoint[i]);
     }
     
