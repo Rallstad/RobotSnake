@@ -9,11 +9,14 @@
 #include "visualization_msgs/MarkerArray.h"
 
 #include "snakebot_kinematics/kinematics.h"
+#include "snakebot_kinematics/obstacles.h"
+#include "snakebot_kinematics/snake_obstacles.h"
 
 #include "snakebot_labview_communication/Float64Array.h"
 #include "snakebot_labview_communication/Int32Array.h"
 
 #include "/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h"
+#include "snakebot_visual_data_topic_collector/obstacles.h"
 
 #include "ros/ros.h"
 #include "rosbag/bag.h"
@@ -34,25 +37,32 @@ private:
 
 	geometry_msgs::Pose2D jointPoses[13];
 	geometry_msgs::Pose2D jointPosesPrev[13];
+
+	geometry_msgs::Pose2D obstaclePoses[5];
+	int obstacleNumber[5];
 	//visualization_msgs::MarkerArray jointPose;
 
 	ros::Subscriber measuredJointAnglesSub;
 	//ros::Subscriber headGroundPoseSub;
 	ros::Subscriber jointPoseSub;
 	ros::Subscriber matlabTestSub;
+	ros::Subscriber obstacleSub;
 
 	ros::Publisher snakeConfigurationPub;
 	ros::Publisher snakeJointPosePub;
+	ros::Publisher snakeObstaclePub;
 
 	void anglesCallback(const snakebot_labview_communication::Float64Array::ConstPtr &msg);
 	void headGroundPoseCallback(const geometry_msgs::Pose2D::ConstPtr &msg);
 	void jointPoseCallback(const snakebot_visual_data_topic_collector::jointposes::ConstPtr &msg);
 	void matlabCallback(const geometry_msgs::Point::ConstPtr &msg);
+	void obstacleCallback(const snakebot_visual_data_topic_collector::obstacles::ConstPtr& msg);
 
 public:
 	void calculateJointAnglesWorld();
 	void calculateJointPosition();
 	void publishSnakeConfiguration();
+	void publishSnakeObstaclePose();
 	//void publishKinematicsSnakeJointPose();
 	void writeJointPosesToFile();
 	//geometry_msgs::Pose2D getHeadGroundPose();

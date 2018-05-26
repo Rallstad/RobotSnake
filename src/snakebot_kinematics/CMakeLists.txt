@@ -52,6 +52,8 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    FILES
    kinematics.msg
+   obstacles.msg
+   snake_obstacles.msg
 )
 
 ## Generate services in the 'srv' folder

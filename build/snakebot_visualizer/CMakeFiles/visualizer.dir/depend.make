@@ -5,6 +5,8 @@ snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Docume
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/SnakeContacts.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_input_interface/Ctrl.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
+snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/obstacles.h
+snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Float64Array.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Int32Array.h
 snakebot_visualizer/CMakeFiles/visualizer.dir/src/main.cpp.o: /home/snake/Documents/catkin_ws/devel/include/snakebot_matlab_communication/closestJoints.h

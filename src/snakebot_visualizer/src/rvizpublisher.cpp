@@ -24,7 +24,7 @@ RVizPublisher::RVizPublisher(ros::NodeHandle rosNodeHandle, int numberOfLinks): 
                     allForcesMarker.header.frame_id =
                         resultantForceMarker.header.frame_id =
                             ctrlMarker.header.frame_id =
-                                effortMarker.header.frame_id = "/dummy_link";
+                                effortMarker.header.frame_id = "/world";
     normalsMarker.ns = "normals";
     resultantNormalsMarker.ns = "sum of normals";
     tangentsMarker.ns = "tangents";
@@ -200,8 +200,8 @@ void RVizPublisher::getData(StateSubscriber stateSub){
 
 
 void RVizPublisher::obstaclesCallback(const snakebot_visual_data_topic_collector::obstacles::ConstPtr &msg){
-    for(int i = 0; i <= 2; i++){
-        obstaclePositions[i] = msg->obstacles[i];
+    for(int i = 1; i <= 3; i++){
+        obstaclePositions[i-1] = msg->obstacles[i];
     }
 }
 
@@ -351,15 +351,15 @@ void RVizPublisher::publishKinematicsSnakeJointPose(){
 void RVizPublisher::publishVisualObstacle(){
     visualization_msgs::MarkerArray markerarray;
     visualization_msgs::Marker marker;
-    for(int obstacle_num = 14; obstacle_num <= 16; obstacle_num++){
+    for(int obstacle_num = 15; obstacle_num <= 17; obstacle_num++){
         marker.header.frame_id = "world";
         marker.header.stamp = ros::Time();
         marker.ns = "obstacles";
         marker.id = obstacle_num;
         marker.type = visualization_msgs::Marker::CYLINDER;
         marker.action = visualization_msgs::Marker::ADD;
-        marker.pose.position.x = obstaclePositions[obstacle_num-14].x;
-        marker.pose.position.y = obstaclePositions[obstacle_num-14].y;
+        marker.pose.position.x = obstaclePositions[obstacle_num-15].x;
+        marker.pose.position.y = obstaclePositions[obstacle_num-15].y;
         marker.pose.position.z = 0.05;
         marker.pose.orientation.x = 0.0;
         marker.pose.orientation.y = 0.0;
@@ -388,7 +388,7 @@ void RVizPublisher::publishVisualNormalForce(){
 
     visualization_msgs::MarkerArray markerarray;
     visualization_msgs::Marker marker;
-    for(int joint_num = 1; joint_num <= 13; joint_num++){
+    for(int joint_num = 13; joint_num >= 1; joint_num--){
         marker.header.frame_id = "world";
         marker.header.stamp = ros::Time();
         marker.ns = "normal_forces";
@@ -400,17 +400,28 @@ void RVizPublisher::publishVisualNormalForce(){
         marker.pose.position.z = 0.035;
         marker.pose.orientation.x = 0.0;
         marker.pose.orientation.y = 0.0;
-        marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        marker.pose.orientation.z = sin(((kinematicsJointPoses[joint_num-1].theta+270)/2)*(M_PI/180));
+        marker.pose.orientation.w = cos(((kinematicsJointPoses[joint_num-1].theta+270)/2)*(M_PI/180));
+        
        
 
-        marker.scale.x = (sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000;
+        /*if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) <= 0) {
+        
+            
+        }
+
+        else if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) > 0){
+            marker.pose.orientation.z = sin(((kinematicsJointPoses[joint_num-1].theta-90)/2)*(M_PI/180));
+            marker.pose.orientation.w = cos(((kinematicsJointPoses[joint_num-1].theta-90)/2)*(M_PI/180));
+        }*/
+
+        marker.scale.x = -(sgData[13 - joint_num] - forceMidpoint[13 - joint_num])/2000;
         marker.scale.y = 0.005;
         marker.scale.z = 0.005;
         marker.color.a = 1.0; // Don't forget to set the alpha!
         marker.color.r = 1.0;
-        marker.color.g = 0.0;
-        marker.color.b = 0.0;
+        marker.color.g = 1.0;
+        marker.color.b = 1.0;
         markerarray.markers.push_back(marker);
 
     }
@@ -423,7 +434,7 @@ void RVizPublisher::publishVisualNormalForce(){
 void RVizPublisher::publishVisualTangentForce(){
     visualization_msgs::MarkerArray markerarray;
     visualization_msgs::Marker marker;
-    for(int joint_num = 1; joint_num <= 13; joint_num++){
+    for(int joint_num = 13; joint_num >= 1; joint_num--){
         marker.header.frame_id = "world";
         marker.header.stamp = ros::Time();
         marker.ns = "tangent_forces";
@@ -435,28 +446,23 @@ void RVizPublisher::publishVisualTangentForce(){
         marker.pose.position.z = 0.035;
         marker.pose.orientation.x = 0.0;
         marker.pose.orientation.y = 0.0;
-
-
-        if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) <= 0) {
-            cout<<"LESS"<<endl;
-            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))-1;
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        }
-
-        else if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) > 0){
-            cout<<"MORE"<<endl;
-
-            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))+1;
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        }
+        marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
         
-        marker.scale.x = (sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000;
+        if(sgData[13 - joint_num] > forceMidpoint[13 - joint_num]){
+        marker.scale.x = (sgData[13 - joint_num] - forceMidpoint[13 - joint_num])/2000;
+
+        }
+        else{
+        marker.scale.x = (forceMidpoint[13 - joint_num] - sgData[13 - joint_num]) /2000;
+
+        }
         marker.scale.y = 0.005;
         marker.scale.z = 0.005;
         marker.color.a = 1.0; // Don't forget to set the alpha!
-        marker.color.r = 1.0;
-        marker.color.g = 0.0;
-        marker.color.b = 1.0;
+        marker.color.r = 0.5;
+        marker.color.g = 0.5;
+        marker.color.b = 0.5;
         markerarray.markers.push_back(marker);
 
     }

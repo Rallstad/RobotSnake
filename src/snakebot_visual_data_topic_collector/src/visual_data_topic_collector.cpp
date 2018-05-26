@@ -15,9 +15,11 @@ Topic_collector::Topic_collector(ros::NodeHandle n){
 	joint2Sub = n.subscribe("joint_2/ground_pose",100, &Topic_collector::joint2Callback, this);
 	joint1Sub = n.subscribe("joint_1/ground_pose",100, &Topic_collector::joint1Callback, this);
 	joint0Sub = n.subscribe("joint_0/ground_pose",100, &Topic_collector::joint0Callback, this);
+	obstacle0Sub = n.subscribe("obstacle_0/ground_pose", 100, &Topic_collector::obstacle0Callback, this);
 	obstacle1Sub = n.subscribe("obstacle_1/ground_pose", 100, &Topic_collector::obstacle1Callback, this);
 	obstacle2Sub = n.subscribe("obstacle_2/ground_pose", 100, &Topic_collector::obstacle2Callback, this);
 	obstacle3Sub = n.subscribe("obstacle_3/ground_pose", 100, &Topic_collector::obstacle3Callback, this);
+	obstacle4Sub = n.subscribe("obstacle_4/ground_pose", 100, &Topic_collector::obstacle4Callback, this);
 
 
 	//jointPosePub = n.advertise<snakebot_visual_data_topic_collector::visual_data_topic_collector>("/test",10);
@@ -204,19 +206,28 @@ void Topic_collector::joint0Callback(const geometry_msgs::Pose2D::ConstPtr &msg)
 
 }
 
-void Topic_collector::obstacle1Callback(const geometry_msgs::Pose2D::ConstPtr &msg){
+void Topic_collector::obstacle0Callback(const geometry_msgs::Pose2D::ConstPtr &msg){
 	obstacles[0].x = msg->x;
 	obstacles[0].y = msg->y;
 }
 
-void Topic_collector::obstacle2Callback(const geometry_msgs::Pose2D::ConstPtr &msg){
+void Topic_collector::obstacle1Callback(const geometry_msgs::Pose2D::ConstPtr &msg){
 	obstacles[1].x = msg->x;
 	obstacles[1].y = msg->y;
 }
 
-void Topic_collector::obstacle3Callback(const geometry_msgs::Pose2D::ConstPtr &msg){
+void Topic_collector::obstacle2Callback(const geometry_msgs::Pose2D::ConstPtr &msg){
 	obstacles[2].x = msg->x;
 	obstacles[2].y = msg->y;
+}
+
+void Topic_collector::obstacle3Callback(const geometry_msgs::Pose2D::ConstPtr &msg){
+	obstacles[3].x = msg->x;
+	obstacles[3].y = msg->y;
+}
+void Topic_collector::obstacle4Callback(const geometry_msgs::Pose2D::ConstPtr &msg){
+	obstacles[4].x = msg->x;
+	obstacles[4].y = msg->y;
 }
 
 
@@ -237,7 +248,7 @@ void Topic_collector::publishJointPose(){
 void Topic_collector::publishObstacles(){
 	geometry_msgs::Pose2D pose2d;
 	snakebot_visual_data_topic_collector::obstacles msg;
-	for(int i=0;i<=2;i++){
+	for(int i=0;i<=4;i++){
 		pose2d.x = obstacles[i].x;
 		pose2d.y = obstacles[i].y;
 		msg.obstacles.push_back(pose2d);

@@ -33,7 +33,11 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/snakebot_kinematics/msg" TYPE FILE FILES "/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/snakebot_kinematics/msg" TYPE FILE FILES
+    "/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg"
+    "/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg"
+    "/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/snake_obstacles.msg"
+    )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

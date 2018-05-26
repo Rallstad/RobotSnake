@@ -46,6 +46,8 @@ CMAKE_BINARY_DIR = /home/snake/Documents/catkin_ws/build
 include snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp.dir/progress.make
 
 snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
+snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/obstacles.h
+snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h
 
 /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg
@@ -55,8 +57,28 @@ snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp: /home/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from snakebot_kinematics/kinematics.msg"
 	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg -Isnakebot_kinematics:/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_kinematics -o /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics -e /opt/ros/indigo/share/gencpp/cmake/..
 
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/obstacles.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/obstacles.h: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/obstacles.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/obstacles.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from snakebot_kinematics/obstacles.msg"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg -Isnakebot_kinematics:/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_kinematics -o /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics -e /opt/ros/indigo/share/gencpp/cmake/..
+
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/snake_obstacles.msg
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg
+/home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from snakebot_kinematics/snake_obstacles.msg"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/snake_obstacles.msg -Isnakebot_kinematics:/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_kinematics -o /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics -e /opt/ros/indigo/share/gencpp/cmake/..
+
 snakebot_kinematics_generate_messages_cpp: snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp
 snakebot_kinematics_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
+snakebot_kinematics_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/obstacles.h
+snakebot_kinematics_generate_messages_cpp: /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h
 snakebot_kinematics_generate_messages_cpp: snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp.dir/build.make
 .PHONY : snakebot_kinematics_generate_messages_cpp
 

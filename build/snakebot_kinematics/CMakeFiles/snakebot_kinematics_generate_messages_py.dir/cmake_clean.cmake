@@ -1,6 +1,8 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/snakebot_kinematics_generate_messages_py"
   "/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_kinematics.py"
+  "/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_obstacles.py"
+  "/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py"
   "/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/__init__.py"
 )
 

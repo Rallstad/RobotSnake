@@ -46,6 +46,8 @@ CMAKE_BINARY_DIR = /home/snake/Documents/catkin_ws/build
 include snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_lisp.dir/progress.make
 
 snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/kinematics.lisp
+snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/obstacles.lisp
+snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/snake_obstacles.lisp
 
 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/kinematics.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/kinematics.lisp: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg
@@ -54,8 +56,26 @@ snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_lisp: /home
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from snakebot_kinematics/kinematics.msg"
 	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg -Isnakebot_kinematics:/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_kinematics -o /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg
 
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/obstacles.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/obstacles.lisp: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/obstacles.lisp: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from snakebot_kinematics/obstacles.msg"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg -Isnakebot_kinematics:/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_kinematics -o /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg
+
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/snake_obstacles.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/snake_obstacles.lisp: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/snake_obstacles.msg
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/snake_obstacles.lisp: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/snake_obstacles.lisp: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg
+/home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/snake_obstacles.lisp: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from snakebot_kinematics/snake_obstacles.msg"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/snake_obstacles.msg -Isnakebot_kinematics:/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_kinematics -o /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg
+
 snakebot_kinematics_generate_messages_lisp: snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_lisp
 snakebot_kinematics_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/kinematics.lisp
+snakebot_kinematics_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/obstacles.lisp
+snakebot_kinematics_generate_messages_lisp: /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/snake_obstacles.lisp
 snakebot_kinematics_generate_messages_lisp: snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_lisp.dir/build.make
 .PHONY : snakebot_kinematics_generate_messages_lisp
 

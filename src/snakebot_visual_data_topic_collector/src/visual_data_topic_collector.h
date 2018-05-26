@@ -15,7 +15,7 @@ class Topic_collector{
 private:
 	geometry_msgs::Pose2D jointPoses[13];
 	geometry_msgs::Pose2D jointPosesPrev[13];
-	geometry_msgs::Pose2D obstacles[3];
+	geometry_msgs::Pose2D obstacles[5];
 
 	visualization_msgs::MarkerArray jointPose;
 	visualization_msgs::MarkerArray obstacle;
@@ -49,9 +49,11 @@ private:
 	ros::Subscriber joint2Sub;
 	ros::Subscriber joint1Sub;
 	ros::Subscriber joint0Sub;
+	ros::Subscriber obstacle0Sub;
 	ros::Subscriber obstacle1Sub;
 	ros::Subscriber obstacle2Sub;
 	ros::Subscriber obstacle3Sub;
+	ros::Subscriber obstacle4Sub;
 
 	ros::Publisher jointPosePub;
 	ros::Publisher obstaclePub;
@@ -69,9 +71,11 @@ private:
 	void joint2Callback(const geometry_msgs::Pose2D::ConstPtr &msg);
 	void joint1Callback(const geometry_msgs::Pose2D::ConstPtr &msg);
 	void joint0Callback(const geometry_msgs::Pose2D::ConstPtr &msg);
+	void obstacle0Callback(const geometry_msgs::Pose2D::ConstPtr &msg);
 	void obstacle1Callback(const geometry_msgs::Pose2D::ConstPtr &msg);
 	void obstacle2Callback(const geometry_msgs::Pose2D::ConstPtr &msg);
 	void obstacle3Callback(const geometry_msgs::Pose2D::ConstPtr &msg);
+	void obstacle4Callback(const geometry_msgs::Pose2D::ConstPtr &msg);
 
 
 

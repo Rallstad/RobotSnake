@@ -23,7 +23,7 @@ Snake::Snake(ros::NodeHandle n){
 	SGDataJoint13Sub = n.subscribe("from_matlab/SG_joint13", 100, &Snake::SGDataJoint13Callback, this);*/
 	CollisionListPub = n.advertise<snakebot_matlab_communication::collisionList>("/snakebot/collisionsMamba",13);
 	closestJointsPub = n.advertise<snakebot_matlab_communication::closestJoints>("/snakebot/closestJoints",10);
-	propulsionPub = n.advertise<std_msgs::Float64MultiArray>("/to_matlab/propulsion_effort",10);
+	propulsionPub = n.advertise<std_msgs::Float64MultiArray>("/to_matlab/propulsion_effort",30);
 	initialSGRead = true;
 
 	
@@ -65,7 +65,7 @@ void Snake::propulsionCallback(const std_msgs::Float64MultiArray::ConstPtr& msg)
 	propulsionPub.publish(propmsg);
 }
 
-void Snake::publishCollisions(){
+/*void Snake::publishCollisions(){
 	//Because of how the pushpointextractor finds pushpoints, the order of the joints has to be reversed
 	
 	snakebot_matlab_communication::collisionList list;
@@ -101,9 +101,9 @@ void Snake::publishCollisions(){
 	}
 	CollisionListPub.publish(list);
 	//CollisionPub.pub(msg);
-}
+}*/
 
-/*void Snake::publishCollisions(){
+void Snake::publishCollisions(){
 	findPossibleCollisions();
 	snakebot_matlab_communication::collisionList list;
 	int obstacle_number = 1;
@@ -126,7 +126,7 @@ void Snake::publishCollisions(){
 	obstacle1.clear();
 	obstacle2.clear();
 	obstacle3.clear();
-}*/
+}
 
 
 
@@ -273,9 +273,9 @@ geometry_msgs::Point Snake::getContactPosition(string contactSide, geometry_msgs
 
 
 void Snake::obstacleCallback(const snakebot_visual_data_topic_collector::obstacles::ConstPtr& msg){
-    for(int obstacle_num = 0; obstacle_num < 3; obstacle_num++){
-        obstacles[obstacle_num].x = msg->obstacles[obstacle_num].x;
-        obstacles[obstacle_num].y = msg->obstacles[obstacle_num].y;
+    for(int obstacle_num = 1; obstacle_num < 4; obstacle_num++){
+        obstacles[obstacle_num-1].x = msg->obstacles[obstacle_num].x;
+        obstacles[obstacle_num-1].y = msg->obstacles[obstacle_num].y;
     }
 }
 

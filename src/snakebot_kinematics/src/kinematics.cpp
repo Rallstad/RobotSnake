@@ -9,8 +9,11 @@ Snake::Snake(ros::NodeHandle n){
 	//headGroundPoseSub = n.subscribe("snake_tail/ground_pose", 100, &Snake::headGroundPoseCallback, this);
 	jointPoseSub = n.subscribe("/snakebot/visualSnakeJointPose/",100, &Snake::jointPoseCallback,this);
 	matlabTestSub = n.subscribe("/SG_data", 100, &Snake::matlabCallback,this);
+	obstacleSub = n.subscribe("/snakebot/obstaclePosition",100, &Snake::obstacleCallback,this);
 
 	snakeConfigurationPub = n.advertise<snakebot_kinematics::kinematics>("/snakebot/real_snake_pose",10);
+	snakeObstaclePub = n.advertise<snakebot_kinematics::snake_obstacles>("snakebot/snake_obstacles",10);
+
 	//snakeJointPosePub = n.advertise<visualization_msgs::MarkerArray>("/snakebot/real_snake_joint_pose",10);
 }
 
@@ -45,6 +48,15 @@ void Snake::jointPoseCallback(const snakebot_visual_data_topic_collector::jointp
 	}
 }
 
+void Snake::obstacleCallback(const snakebot_visual_data_topic_collector::obstacles::ConstPtr& msg){
+	for(int i =0;i<msg->obstacles.size();i++){
+		obstaclePoses[i].x = msg->obstacles[i].x;
+		obstaclePoses[i].y = msg->obstacles[i].y;
+		obstacleNumber[i] = i+1;
+		cout<<"i: "<<i<<endl;
+	}
+}
+
 
 void Snake::publishSnakeConfiguration(){
 	//snakebot_kinematics::kinematics pose;
@@ -59,6 +71,33 @@ void Snake::publishSnakeConfiguration(){
 		//cout<<joint_num<< ": x: " <<pose2d.x<<" y: "<<pose2d.y<<" theta: "<<pose2d.theta<<endl;
 	} 
 	snakeConfigurationPub.publish(positions);
+}
+
+void Snake::publishSnakeObstaclePose(){
+	geometry_msgs::Pose2D pose2d;
+	snakebot_kinematics::kinematics positions;
+	snakebot_kinematics::obstacles Obstacles;
+	
+	for(int joint_num = 12;joint_num >= 0;joint_num--){
+		positions.number.push_back(joint_num);
+		pose2d.x = jointPoses[joint_num].x;
+		pose2d.y = jointPoses[joint_num].y;
+		pose2d.theta = jointPoses[joint_num].theta;
+		positions.pose.push_back(pose2d);
+	}
+
+	for(int i=0;i<5;i++){
+        Obstacles.number.push_back(i+1);
+        geometry_msgs::Pose2D pose;
+        pose.x = obstaclePoses[i].x;
+        pose.y = obstaclePoses[i].y;
+        Obstacles.pose.push_back(pose);
+	}
+	
+	snakebot_kinematics::snake_obstacles Snake_Obstacles;
+	Snake_Obstacles.obstaclePose = Obstacles;
+	Snake_Obstacles.snakePose = positions;
+	snakeObstaclePub.publish(Snake_Obstacles);
 }
 
 

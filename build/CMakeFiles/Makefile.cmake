@@ -443,6 +443,8 @@ SET(CMAKE_DEPEND_INFO_FILES
   "snakebot_input_interface/CMakeFiles/snakebot_input_interface_genlisp.dir/DependInfo.cmake"
   "snakebot_input_interface/CMakeFiles/snakebot_input_interface_genpy.dir/DependInfo.cmake"
   "snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_kinematics.dir/DependInfo.cmake"
+  "snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles.dir/DependInfo.cmake"
+  "snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles.dir/DependInfo.cmake"
   "snakebot_kinematics/CMakeFiles/kinematics.dir/DependInfo.cmake"
   "snakebot_kinematics/CMakeFiles/snakebot_kinematics_gencpp.dir/DependInfo.cmake"
   "snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages.dir/DependInfo.cmake"

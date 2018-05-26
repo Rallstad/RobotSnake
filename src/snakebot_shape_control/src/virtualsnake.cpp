@@ -5,7 +5,8 @@ VirtualSnake::VirtualSnake(ros::NodeHandle n){
     linkLength = 0.2 + 0.03*2;
     linkWidth = 0.1;
     obstacleDataSub = n.subscribe("/snakebot/pushpoints", 14, &VirtualSnake::obstacleDataCallback, this);
-    robotPoseSub = n.subscribe( "/snakebot/robot_pose", 14, &VirtualSnake::robotPoseCallback, this );
+    //robotPoseSub = n.subscribe( "/snakebot/robot_pose", 14, &VirtualSnake::robotPoseCallback, this );
+    robotPoseSub = n.subscribe( "/snakebot/snake_obstacles", 14, &VirtualSnake::robotPoseCallback, this );
     desiredPositionPub = n.advertise<std_msgs::Float64MultiArray>("/snakebot/desired_joint_positions", 1);
 }
 
@@ -27,13 +28,13 @@ void VirtualSnake::obstacleDataCallback(const snakebot_pushpoints::Pushpoints::C
 }
 
 
-void VirtualSnake::robotPoseCallback(const snakebot_robot_pose::Pose::ConstPtr &msg){
+void VirtualSnake::robotPoseCallback(const snakebot_kinematics::snake_obstacles::ConstPtr &msg){
     contactLinkPosition.clear();
     contactLinkOrientation.clear();
     linkPosition.clear();
     linkOrientation.clear();
     obstaclePosition.clear();
-    for (int i = 0; i < msg->snakePose.name.size(); i++){
+    for (int i = 0; i < msg->snakePose.number.size(); i++){
         for (int j = 0; j < contactLinkNumber.size(); j++){
             int link = contactLinkNumber[j];
             if (msg->snakePose.number[i] == link){
@@ -52,7 +53,7 @@ void VirtualSnake::robotPoseCallback(const snakebot_robot_pose::Pose::ConstPtr &
     else {
         robotPoseReady = true;
     }
-    for (int i = 0; i < msg->obstaclePose.name.size(); i++){
+    for (int i = 0; i < msg->obstaclePose.number.size(); i++){
         obstaclePosition.push_back(Point2d(msg->obstaclePose.pose[i].x, msg->obstaclePose.pose[i].y));
     }
 }

@@ -553,6 +553,32 @@ _snakebot_kinematics_generate_messages_check_deps_kinematics/fast:
 .PHONY : _snakebot_kinematics_generate_messages_check_deps_kinematics/fast
 
 #=============================================================================
+# Target rules for targets named _snakebot_kinematics_generate_messages_check_deps_obstacles
+
+# Build rule for target.
+_snakebot_kinematics_generate_messages_check_deps_obstacles: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _snakebot_kinematics_generate_messages_check_deps_obstacles
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_obstacles
+
+# fast build rule for target.
+_snakebot_kinematics_generate_messages_check_deps_obstacles/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles.dir/build.make snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles.dir/build
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_obstacles/fast
+
+#=============================================================================
+# Target rules for targets named _snakebot_kinematics_generate_messages_check_deps_snake_obstacles
+
+# Build rule for target.
+_snakebot_kinematics_generate_messages_check_deps_snake_obstacles: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _snakebot_kinematics_generate_messages_check_deps_snake_obstacles
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_snake_obstacles
+
+# fast build rule for target.
+_snakebot_kinematics_generate_messages_check_deps_snake_obstacles/fast:
+	$(MAKE) -f snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles.dir/build.make snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles.dir/build
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_snake_obstacles/fast
+
+#=============================================================================
 # Target rules for targets named kinematics
 
 # Build rule for target.
@@ -2715,6 +2741,8 @@ help:
 	@echo "... snakebot_input_interface_genlisp"
 	@echo "... snakebot_input_interface_genpy"
 	@echo "... _snakebot_kinematics_generate_messages_check_deps_kinematics"
+	@echo "... _snakebot_kinematics_generate_messages_check_deps_obstacles"
+	@echo "... _snakebot_kinematics_generate_messages_check_deps_snake_obstacles"
 	@echo "... kinematics"
 	@echo "... snakebot_kinematics_gencpp"
 	@echo "... snakebot_kinematics_generate_messages"

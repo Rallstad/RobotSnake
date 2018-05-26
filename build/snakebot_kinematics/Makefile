@@ -164,6 +164,34 @@ _snakebot_kinematics_generate_messages_check_deps_kinematics/fast:
 .PHONY : _snakebot_kinematics_generate_messages_check_deps_kinematics/fast
 
 # Convenience name for target.
+snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles.dir/rule:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles.dir/rule
+.PHONY : snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles.dir/rule
+
+# Convenience name for target.
+_snakebot_kinematics_generate_messages_check_deps_obstacles: snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles.dir/rule
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_obstacles
+
+# fast build rule for target.
+_snakebot_kinematics_generate_messages_check_deps_obstacles/fast:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles.dir/build.make snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles.dir/build
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_obstacles/fast
+
+# Convenience name for target.
+snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles.dir/rule:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles.dir/rule
+.PHONY : snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles.dir/rule
+
+# Convenience name for target.
+_snakebot_kinematics_generate_messages_check_deps_snake_obstacles: snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles.dir/rule
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_snake_obstacles
+
+# fast build rule for target.
+_snakebot_kinematics_generate_messages_check_deps_snake_obstacles/fast:
+	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles.dir/build.make snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles.dir/build
+.PHONY : _snakebot_kinematics_generate_messages_check_deps_snake_obstacles/fast
+
+# Convenience name for target.
 snakebot_kinematics/CMakeFiles/kinematics.dir/rule:
 	cd /home/snake/Documents/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 snakebot_kinematics/CMakeFiles/kinematics.dir/rule
 .PHONY : snakebot_kinematics/CMakeFiles/kinematics.dir/rule
@@ -372,6 +400,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... _snakebot_kinematics_generate_messages_check_deps_kinematics"
+	@echo "... _snakebot_kinematics_generate_messages_check_deps_obstacles"
+	@echo "... _snakebot_kinematics_generate_messages_check_deps_snake_obstacles"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"

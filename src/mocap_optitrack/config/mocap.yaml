@@ -69,20 +69,30 @@ rigid_bodies:
         child_frame_id: joint_0/base_link
         parent_frame_id: world
     '14':
+        pose: obstacle_0/pose
+        pose2d: obstacle_0/ground_pose
+        child_frame_id: obstacle_0/base_link
+        parent_frame_id: world
+    '15':
         pose: obstacle_1/pose
         pose2d: obstacle_1/ground_pose
         child_frame_id: obstacle_1/base_link
-        parent_frame_id: world
-    '15':
+        parent_frame_id: world    
+    '16':
         pose: obstacle_2/pose
         pose2d: obstacle_2/ground_pose
         child_frame_id: obstacle_2/base_link
-        parent_frame_id: world    
-    '16':
+        parent_frame_id: world
+    '17':
         pose: obstacle_3/pose
         pose2d: obstacle_3/ground_pose
         child_frame_id: obstacle_3/base_link
-        parent_frame_id: world  
+        parent_frame_id: world
+    '18':
+        pose: obstacle_4/pose
+        pose2d: obstacle_4/ground_pose
+        child_frame_id: obstacle_4/base_link
+        parent_frame_id: world              
 
 optitrack_config:
         multicast_address: 224.0.0.1

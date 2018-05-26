@@ -8,6 +8,7 @@
 #include "snakebot_robot_pose/Pose.h"
 #include "snakebot_shape_control/ShapeCurve.h"
 #include "spline.h"
+#include "snakebot_kinematics/snake_obstacles.h"
 
 using std::cout;
 using std::endl;
@@ -62,7 +63,7 @@ private:
     ros::Subscriber robotPoseSub;
     ros::Subscriber shapeCurveSub;
 
-    void robotPoseCallback(const snakebot_robot_pose::Pose::ConstPtr& msg);
+    void robotPoseCallback(const snakebot_kinematics::snake_obstacles::ConstPtr &msg);
     void obstacleDataCallback(const snakebot_pushpoints::Pushpoints::ConstPtr& msg);
     void shapeCurveCallback(const snakebot_shape_control::ShapeCurve::ConstPtr& msg);
 

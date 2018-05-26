@@ -7,6 +7,8 @@
 ce603471c95524dfa445035ea03e3401 /home/snake/Documents/catkin_ws/devel/include/snakebot_collisions/SnakeContacts.h
 3a3de277da9896fafd4be50e6cc5e9d9 /home/snake/Documents/catkin_ws/devel/include/snakebot_input_interface/Ctrl.h
 ca5a59ef18976c8a9bc443a081df4948 /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/kinematics.h
+994f65b99fab801fc90493170c9bf13c /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/obstacles.h
+82a56d2c31da869a5a51a0ea73b21870 /home/snake/Documents/catkin_ws/devel/include/snakebot_kinematics/snake_obstacles.h
 c80a5c8838b5272c32311affa3007f21 /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Collisions.h
 407a2161cb990064f7381c60a82b5901 /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Float64Array.h
 ac486cdc92954bcb1a6d12a6bd0c3fbb /home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Int32Array.h
@@ -42,6 +44,8 @@ a17c6a46ef9f07981fad500afaa49831 /home/snake/Documents/catkin_ws/devel/lib/pytho
 7a116190b21acba39523951856c4ee32 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_input_interface/msg/__init__.py
 268e641f658fe6a9a54c060c9ca5f394 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/__init__.py
 7d69acac9df841c5503eea7ff486f024 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_kinematics.py
+e08258695eb90516e7b40cc130450e39 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_obstacles.py
+b005d4b54cf929b73a5df0ef8d5006e2 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py
 f74222fe3b71ad57275fc4e7d20070f9 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_labview_communication/msg/_Collisions.py
 9ffb5d734bf395a28436fbe5a86439d9 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_labview_communication/msg/_Float64Array.py
 c095c85a10095db70606fd902293cfcc /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_labview_communication/msg/_Int32Array.py
@@ -81,6 +85,8 @@ b72b4603b24d0454b36d713a94fc54cf /home/snake/Documents/catkin_ws/devel/share/com
 2a3078b6bc8d6e78f992e86ebe597291 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_collisions/msg/SnakeContacts.lisp
 75ce85745b80ee8a37e02e3ef3fcf563 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_input_interface/msg/Ctrl.lisp
 6589e09ae4e136329e7be694be12da52 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/kinematics.lisp
+eb2a7f58a724c2536eb35efad04a271b /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/obstacles.lisp
+5d1e38f16d38327121811892c0dd9099 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_kinematics/msg/snake_obstacles.lisp
 399e9035ab34c8113e122f378ea9a250 /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_labview_communication/msg/Collisions.lisp
 e56e3e3f6748318d7bbb91b30741849e /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_labview_communication/msg/Float64Array.lisp
 dc0a290dc5904d1159dd50480631990e /home/snake/Documents/catkin_ws/devel/share/common-lisp/ros/snakebot_labview_communication/msg/Int32Array.lisp
@@ -177,6 +183,8 @@ d46b1bd7ec5b0103741e52837e5f7d0f snakebot_input_interface/CMakeFiles/snakebot_in
 d46b1bd7ec5b0103741e52837e5f7d0f snakebot_input_interface/CMakeFiles/snakebot_input_interface_genlisp
 d46b1bd7ec5b0103741e52837e5f7d0f snakebot_input_interface/CMakeFiles/snakebot_input_interface_genpy
 56fee6256554fcf8c385f9c0916eceac snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_kinematics
+c704151a60e17dbc1d2ab90a4041534c snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_obstacles
+dafc6b8276f28b62943fa9c387fb5e9e snakebot_kinematics/CMakeFiles/_snakebot_kinematics_generate_messages_check_deps_snake_obstacles
 5a591b1044b1ddce67a3e06891cb310a snakebot_kinematics/CMakeFiles/snakebot_kinematics_gencpp
 5a591b1044b1ddce67a3e06891cb310a snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages
 5a591b1044b1ddce67a3e06891cb310a snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_cpp

@@ -1,0 +1,2 @@
+obstacles obstaclePose
+kinematics snakePose

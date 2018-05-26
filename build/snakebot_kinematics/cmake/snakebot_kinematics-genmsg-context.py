@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg"
+messages_str = "/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg;/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg;/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/snake_obstacles.msg"
 services_str = ""
 pkg_name = "snakebot_kinematics"
 dependencies_str = "std_msgs;geometry_msgs"

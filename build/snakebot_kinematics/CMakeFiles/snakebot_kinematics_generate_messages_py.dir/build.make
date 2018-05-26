@@ -46,6 +46,8 @@ CMAKE_BINARY_DIR = /home/snake/Documents/catkin_ws/build
 include snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py.dir/progress.make
 
 snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_kinematics.py
+snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_obstacles.py
+snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py
 snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/__init__.py
 
 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_kinematics.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
@@ -55,14 +57,34 @@ snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py: /home/s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG snakebot_kinematics/kinematics"
 	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg -Isnakebot_kinematics:/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_kinematics -o /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg
 
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_obstacles.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_obstacles.py: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_obstacles.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG snakebot_kinematics/obstacles"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg -Isnakebot_kinematics:/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_kinematics -o /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg
+
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/snake_obstacles.msg
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/kinematics.msg
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py: /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/obstacles.msg
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose2D.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG snakebot_kinematics/snake_obstacles"
+	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg/snake_obstacles.msg -Isnakebot_kinematics:/home/snake/Documents/catkin_ws/src/snakebot_kinematics/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -p snakebot_kinematics -o /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg
+
 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/__init__.py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_kinematics.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/__init__.py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_obstacles.py
+/home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/__init__.py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/snake/Documents/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python msg __init__.py for snakebot_kinematics"
 	cd /home/snake/Documents/catkin_ws/build/snakebot_kinematics && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg --initpy
 
 snakebot_kinematics_generate_messages_py: snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py
 snakebot_kinematics_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_kinematics.py
+snakebot_kinematics_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_obstacles.py
+snakebot_kinematics_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/_snake_obstacles.py
 snakebot_kinematics_generate_messages_py: /home/snake/Documents/catkin_ws/devel/lib/python2.7/dist-packages/snakebot_kinematics/msg/__init__.py
 snakebot_kinematics_generate_messages_py: snakebot_kinematics/CMakeFiles/snakebot_kinematics_generate_messages_py.dir/build.make
 .PHONY : snakebot_kinematics_generate_messages_py

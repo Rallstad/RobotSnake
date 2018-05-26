@@ -47,7 +47,7 @@ void EffortSelector::updateEffort(){
     //publishDesiredPosition();
 
     if (positionControlOnly){
-        combinedEffort = positionControlEffort;
+        combinedEffort = positionControlEffort; 
     }
     else if (!(propulsionEffortReady && positionControlEffortReady)){
         if (positionControlEffortReady){

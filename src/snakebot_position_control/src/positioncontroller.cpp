@@ -15,14 +15,14 @@ PositionController::PositionController(ros::NodeHandle handle, double stepLength
     //setMappingMatrix();
 
     desiredPositionSub = n.subscribe("/snakebot/desired_joint_positions", 1, &PositionController::desiredPositionCallback, this);
-    //labviewPositionSub = n.subscribe("LabVIEW_ROS/to_ROS_measured_angles", 1, &PositionController::labviewPositionCallback, this);
-    jointStateSub = n.subscribe("/snakebot/joint_states", 1, &PositionController::jointStateCallback, this);
+    labviewPositionSub = n.subscribe("/LabVIEW_ROS/from_LabVIEW_measured_angles", 1, &PositionController::labviewPositionCallback, this);
+    //jointStateSub = n.subscribe("/snakebot/joint_states", 1, &PositionController::jointStateCallback, this);
     desiredPositionPub = n.advertise<std_msgs::Float64MultiArray>("/snakebot/desired_joint_positions", 1);
     effortPub = n.advertise<snakebot_position_control::PositionControlEffort>("/snakebot/position_controller_effort", 1);
     LabViewDesiredPositionPub = n.advertise<std_msgs::Float64MultiArray>("/LabVIEW_ROS/from_ROS_reference_angles",1);
     desiredPosition.resize(numJoints);
     currentPosition.resize(numJoints);
-    currentVelocity.resize(numJoints);
+    currentVelocity.resize(numJoints,0.1);
     velocityAverage.resize(numJoints, 0.0);
     error.resize(numJoints, 0.0);
     errorPrev.resize(numJoints, 0.0);
@@ -62,20 +62,29 @@ void PositionController::desiredPositionCallback(const std_msgs::Float64MultiArr
     //cout<<"currentPositionReady: " <<currentPositionReady;
 }
 
-// get vector of measured positions of real snake robot and use as desired position
 void PositionController::labviewPositionCallback(const std_msgs::Float64MultiArray::ConstPtr &inMsg){
+    for(int i=12;i<0;i--){
+        currentPosition[i] = inMsg->data[i]*3.1415/180;
+    }
+    calculateAndPublishEffort();    
+}
+
+
+
+// get vector of measured positions of real snake robot and use as desired position
+/*void PositionController::labviewPositionCallback(const std_msgs::Float64MultiArray::ConstPtr &inMsg){
     if (followRealSnakeMode){
         std::vector<double> mappedJoints = map6to10(inMsg->data);
         std_msgs::Float64MultiArray outMsg;
         outMsg.data = mappedJoints;
         desiredPositionPub.publish(outMsg);
     }
-}
+}*/
 
 // store received vector of current positions
 void PositionController::jointStateCallback(const sensor_msgs::JointState::ConstPtr& msg){
     currentPosition = msg->position;
-    currentVelocity = msg->velocity;
+    //currentVelocity = msg->velocity;
     currentPositionReady = true;
     calculateAndPublishEffort();
 }
@@ -102,7 +111,10 @@ void PositionController::calculateAndPublishEffort(){
     //cout << "currentsize: "<<currentPosition.size()<<endl;
     errorDerivative = (error - errorPrev)/dt;
     //errorDerivative = currentVelocity;
+    
     velocityAverage = movingAverage(errorDerivative, velocityAverage, 0.5);
+    
+
     errorIntegral = errorIntegral +  dt*(error + errorPrev)/2;
     //effort = elementWiseMult(kp, error) + elementWiseMult(kd, errorDerivative) + elementWiseMult(ki, errorIntegral);
     effort = elementWiseMult(kp, error) + elementWiseMult(kd, velocityAverage) + elementWiseMult(ki, errorIntegral);
