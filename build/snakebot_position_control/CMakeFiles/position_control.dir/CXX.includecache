@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/snake/Documents/catkin_ws/devel/include/snakebot_labview_communication/Float64Array.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/snake/Documents/catkin_ws/devel/include/snakebot_position_control/PositionControlEffort.h
 string
 -
@@ -47,6 +63,8 @@ sensor_msgs/JointState.h
 /home/snake/Documents/catkin_ws/src/snakebot_position_control/src/sensor_msgs/JointState.h
 snakebot_position_control/PositionControlEffort.h
 /home/snake/Documents/catkin_ws/src/snakebot_position_control/src/snakebot_position_control/PositionControlEffort.h
+snakebot_labview_communication/Float64Array.h
+/home/snake/Documents/catkin_ws/src/snakebot_position_control/src/snakebot_labview_communication/Float64Array.h
 
 /home/snake/Documents/catkin_ws/src/snakebot_position_control/src/vectoroperators.h
 vector

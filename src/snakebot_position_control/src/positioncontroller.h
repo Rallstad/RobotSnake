@@ -9,6 +9,7 @@
 #include "std_msgs/Float64.h"
 #include "sensor_msgs/JointState.h"
 #include "snakebot_position_control/PositionControlEffort.h"
+#include "snakebot_labview_communication/Float64Array.h"
 
 using std::cout;
 using std::endl;
@@ -36,7 +37,7 @@ private:
     std::vector<double> errorIntegral;
 
     void desiredPositionCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);
-    void labviewPositionCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);
+    void labviewPositionCallback(const snakebot_labview_communication::Float64Array::ConstPtr& msg);
     void jointStateCallback(const sensor_msgs::JointState::ConstPtr& msg);
     ros::Subscriber desiredPositionSub;
     ros::Subscriber labviewPositionSub;

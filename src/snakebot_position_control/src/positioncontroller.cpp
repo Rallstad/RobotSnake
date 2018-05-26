@@ -14,8 +14,8 @@ PositionController::PositionController(ros::NodeHandle handle, double stepLength
 
     //setMappingMatrix();
 
-    desiredPositionSub = n.subscribe("/snakebot/desired_joint_positions", 1, &PositionController::desiredPositionCallback, this);
-    labviewPositionSub = n.subscribe("/LabVIEW_ROS/from_LabVIEW_measured_angles", 1, &PositionController::labviewPositionCallback, this);
+    desiredPositionSub = n.subscribe("/snakebot/desired_joint_positions", 100, &PositionController::desiredPositionCallback, this);
+    labviewPositionSub = n.subscribe("/LabVIEW_ROS/from_LabVIEW_measured_angles", 100, &PositionController::labviewPositionCallback, this);
     //jointStateSub = n.subscribe("/snakebot/joint_states", 1, &PositionController::jointStateCallback, this);
     desiredPositionPub = n.advertise<std_msgs::Float64MultiArray>("/snakebot/desired_joint_positions", 1);
     effortPub = n.advertise<snakebot_position_control::PositionControlEffort>("/snakebot/position_controller_effort", 1);
@@ -62,10 +62,13 @@ void PositionController::desiredPositionCallback(const std_msgs::Float64MultiArr
     //cout<<"currentPositionReady: " <<currentPositionReady;
 }
 
-void PositionController::labviewPositionCallback(const std_msgs::Float64MultiArray::ConstPtr &inMsg){
-    for(int i=12;i<0;i--){
-        currentPosition[i] = inMsg->data[i]*3.1415/180;
+void PositionController::labviewPositionCallback(const snakebot_labview_communication::Float64Array::ConstPtr &inMsg){
+    std::vector<double> PositionMsg;
+    for(int i=0;i<=12;i++){
+        PositionMsg.push_back(inMsg->data[i]*3.1415/180);
+        cout<<"hei"<<endl;
     }
+    currentPosition = PositionMsg;
     calculateAndPublishEffort();    
 }
 

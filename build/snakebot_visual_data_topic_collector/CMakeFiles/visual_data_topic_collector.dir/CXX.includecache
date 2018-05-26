@@ -42,6 +42,10 @@ ros/message_operations.h
 geometry_msgs/Pose2D.h
 -
 
+/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/main.cpp
+visual_data_topic_collector.h
+/home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
+
 /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.cpp
 visual_data_topic_collector.h
 /home/snake/Documents/catkin_ws/src/snakebot_visual_data_topic_collector/src/visual_data_topic_collector.h
