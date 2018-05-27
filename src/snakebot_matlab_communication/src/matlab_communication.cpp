@@ -65,7 +65,7 @@ void Snake::propulsionCallback(const std_msgs::Float64MultiArray::ConstPtr& msg)
 	propulsionPub.publish(propmsg);
 }
 
-void Snake::publishCollisions(){
+/*void Snake::publishCollisions(){
 	//Because of how the pushpointextractor finds pushpoints, the order of the joints has to be reversed
 	
 	snakebot_matlab_communication::collisionList list;
@@ -101,9 +101,9 @@ void Snake::publishCollisions(){
 	}
 	CollisionListPub.publish(list);
 	//CollisionPub.pub(msg);
-}
+}*/
 
-/*void Snake::publishCollisions(){
+void Snake::publishCollisions(){
 	findPossibleCollisions();
 	snakebot_matlab_communication::collisionList list;
 	int obstacle_number = 1;
@@ -126,7 +126,7 @@ void Snake::publishCollisions(){
 	obstacle1.clear();
 	obstacle2.clear();
 	obstacle3.clear();
-}*/
+}
 
 
 

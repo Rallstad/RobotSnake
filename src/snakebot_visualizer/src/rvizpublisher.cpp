@@ -400,17 +400,17 @@ void RVizPublisher::publishVisualNormalForce(){
         marker.pose.position.z = 0.035;
         marker.pose.orientation.x = 0.0;
         marker.pose.orientation.y = 0.0;
-        marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        marker.pose.orientation.z = sin(((kinematicsJointPoses[joint_num-1].theta+270)/2)*(M_PI/180));
+        marker.pose.orientation.w = cos(((kinematicsJointPoses[joint_num-1].theta+270)/2)*(M_PI/180));
        
 
-        marker.scale.x = (sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000;
+        marker.scale.x = -(sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000;
         marker.scale.y = 0.005;
         marker.scale.z = 0.005;
         marker.color.a = 1.0; // Don't forget to set the alpha!
         marker.color.r = 1.0;
-        marker.color.g = 0.0;
-        marker.color.b = 0.0;
+        marker.color.g = 1.0;
+        marker.color.b = 1.0;
         markerarray.markers.push_back(marker);
 
     }
@@ -436,27 +436,17 @@ void RVizPublisher::publishVisualTangentForce(){
         marker.pose.orientation.x = 0.0;
         marker.pose.orientation.y = 0.0;
 
-
-        if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) <= 0) {
-            cout<<"LESS"<<endl;
-            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))-1;
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        }
-
-        else if((sgData[joint_num-1] - forceMidpoint[joint_num-1]) > 0){
-            cout<<"MORE"<<endl;
-
-            marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180))+1;
-            marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
-        }
+        marker.pose.orientation.z = sin((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
+        marker.pose.orientation.w = cos((kinematicsJointPoses[joint_num-1].theta/2)*(M_PI/180));
         
-        marker.scale.x = (sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000;
+        
+        marker.scale.x = abs((sgData[joint_num-1] - forceMidpoint[joint_num-1])/2000);
         marker.scale.y = 0.005;
         marker.scale.z = 0.005;
         marker.color.a = 1.0; // Don't forget to set the alpha!
-        marker.color.r = 1.0;
-        marker.color.g = 0.0;
-        marker.color.b = 1.0;
+        marker.color.r = 0.0;
+        marker.color.g = 1.0;
+        marker.color.b = 0.0;
         markerarray.markers.push_back(marker);
 
     }
